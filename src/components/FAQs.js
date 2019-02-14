@@ -25,6 +25,7 @@ class FAQs extends React.Component {
                 <table className="table">
                     <tbody>
                         <tr className="header-row">
+                            <td>Title</td>
                             <td>Question</td>
                         </tr>
                         {this.state.faqs.map((faq) => (
