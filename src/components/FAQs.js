@@ -1,6 +1,7 @@
 import React from 'react';
 import FAQService from '../services/FAQService';
 import './table.scss';
+import {Link} from 'react-router-dom';
 
 class FAQs extends React.Component {
     constructor(props) {
@@ -23,13 +24,14 @@ class FAQs extends React.Component {
                 <h3>Frequently Asked Questions</h3>
                 <table className="table">
                     <tbody>
-                        <tr class="header-row">
-                            <td>Title</td>
+                        <tr className="header-row">
                             <td>Question</td>
                         </tr>
                         {this.state.faqs.map((faq) => (
                             <tr key={faq.id}>
-                                <td>{faq.title}</td>
+                                <td>
+                                    <Link to={`/admin/faqs/${faq.id}`}>{faq.title}</Link>
+                                </td>
                                 <td>{faq.question}</td>
                             </tr>
                         ))}
