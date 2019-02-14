@@ -1,3 +1,5 @@
+import { API_ROOT } from '../api-config';
+
 export default class ServiceService {
     static instance = null;
     static getInstance() {
@@ -7,9 +9,9 @@ export default class ServiceService {
         return this.instance
     }
     findServiceById = serviceId =>
-        fetch(`http://localhost:8080/api/services/${serviceId}`)
+        fetch(`${API_ROOT}/api/services/${serviceId}/`)
             .then(response => response.json())
     findAllServices = () =>
-        fetch("http://localhost:8080/api/services")
+        fetch(`${API_ROOT}/api/services`)
             .then(response => response.json())
 }
