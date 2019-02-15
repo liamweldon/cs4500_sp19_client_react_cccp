@@ -3,6 +3,8 @@ import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
 import Services from './Services';
 import FAQs from './FAQs';
 import FAQDetails from './FAQDetails';
+import ServiceDetails from "./ServiceDetails";
+import Users from './Users';
 
 const Admin = () => (
     <div>
@@ -14,10 +16,14 @@ const Admin = () => (
                     <br />
                     <Link to="/admin/faqs">FAQs</Link>
                     <br />
+                    <Link to="/admin/users">Users</Link>
+                    <br />
                 </div>
                 <div className="col-9">
                     <Route path="/admin/faqs" exact component={FAQs} />
                     <Route path="/admin/services" exact component={Services} />
+                    <Route path="/admin/services/:id" exact component={ServiceDetails} />
+                    <Route path="/admin/users" exact component={Users} />
                     <Route path="/admin/faqs/:id" exact component={FAQDetails} />
                 </div>
             </div>
