@@ -13,7 +13,7 @@ class FAQAnswers extends React.Component {
   componentDidMount() {
     this.faqAnswerService.findAllFAAs().then(faqAnswers =>
       this.setState({
-        faqAnswers: faqAnswers || []
+        faqAnswers: faqAnswers.isArray ? faqAnswers : [],
       })
     );
   }
