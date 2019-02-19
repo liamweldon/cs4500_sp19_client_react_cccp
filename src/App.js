@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
-import Admin from './components/Admin'
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+import Admin from "./components/Admin";
 
 class App extends Component {
   render() {
@@ -12,10 +12,7 @@ class App extends Component {
         <Router>
           <div>
             <Link to="/admin">Admin</Link>
-            <Route
-                path="/admin"
-                exact
-                component={Admin}/>
+            <Route path="/admin" exact component={Admin} />
           </div>
         </Router>
       </div>
