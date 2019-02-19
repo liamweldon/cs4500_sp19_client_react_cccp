@@ -9,25 +9,27 @@ class ServiceDetails extends React.Component {
     this.state = {
       services: [],
       service: {
-        title: "",
-        id: 1
+        title: undefined,
+        id: undefined
       }
     };
   }
 
   componentDidMount() {
     this.serviceService.findAllServices().then(services => {
-      this.props.history.push("/admin/services/" + services[0].id);
+      const currentServiceId = this.props.match.params.id;
+      this.selectService(currentServiceId);
+
+      // this.props.history.push("/admin/services/" + currentService);
       this.setState({
-        services: services,
-        service: services[0]
+        services: services
       });
     });
   }
 
   selectService = id =>
     this.serviceService.findServiceById(id).then(service => {
-      this.props.history.push("/admin/services/" + id);
+      // this.props.history.push("/admin/services/" + id);
       this.setState({
         service: service
       });
@@ -42,18 +44,28 @@ class ServiceDetails extends React.Component {
           onChange={e => this.selectService(e.target.value)}
           className="form-control"
         >
-          {this.state.services.map(service => (
-            <option value={service.id} key={service.id}>
-              {service.serviceName}
-            </option>
-          ))}
+          {this.state.services.map(service => {
+            var selected = service.id === this.state.service.id ? true : false;
+            return (
+              <option
+                value={service.id}
+                key={service.id}
+                defaultValue={selected}
+              >
+                {service.serviceName}
+              </option>
+            );
+          })}
         </select>
         <label>Service Title</label>
         <br />
         <input
-          onChange={() => {}}
           className="form-control"
+          type="text"
           value={this.state.service.serviceName}
+          onChange={() => {
+            console.log("input changed");
+          }}
         />
       </div>
     );
