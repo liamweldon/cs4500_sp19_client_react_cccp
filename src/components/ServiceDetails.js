@@ -44,7 +44,7 @@ class ServiceDetails extends React.Component {
         >
           {this.state.services.map(service => (
             <option value={service.id} key={service.id}>
-              {service.title}
+              {service.serviceName}
             </option>
           ))}
         </select>
@@ -53,7 +53,7 @@ class ServiceDetails extends React.Component {
         <input
           onChange={() => {}}
           className="form-control"
-          value={this.state.service.title}
+          value={this.state.service.serviceName}
         />
       </div>
     );
