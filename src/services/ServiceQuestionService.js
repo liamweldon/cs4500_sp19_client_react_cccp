@@ -3,15 +3,12 @@ import {API_ROOT} from '../api-config';
 export default class ServiceQuestionService {
     static instance = null;
     static getInstance() {
-        if(ServiceQuestionService.instance === null) {
-            ServiceQuestionService.instance = new ServiceQuestionService()
+        if (ServiceQuestionService.instance === null) {
+            ServiceQuestionService.instance = new ServiceQuestionService();
         }
-        return this.instance
+        return this.instance;
     }
-    findServiceQuestionById = id =>
-        fetch(`http://localhost:8080/api/service-questions/${id}`)
-            .then(response => response.json())
-    findAllServiceQuestions = () =>
-        fetch("http://localhost:8080/api/service-questions")
-            .then(response => response.json())
+    findServiceQuestionById = (id) =>
+        fetch(`${API_ROOT}/api/service-questions/${id}`).then((response) => response.json());
+    findAllServiceQuestions = () => fetch(`${API_ROOT}/api/service-questions`).then((response) => response.json());
 }
