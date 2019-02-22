@@ -10,6 +10,7 @@ import ServiceQuestions from './ServiceQuestions';
 import ServiceQuestionDetails from './ServiceQuestionDetails';
 import ServiceAnswers from './ServiceAnswers';
 import ServiceAnswerDetails from './ServiceAnswerDetails';
+import FAQAnswerDetails from "./FAQAnswerDetails";
 
 const Admin = () => (
     <div>
@@ -33,6 +34,7 @@ const Admin = () => (
                 <div className="col-9">
                     <Route path="/admin/faqs" exact component={FAQs} />
                     <Route path="/admin/faas" exact component={FAQAnswers} />
+                    <Route path="/admin/faas/:id" exact component={FAQAnswerDetails} />
                     <Route path="/admin/services" exact component={Services} />
                     <Route path="/admin/services/:id" exact component={ServiceDetails} />
                     <Route path="/admin/users" exact component={Users} />
