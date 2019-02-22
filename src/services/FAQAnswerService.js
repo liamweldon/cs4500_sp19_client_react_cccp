@@ -4,7 +4,7 @@ export default class FAQAnswerService {
     static instance = null;
     static getInstance() {
         if (FAQAnswerService.instance === null) {
-            FAQAnswerService.instance = new FAQService();
+            FAQAnswerService.instance = new FAQAnswerService();
         }
         return this.instance;
     }
