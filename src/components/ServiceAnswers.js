@@ -1,5 +1,7 @@
 import React from 'react'
 import ServiceAnswerService from '../services/ServiceAnswerService'
+import './table.scss';
+import {Link} from 'react-router-dom';
 class ServiceAnswers extends React.Component {
     constructor(props) {
         super(props)
@@ -23,14 +25,18 @@ class ServiceAnswers extends React.Component {
                 <h3>Service Answers</h3>
                 <table className="table">
                     <tbody>
-                    {
-                        this.state.serviceAnswers
-                            .map(serviceAnswer =>
-                                <tr key={serviceAnswer.id}>
-                                    <td>{serviceAnswer.choiceAnswer}</td>
-                                </tr>
-                            )
-                    }
+                    <tr className="header-row">
+                            <td>Question</td>
+                            <td>Answer</td>
+                    </tr>
+                    {this.state.serviceAnswers.map((serviceAnswer) => (
+                            <tr key={serviceAnswer.id}>
+                                <td>
+                                    {serviceAnswer.serviceQuestion}
+                                </td>
+                                <td><Link to={`/admin/service-answers/${serviceAnswer.id}`}>{serviceAnswer.id}</Link></td>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
             </div>
