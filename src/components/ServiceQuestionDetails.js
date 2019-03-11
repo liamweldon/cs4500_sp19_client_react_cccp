@@ -57,7 +57,7 @@ class ServiceQuestionDetails extends React.Component {
                 <input
                     onChange={() => {}}
                     className="form-control"
-                    value={this.state.serviceQuestion.question}/>
+                    value={this.state.serviceQuestion.title}/>
             </div>
         )
     }
