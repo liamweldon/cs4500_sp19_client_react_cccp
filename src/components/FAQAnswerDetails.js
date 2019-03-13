@@ -1,5 +1,5 @@
-import React from "react";
-import FAQAnswerService from "../services/FAQAnswerService";
+import React from 'react';
+import FAQAnswerService from '../services/FAQAnswerService';
 
 class FAQAnswerDetails extends React.Component {
   constructor(props) {
@@ -8,23 +8,23 @@ class FAQAnswerDetails extends React.Component {
     this.state = {
       faqAnswers: [],
       faqAnswer: {
-        choiceAnswer: "",
+        choiceAnswer: '',
         id: 1
       }
     };
   }
   componentDidMount() {
-    this.faqAnswerService.findAllFAAs().then(faqAnswers => {
-      this.props.history.push("/admin/faq-answers/" + faqAnswers[0].id);
+    this.faqAnswerService.findAllFAAs().then((faqAnswers) => {
+      this.props.history.push('/admin/faas/' + faqAnswers[0].id);
       this.setState({
         faqAnswers: faqAnswers,
         faqAnswer: faqAnswers[0]
       });
     });
   }
-  selectFAQAnswer = id =>
-    this.faqAnswerService.findFAAById(id).then(faqAnswer => {
-      this.props.history.push("/admin/faq-answers/" + id);
+  selectFAQAnswer = (id) =>
+    this.faqAnswerService.findFAAById(id).then((faqAnswer) => {
+      this.props.history.push('/admin/faas/' + id);
       this.setState({
         faqAnswer: faqAnswer
       });
@@ -35,10 +35,10 @@ class FAQAnswerDetails extends React.Component {
         <h3>FAQ Answer Details</h3>
         <select
           value={this.state.faqAnswer.id}
-          onChange={e => this.selectFAQAnswer(e.target.value)}
+          onChange={(e) => this.selectFAQAnswer(e.target.value)}
           className="form-control"
         >
-          {this.state.faqAnswers.map(faqAnswer => (
+          {this.state.faqAnswers.map((faqAnswer) => (
             <option value={faqAnswer.id} key={faqAnswer.id}>
               {faqAnswer.id}
             </option>
@@ -46,18 +46,10 @@ class FAQAnswerDetails extends React.Component {
         </select>
         <label>FAQ Answer Question</label>
         <br />
-        <input
-          onChange={() => {}}
-          className="form-control"
-          value={this.state.faqAnswer.question}
-        />
+        <input onChange={() => {}} className="form-control" value={this.state.faqAnswer.question} />
         <label>FAQ Answer Answer</label>
         <br />
-        <input
-          onChange={() => {}}
-          className="form-control"
-          value={this.state.faqAnswer.answer}
-        />
+        <input onChange={() => {}} className="form-control" value={this.state.faqAnswer.answer} />
       </div>
     );
   }
