@@ -12,13 +12,23 @@ class FAQs extends React.Component {
       faqs: []
     };
   }
-  componentDidMount() {
+
+  getFAQs = () => {
     this.faqService.findAllFAQs().then((faqs) =>
       this.setState({
         faqs: faqs
       })
     );
+  };
+
+  componentDidMount() {
+    this.getFAQs();
   }
+
+  deleteQuestion = (id) => {
+    // once the question is deleted, reload the questions so the user doesnt see the deleted one
+    this.faqService.deleteFAQ(id).then((res) => this.getFAQs());
+  };
 
   editQuestion = () => {};
 
@@ -41,14 +51,14 @@ class FAQs extends React.Component {
                 <td>
                   <button
                     onClick={() => {
-                      this.faqService.deleteFAQ(faq.id);
+                      this.deleteQuestion(faq.id);
                     }}
                   >
-                    <i class="fas fa-trash-alt" />
+                    <i className="fas fa-trash-alt" />
                   </button>
                 </td>
                 <td>
-                  <i class="fas fa-pen-square" onClick={this.editQuestion} />
+                  <i className="fas fa-pen-square" onClick={this.editQuestion} />
                 </td>
               </tr>
             ))}
