@@ -1,6 +1,6 @@
-import React from "react";
-import FAQAnswerService from "../services/FAQAnswerService";
-import { Link } from "react-router-dom";
+import React from 'react';
+import FAQAnswerService from '../services/FAQAnswerService';
+import {Link} from 'react-router-dom';
 
 class FAQAnswers extends React.Component {
   constructor(props) {
@@ -11,9 +11,9 @@ class FAQAnswers extends React.Component {
     };
   }
   componentDidMount() {
-    this.faqAnswerService.findAllFAAs().then(faqAnswers =>
+    this.faqAnswerService.findAllFAAs().then((faqAnswers) =>
       this.setState({
-        faqAnswers: faqAnswers.isArray ? faqAnswers : [],
+        faqAnswers: faqAnswers.length ? faqAnswers : []
       })
     );
   }
@@ -27,13 +27,11 @@ class FAQAnswers extends React.Component {
               <td>Question</td>
               <td>Answer</td>
             </tr>
-            {this.state.faqAnswers.map(faqAnswer => (
+            {this.state.faqAnswers.map((faqAnswer) => (
               <tr key={faqAnswer.id}>
                 <td>{faqAnswer.question}</td>
                 <td>
-                  <Link to={`/admin/faas/${faqAnswer.id}`}>
-                    {faqAnswer.answer}
-                  </Link>
+                  <Link to={`/admin/faas/${faqAnswer.id}`}>{faqAnswer.answer}</Link>
                 </td>
               </tr>
             ))}

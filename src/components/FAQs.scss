@@ -1,0 +1,20 @@
+.faqs {
+  button {
+    background: none;
+    border: none;
+  }
+  i {
+    font-size: 2em;
+
+    &.fa-trash-alt {
+      color: red;
+    }
+    &.fa-pen-square,
+    &.fa-plus-square {
+      color: blue;
+    }
+    &.fa-check-square {
+      color: green;
+    }
+  }
+}
