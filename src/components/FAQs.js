@@ -13,7 +13,8 @@ class FAQs extends React.Component {
       faqs: [],
       // key value pairs where the key is the ID and the value is the fields
       // ex {0: {title: '', question: ''}, 1: {title: '', question: ''}}
-      editing: {}
+      editing: {},
+      newQuestion: {title: '', question: ''}
     };
   }
 
@@ -39,6 +40,18 @@ class FAQs extends React.Component {
     this.faqService.editFAQ(id, newQuestion).then((res) => {
       this.getFAQs();
       this.setState({editing: omit(this.state.editing, id)});
+    });
+  };
+
+  handleNewQuestionInputChange = (e) => {
+    this.setState({newQuestion: {...this.state.newQuestion, [e.target.name]: e.target.value}});
+  };
+
+  addQuestion = () => {
+    const newQuestion = this.state.newQuestion;
+    this.faqService.addFAQ(newQuestion).then((res) => {
+      this.getFAQs();
+      this.setState({newQuestion: {title: '', question: ''}});
     });
   };
 
@@ -72,13 +85,17 @@ class FAQs extends React.Component {
             </tr>
             <tr key={-1}>
               <td>
-                <input />
+                <input value={this.state.newQuestion.title} name="title" onChange={this.handleNewQuestionInputChange} />
               </td>
               <td>
-                <input />
+                <input
+                  value={this.state.newQuestion.question}
+                  name="question"
+                  onChange={this.handleNewQuestionInputChange}
+                />
               </td>
               <td>
-                <button onClick={() => {}}>
+                <button onClick={this.addQuestion}>
                   <i className="fas fa-plus-square" />
                 </button>
               </td>

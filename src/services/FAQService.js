@@ -8,6 +8,16 @@ export default class FAQService {
     }
     return this.instance;
   }
+
+  addFAQ = (newQuestion) =>
+    fetch(`${API_ROOT}/api/faqs/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newQuestion)
+    }).then((response) => response.json());
+
   editFAQ = (id, newQuestion) =>
     fetch(`${API_ROOT}/api/faqs/${id}`, {
       method: 'PUT',
