@@ -1,12 +1,14 @@
 import React from 'react'
 import FAQService from '../services/FAQService'
-import {Link} from 'react-router-dom';
+import {Redirect, Link} from 'react-router-dom';
+
 import './FAQDetails.scss'
 class FAQDetails extends React.Component {
     constructor(props) {
         super(props)
         this.faqService = FAQService.getInstance()
         this.state = {
+            redirect: false,
             faqs: [],
             faq: {
                 choiceAnswer: '',
@@ -29,14 +31,13 @@ class FAQDetails extends React.Component {
         this.faqService
             .findFAQById(id)
             .then(faq => {
-                    this.props.history.push("/admin/faqs/" + id)
                     this.setState({
                         faq: faq
                     })
                 }
             )
     toSummary = () => {
-        this.props.history.push('/admin/faqs')
+        this.setState({redirect: true});
     }
 
     addFAQ = () => {
@@ -54,6 +55,7 @@ class FAQDetails extends React.Component {
 
 
     render() {
+        if (this.state.redirect) return <Redirect to='/admin/faqs' />;
         return(
             <div className="faqdetails">
                 <h3>FAQ Details</h3>
