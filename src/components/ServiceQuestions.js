@@ -2,14 +2,34 @@ import React from 'react'
 import ServiceQuestionService from '../services/ServiceQuestionService'
 import './table.scss';
 import {Link} from 'react-router-dom';
+import './ServiceQuestions.scss';
+
 class ServiceQuestions extends React.Component {
     constructor(props) {
         super(props)
         this.serviceQuestionService = ServiceQuestionService.getInstance()
         this.state = {
-            serviceQuestions: []
+            serviceQuestions: [],
+
+            editing: {},
+            newQuestion: {title: '', question: ''}
         }
     }
+
+      getServiceQuestions = () => {
+        this.serviceQuestionService.findAllServiceQuestions().then((serviceQuestions) =>
+          this.setState({
+            serviceQuestions: serviceQuestions
+          })
+        );
+      };
+
+      deleteQuestion = (id) => {
+        // once the question is deleted, reload the questions so the user doesnt see the deleted one
+        this.serviceQuestionService.deleteServiceQuestion(id).then((res) => this.getServiceQuestions());
+      };
+
+
     componentDidMount() {
         this.serviceQuestionService
             .findAllServiceQuestions()
@@ -35,6 +55,15 @@ class ServiceQuestions extends React.Component {
                                     {serviceQuestion.type}
                                 </td>
                                 <td><Link to={`/admin/service-questions/${serviceQuestion.id}`}>{serviceQuestion.question}</Link></td>
+                                <td>
+                                  <button
+                                    onClick={() => {
+                                      this.deleteQuestion(serviceQuestion.id);
+                                    }}
+                                  >
+                                    <i className="fas fa-trash-alt" />
+                                  </button>
+                                </td>
                             </tr>
                         ))}
                     </tbody>
