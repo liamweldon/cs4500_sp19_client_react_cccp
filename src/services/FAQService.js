@@ -8,6 +8,14 @@ export default class FAQService {
     }
     return this.instance;
   }
+  editFAQ = (id, newQuestion) =>
+    fetch(`${API_ROOT}/api/faqs/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newQuestion)
+    }).then((response) => response.json());
   findFAQById = (id) => fetch(`${API_ROOT}/api/faqs/${id}`).then((response) => response.json());
   deleteFAQ = (id) => fetch(`${API_ROOT}/api/faqs/${id}`, {method: 'DELETE'}).then((response) => response.json());
   findAllFAQs = () => fetch(`${API_ROOT}/api/faqs`).then((response) => response.json());

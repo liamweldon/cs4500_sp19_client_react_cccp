@@ -34,15 +34,27 @@ class FAQs extends React.Component {
     this.faqService.deleteFAQ(id).then((res) => this.getFAQs());
   };
 
-  editQuestion = () => {};
+  saveQuestion = (id) => {
+    const newQuestion = this.state.editing[id];
+    this.faqService.editFAQ(id, newQuestion).then((res) => {
+      this.getFAQs();
+      this.setState({editing: omit(this.state.editing, id)});
+    });
+  };
+
+  handleInputChange = (e, id) => {
+    let editingCopy = {...this.state.editing};
+    editingCopy[id] = {...editingCopy[id], [e.target.name]: e.target.value};
+    this.setState({editing: editingCopy});
+  };
 
   toggleEditMode = (question) => {
     if (question.id in this.state.editing) {
       this.setState({editing: omit(this.state.editing, question.id)});
     } else {
-      let editingCopy = {...this.state.editing};
-      editingCopy[question.id] = {title: question.title, question: question.question};
-      this.setState({editing: editingCopy});
+      this.setState({
+        editing: {...this.state.editing, [question.id]: {title: question.title, question: question.question}}
+      });
     }
   };
 
@@ -75,9 +87,31 @@ class FAQs extends React.Component {
             {this.state.faqs.map((faq) => (
               <tr key={faq.id}>
                 <td>
-                  {faq.id in this.state.editing ? <input /> : <Link to={`/admin/faqs/${faq.id}`}>{faq.title}</Link>}
+                  {faq.id in this.state.editing ? (
+                    <input
+                      value={this.state.editing[faq.id].title}
+                      name="title"
+                      onChange={(e) => {
+                        this.handleInputChange(e, faq.id);
+                      }}
+                    />
+                  ) : (
+                    <Link to={`/admin/faqs/${faq.id}`}>{faq.title}</Link>
+                  )}
                 </td>
-                <td>{faq.id in this.state.editing ? <input /> : faq.question}</td>
+                <td>
+                  {faq.id in this.state.editing ? (
+                    <input
+                      defaultValue={this.state.editing[faq.id].question}
+                      name="question"
+                      onChange={(e) => {
+                        this.handleInputChange(e, faq.id);
+                      }}
+                    />
+                  ) : (
+                    faq.question
+                  )}
+                </td>
                 <td>
                   <button
                     onClick={() => {
@@ -88,7 +122,16 @@ class FAQs extends React.Component {
                   </button>
                 </td>
                 <td>
-                  <i className="fas fa-pen-square" onClick={() => this.toggleEditMode(faq)} />
+                  {faq.id in this.state.editing ? (
+                    <i
+                      className="fas fa-check-square"
+                      onClick={() => {
+                        this.saveQuestion(faq.id);
+                      }}
+                    />
+                  ) : (
+                    <i className="fas fa-pen-square" onClick={() => this.toggleEditMode(faq)} />
+                  )}
                 </td>
               </tr>
             ))}
