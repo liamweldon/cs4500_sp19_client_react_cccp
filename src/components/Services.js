@@ -28,11 +28,9 @@ class Services extends React.Component {
           <tbody>
             {this.state.services.map(service => (
               <tr key={service.id}>
-                <td>
-                  <Link to={"/admin/services/" + service.id}>
+                <Link to={"/admin/services/" + service.id}>
                     {service.serviceName}
-                  </Link>
-                </td>
+                </Link>
               </tr>
             ))}
           </tbody>
