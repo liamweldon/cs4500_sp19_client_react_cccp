@@ -27,16 +27,24 @@ class Users extends React.Component {
                 <h3>Users</h3>
                 <table className="table">
                     <tbody>
+                    <tr>
+                        <td>ID</td>
+                        <td>Username</td>
+                        <td>First Name</td>
+                        <td>Last Name</td>
+                    </tr>
                     {
                         this.state.users
                             .map(user =>
+
                                 <tr key={user.id}>
                                     <td>
                                         <Link to={"/admin/users/" + user.id}>
-                                            {user.username}
+                                            {user.id}
                                         </Link>
                                     </td>
-                                    {/*<td>{user.username}</td>*/}
+                                    <td>{user.username}</td>
+                                    <td>{user.password}</td>
                                     <td>{user.firstName}</td>
                                     <td>{user.lastName}</td>
                                 </tr>
