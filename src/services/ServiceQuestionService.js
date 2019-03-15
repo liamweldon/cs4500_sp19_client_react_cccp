@@ -22,4 +22,13 @@ export default class ServiceQuestionService {
           },
           body: JSON.stringify(newServiceQuestion)
         }).then((response) => response.json());
+
+        editServiceQuestion = (id, newServiceQuestion) =>
+        fetch(`${API_ROOT}/api/service-questions/${id}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(newServiceQuestion)
+        }).then((response) => response.json());
 }
