@@ -1,0 +1,25 @@
+.faqdetails {
+  button {
+    background: none;
+    border: none;
+  }
+  i {
+    font-size: 2em;
+    &.fa-arrow-left {
+    color: red
+    }
+    &.fa-search{
+    color: #ffe000;
+    }
+    &.fa-trash-alt {
+      color: red;
+    }
+    &.fa-pen-square,
+    &.fa-plus-square {
+      color: blue;
+    }
+    &.fa-check-square {
+      color: green;
+    }
+  }
+}
