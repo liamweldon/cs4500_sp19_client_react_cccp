@@ -44,6 +44,11 @@ class ServiceQuestions extends React.Component {
             );
     }
 
+      deleteQuestion = (id) => {
+        // once the question is deleted, reload the questions so the user doesnt see the deleted one
+        this.serviceQuestionService.deleteServiceQuestion(id).then((res) => this.getServiceQuestions());
+      };
+
     handleNewServiceQuestionInputChange = (e) => {
       this.setState({newServiceQuestion: {...this.state.newServiceQuestion, [e.target.name]: e.target.value}});
     };
@@ -109,6 +114,15 @@ class ServiceQuestions extends React.Component {
                     </tr>
                     {this.state.serviceQuestions.map((serviceQuestion) => (
                             <tr key={serviceQuestion.id}>
+                                <td>
+                                  <button
+                                    onClick={() => {
+                                      this.deleteQuestion(serviceQuestion.id);
+                                    }}
+                                  >
+                                    <i className="fas fa-trash-alt" />
+                                  </button>
+                                </td>
                                 <td>
                                     {serviceQuestion.serviceName}
                                 </td>
