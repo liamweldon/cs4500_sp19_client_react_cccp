@@ -1,5 +1,7 @@
 import React from 'react'
+import {Link} from "react-router-dom";
 import UserService from '../services/UserService'
+
 class Users extends React.Component {
     constructor(props) {
         super(props)
@@ -8,6 +10,7 @@ class Users extends React.Component {
             users: []
         }
     }
+
     componentDidMount() {
         this.userService
             .findAllUsers()
@@ -17,17 +20,32 @@ class Users extends React.Component {
                 })
             )
     }
+
     render() {
-        return(
+        return (
             <div>
                 <h3>Users</h3>
                 <table className="table">
                     <tbody>
+                    <tr>
+                        <td>ID</td>
+                        <td>Username</td>
+                        <td>Password</td>
+                        <td>First Name</td>
+                        <td>Last Name</td>
+                    </tr>
                     {
                         this.state.users
                             .map(user =>
+
                                 <tr key={user.id}>
+                                    <td>
+                                        <Link to={"/admin/users/" + user.id}>
+                                            {user.id}
+                                        </Link>
+                                    </td>
                                     <td>{user.username}</td>
+                                    <td>{user.password}</td>
                                     <td>{user.firstName}</td>
                                     <td>{user.lastName}</td>
                                 </tr>

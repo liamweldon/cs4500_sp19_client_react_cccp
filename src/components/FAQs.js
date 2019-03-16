@@ -19,11 +19,13 @@ class FAQs extends React.Component {
   }
 
   getFAQs = () => {
-    this.faqService.findAllFAQs().then((faqs) =>
-      this.setState({
-        faqs: faqs
-      })
-    );
+    this.faqService.findAllFAQs().then((faqs) => {
+      if (faqs.length) {
+        this.setState({
+          faqs: faqs
+        });
+      }
+    });
   };
 
   componentDidMount() {

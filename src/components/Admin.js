@@ -5,6 +5,7 @@ import FAQs from './FAQs';
 import FAQDetails from './FAQDetails';
 import ServiceDetails from "./ServiceDetails";
 import Users from './Users';
+import UserDetails from './UserDetails';
 import FAQAnswers from "./FAQAnswers";
 import ServiceQuestions from './ServiceQuestions';
 import ServiceQuestionDetails from './ServiceQuestionDetails';
@@ -38,6 +39,7 @@ const Admin = () => (
                     <Route path="/admin/services" exact component={Services} />
                     <Route path="/admin/services/:id" exact component={ServiceDetails} />
                     <Route path="/admin/users" exact component={Users} />
+                    <Route path="/admin/users/:id" exact component={UserDetails}/>
                     <Route path="/admin/faqs/:id" exact component={FAQDetails} />
                     <Route path="/admin/service-questions" exact component={ServiceQuestions} />
                     <Route path="/admin/service-questions/:id" exact component={ServiceQuestionDetails} />
