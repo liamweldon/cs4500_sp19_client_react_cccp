@@ -107,7 +107,7 @@ class ServiceDetails extends React.Component {
             <input
               type="text"
               class="form-control"
-              //value={this.state.service.serviceName}
+              defaultValue={this.state.service.serviceName}
             />
           </div>
         </div>
