@@ -155,6 +155,7 @@ class UserDetails extends React.Component {
                     <button className="btn btn-success" onClick={
                         () => {
                             this.updateUser().then(window.setTimeout(this.props.history.push("/admin/users/"), 500))
+                            window.location.reload();
                         }
                     }>Update
                     </button>
