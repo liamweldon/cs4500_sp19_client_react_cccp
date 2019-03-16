@@ -9,8 +9,9 @@ class ServiceDetails extends React.Component {
     this.state = {
       services: [],
       service: {
-        title: undefined,
-        id: undefined
+        id: undefined,
+        serviceName: undefined,
+        serviceDescription: undefined
       }
     };
   }
@@ -27,17 +28,19 @@ class ServiceDetails extends React.Component {
   }
 
   createService = () => {
-    this.serviceService
+    return this.serviceService
       .createService(this.state.service)
       .then(this.findAllServices);
   };
 
-  deleteService = id => {
-    this.serviceService.deleteService(id).then(this.findAllServices);
+  deleteService = () => {
+    return this.serviceService
+      .deleteService(this.state.service.id)
+      .then(this.findAllServices);
   };
 
   updateService = () => {
-    this.serviceService
+    return this.serviceService
       .updateService(this.state.service)
       .then(this.findAllServices);
   };
@@ -72,9 +75,9 @@ class ServiceDetails extends React.Component {
 
   render() {
     return (
-      <div class="container">
-        <div class="row">
-          <div class="col">
+      <div className="container">
+        <div className="row">
+          <div className="col">
             <h3>Service Details</h3>
             <select
               value={this.state.service.id}
@@ -101,31 +104,44 @@ class ServiceDetails extends React.Component {
           </div>
         </div>
         <br />
-        <div class="row">
-          <div class="col">
+        <div className="row">
+          <div className="col">
             <label>Service Title</label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               defaultValue={this.state.service.serviceName}
+              onChange={e => this.updateNameInForm(e)}
             />
           </div>
         </div>
         <br />
-        <div class="row">
-          <div class="col">
+        <div className="row">
+          <div className="col">
+            <label>Service Description</label>
+            <input
+              type="text"
+              className="form-control"
+              defaultValue={this.state.service.serviceDescription}
+              onChange={e => this.updateDescriptionInForm(e)}
+            />
+          </div>
+        </div>
+        <br />
+        <div className="row">
+          <div className="col">
             <button
               type="button"
-              class="btn btn-danger"
+              className="btn btn-danger"
               onClick={() => this.props.history.push("/admin/services")}
             >
               Cancel
             </button>
           </div>
-          <div class="col">
+          <div className="col">
             <button
               type="button"
-              class="btn btn-danger"
+              className="btn btn-danger"
               onClick={() =>
                 this.deleteService().then(() =>
                   this.props.history.push("/admin/services")
@@ -135,10 +151,10 @@ class ServiceDetails extends React.Component {
               Delete
             </button>
           </div>
-          <div class="col">
+          <div className="col">
             <button
               type="button"
-              class="btn btn-primary"
+              className="btn btn-primary"
               onClick={() =>
                 this.updateService().then(() =>
                   this.props.history.push("/admin/services")
@@ -148,14 +164,13 @@ class ServiceDetails extends React.Component {
               Edit
             </button>
           </div>
-          <div class="col">
+          <div className="col">
             <button
               type="button"
-              class="btn btn-success"
+              className="btn btn-success"
               onClick={() =>
-                this.createService().then(
-                  () => this.props.history.push("/admin/services")
-                  //<Redirect to='/dashboard' />
+                this.createService().then(() =>
+                  this.props.history.push("/admin/services")
                 )
               }
             >
