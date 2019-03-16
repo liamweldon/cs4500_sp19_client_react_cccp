@@ -12,9 +12,37 @@ export default class ServiceService {
 
   findServiceById = serviceId =>
     fetch(`${API_ROOT}/api/services/${serviceId}/`).then(response =>
-      response.json()
-    );
+      response.json());
 
   findAllServices = () =>
     fetch(`${API_ROOT}/api/services`).then(response => response.json());
+
+  createService = service => {
+    delete service.id;
+    return fetch(`${API_ROOT}/api/services`,
+    {
+      method: 'post',
+      body: JSON.stringify(service),
+      headers: {'content-type': 'application/json'}
+    })
+    .then(response => response.json())
+  };
+
+  updateService = service => {
+    return fetch(`${API_ROOT}/api/services/${service.id}`,
+    {
+      method: 'put',
+      body: JSON.stringify(service),
+      headers: {'content-type': 'application/json'}
+    })
+    .then(response => response.json())
+  };
+
+  deleteService = id => {
+    return fetch(`${API_ROOT}/api/services/${id}`,
+    {
+      method: 'delete'
+    })
+  };
+
 }

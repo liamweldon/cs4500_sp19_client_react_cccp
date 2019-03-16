@@ -1,0 +1,13 @@
+.faqs {
+  button {
+    background: none;
+    border: none;
+  }
+  i {
+    font-size: 2em;
+
+    &.fa-trash-alt {
+      color: red;
+    }
+  }
+}

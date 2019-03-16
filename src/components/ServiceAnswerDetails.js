@@ -1,5 +1,5 @@
-import React from 'react'
-import ServiceAnswerService from '../services/ServiceAnswerService'
+import React from "react"
+import ServiceAnswerService from "../services/ServiceAnswerService"
 class ServiceAnswerDetails extends React.Component {
     constructor(props) {
         super(props)
@@ -12,6 +12,8 @@ class ServiceAnswerDetails extends React.Component {
             }
         }
     }
+
+
     componentDidMount() {
         this.serviceAnswerService
             .findAllServiceAnswers()
