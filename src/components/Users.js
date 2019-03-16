@@ -30,6 +30,7 @@ class Users extends React.Component {
                     <tr>
                         <td>ID</td>
                         <td>Username</td>
+                        <td>Password</td>
                         <td>First Name</td>
                         <td>Last Name</td>
                     </tr>

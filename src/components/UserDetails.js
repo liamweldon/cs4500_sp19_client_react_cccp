@@ -19,10 +19,13 @@ class UserDetails extends React.Component {
         this.userService
             .findAllUsers()
             .then(users => {
-                    //this.props.history.push("/admin/users/" + users[0].id)
-                    this.setState({
-                        users: users,
-                        user: users[0]
+                const currentUserId = this.props.match.params.id;
+                this.selectUser(currentUserId);
+
+                this.setState({
+                        users: users
+                        // TODO fix
+                        //user: users[0]
                     })
                 }
             )
@@ -66,8 +69,9 @@ class UserDetails extends React.Component {
                         onChange={(e) => this.selectUser(e.target.value)}
                         className="form-control">
                         {this.state.users.map(user => {
-                            var selected = user.id === this.state.user.id ? true : false;
-                            console.log(this.state.user.id)
+                            //var selected = user.id === this.state.user.id ? true : false;
+                            var selected = this.state.user.id
+
                             return (
                                 <option
                                     value={user.id}
@@ -146,6 +150,20 @@ class UserDetails extends React.Component {
                         this.createUser().then(window.setTimeout(this.props.history.push("/admin/users/"), 500))
                     }}>
                         Create
+                    </button>
+                    &nbsp;
+                    <button className="btn btn-success" onClick={
+                        () => {
+                            this.updateUser().then(window.setTimeout(this.props.history.push("/admin/users/"), 500))
+                        }
+                    }>Update
+                    </button>
+                    &nbsp;
+                    <button className="btn btn-danger" onClick={
+                        () => {
+                            this.deleteUser().then(window.setTimeout(this.props.history.push("/admin/users/"), 500))
+                        }
+                    }>Delete
                     </button>
                     &nbsp;
                     <button className="btn btn-danger" onClick={
