@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ServiceService from "../services/ServiceService";
 import "./table.scss";
-import '../../node_modules/font-awesome/css/font-awesome.min.css';
 
 class Services extends React.Component {
   constructor(props) {
