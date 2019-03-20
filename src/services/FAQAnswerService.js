@@ -10,4 +10,21 @@ export default class FAQAnswerService {
     }
     findFAAById = (id) => fetch(`${API_ROOT}/api/faas/${id}`).then((response) => response.json());
     findAllFAAs = () => fetch(`${API_ROOT}/api/faas`).then((response) => response.json());
+    addFAA = (newAnswer) =>
+        fetch(`${API_ROOT}/api/faas/`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newAnswer)
+        }).then((response) => response.json());
+
+    editFAA = (id, newAnswer) =>
+        fetch(`${API_ROOT}/api/faas/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newAnswer)
+        }).then((response) => response.json());
 }
