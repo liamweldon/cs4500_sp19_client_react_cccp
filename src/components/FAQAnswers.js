@@ -2,7 +2,8 @@ import React from "react";
 import FAQAnswerService from "../services/FAQAnswerService";
 import FAQService from "../services/FAQService";
 import { Link } from "react-router-dom";
-import "./FAQDetails.scss";
+import "./FAQs.scss";
+import "./table.scss";
 
 class FAQAnswers extends React.Component {
   constructor(props) {
@@ -11,13 +12,23 @@ class FAQAnswers extends React.Component {
     this.faqService = FAQService.getInstance();
     this.state = {
       faqAnswers: [],
-      faqs: []
+      faqs: [],
+      newAnswer: "",
+      selectedQuestion: ""
     };
   }
   componentDidMount() {
     this.getFAAs();
     this.getFAQs();
   }
+
+  handleQuestionSelector = evt => {
+    this.setState({ selectedQuestion: evt.target.value });
+  };
+
+  handleAnswerInput = evt => {
+    this.setState({ newAnswer: evt.target.value });
+  };
 
   getFAAs() {
     this.faqAnswerService.findAllFAAs().then(faqAnswers => {
@@ -37,11 +48,22 @@ class FAQAnswers extends React.Component {
     });
   }
 
-  deleteAnswer = (id) => {
-    this.faqAnswerService.deleteFAA(id).then((res) => this.getFAAs());
+  addAnswer = () => {
+    const { selectedQuestion, newAnswer } = this.state;
+    this.faqAnswerService.addFAA({answer: newAnswer}).then(res => {
+      this.faqService.linkFAAtoFAQ(res.id, selectedQuestion).then(res => {
+        this.getFAAs();
+      })
+    });
+  };
+
+  deleteAnswer = id => {
+    this.faqAnswerService.deleteFAA(id).then(res => this.getFAAs());
   };
 
   render() {
+    const { faqs, selectedQuestion, newAnswer } = this.state;
+
     return (
       <div>
         <h3>Frequently Asked Questions Answers</h3>
@@ -50,6 +72,30 @@ class FAQAnswers extends React.Component {
             <tr className="header-row">
               <td>Question</td>
               <td>Answer</td>
+            </tr>
+            <tr key={-1}>
+              <td>
+                <select
+                  value={selectedQuestion}
+                  className="form-control"
+                  onChange={this.handleQuestionSelector}
+                >
+                  {faqs.map(faq => (
+                    <option value={faq.id} key={faq.id}>
+                      {faq.title}
+                    </option>
+                  ))}
+                </select>
+              </td>
+              <td>
+                <input value={newAnswer} onChange={this.handleAnswerInput} />
+              </td>
+              <td>
+                <button onClick={this.addAnswer}>
+                  <i className="fas fa-plus-square" />
+                </button>
+              </td>
+              <td />
             </tr>
             {this.state.faqAnswers.map(faqAnswer => (
               <tr key={faqAnswer.id}>

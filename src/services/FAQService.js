@@ -29,4 +29,5 @@ export default class FAQService {
   findFAQById = (id) => fetch(`${API_ROOT}/api/faqs/${id}`).then((response) => response.json());
   deleteFAQ = (id) => fetch(`${API_ROOT}/api/faqs/${id}`, {method: 'DELETE'}).then((response) => response.json());
   findAllFAQs = () => fetch(`${API_ROOT}/api/faqs`).then((response) => response.json());
+  linkFAAtoFAQ = (faaID, faqID) => fetch(`${API_ROOT}/api/faqs/${faqID}/faas/${faaID}`).then(response => response.json());
 }
