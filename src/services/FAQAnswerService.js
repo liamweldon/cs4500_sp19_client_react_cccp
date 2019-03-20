@@ -10,6 +10,10 @@ export default class FAQAnswerService {
     }
     findFAAById = (id) => fetch(`${API_ROOT}/api/faas/${id}`).then((response) => response.json());
     findAllFAAs = () => fetch(`${API_ROOT}/api/faas`).then((response) => response.json());
+    deleteFAA = (id) => {
+       fetch(`${API_ROOT}/api/faas/${id}`).then((response) => response.json());
+    };
+
     addFAA = (newAnswer) =>
         fetch(`${API_ROOT}/api/faas/`, {
             method: 'POST',
