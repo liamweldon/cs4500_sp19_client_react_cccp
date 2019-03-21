@@ -1,39 +1,55 @@
 import React from 'react';
 import FAQs from '../../components/FAQs';
+import FAQsContainer from '../../components/FAQsContainer';
 import renderer from 'react-test-renderer';
 import faqsJson from '../mockData/faq.mock.json';
 import {StaticRouter} from 'react-router';
+import Enzyme, {mount} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
-test('FAQs summary', () => {
-  const editMock = jest.fn();
+Enzyme.configure({adapter: new Adapter()});
 
+test('FAQs Summary Snapshots', () => {
   const component = renderer.create(
     <StaticRouter location="/admin/faqs" context={{}}>
-      <FAQs
-        faqs={faqsJson}
-        editing={{}}
-        newQuestion={{title: '', question: ''}}
-        eventHandlers={{handleEditClick: editMock}}
-      />
+      <FAQs faqs={faqsJson} editing={{}} newQuestion={{title: '', question: ''}} eventHandlers={{}} />
+    </StaticRouter>
+  );
+  let tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('FAQs summary DOM', () => {
+  let wrapper = mount(
+    <StaticRouter location="/admin/faqs" context={{}}>
+      <FAQsContainer />
     </StaticRouter>
   );
 
-  let tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-  const table = tree.children.find((element) => element.props['className'] === 'table faqs');
-  const rows = table.children[0].children;
-  const firstFaqRow = rows[2];
-  const firstFaqCell = firstFaqRow.children[0].children;
-  const firstFaqEditBtn = firstFaqRow.children[3].children[0];
+  let faqsComponent = wrapper.find(FAQsContainer);
 
-  // there should be a row in the table for each FAQ, plus 1 for the header and 1 for the add new row
-  expect(rows.length).toEqual(faqsJson.length + 2);
+  faqsComponent.getFAQs = jest.fn().mockReturnValue(faqsJson);
+  wrapper.update();
+  faqsComponent.setState({faqs: faqsJson});
 
-  // before we click the first data row, the Title column should be a link
-  expect(editMock.mock.calls.length).toBe(0);
-  expect(firstFaqCell[0].type).toEqual('a');
+  const firstFaqEditBtn = wrapper.find('.fa-pen-square').at(0);
+  // there should be a row in the table for each FAQ
+  expect(wrapper.find('.faq-row.existing').length).toEqual(faqsJson.length);
+  expect(
+    wrapper
+      .find('.faq-row.existing')
+      .at(0)
+      .find('input').length
+  ).toEqual(0);
 
-  // click the edit button and our edit handler should be called
-  firstFaqEditBtn.props.onClick();
-  expect(editMock.mock.calls.length).toBe(1);
+  // click the pen icon to trigger edit mode for the first faq
+  firstFaqEditBtn.props().onClick();
+  wrapper.update();
+
+  expect(
+    wrapper
+      .find('.faq-row.existing')
+      .at(0)
+      .find('input').length
+  ).toEqual(2);
 });

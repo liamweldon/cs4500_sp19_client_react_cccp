@@ -1,6 +1,146 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FAQs summary 1`] = `
+exports[`FAQs Summary Snapshots 1`] = `
+<div>
+  <h3>
+    Frequently Asked Questions
+  </h3>
+  <table
+    className="table faqs"
+  >
+    <tbody>
+      <tr
+        className="header-row"
+      >
+        <td>
+          Title
+        </td>
+        <td>
+          Question
+        </td>
+        <td />
+        <td />
+      </tr>
+      <tr
+        className="faq-row new"
+      >
+        <td>
+          <input
+            name="title"
+            value=""
+          />
+        </td>
+        <td>
+          <input
+            name="question"
+            value=""
+          />
+        </td>
+        <td>
+          <button>
+            <i
+              className="fas fa-plus-square"
+            />
+          </button>
+        </td>
+        <td />
+      </tr>
+      <tr
+        className="faq-row existing"
+      >
+        <td>
+          <a
+            href="/admin/faqs/172"
+            onClick={[Function]}
+          >
+            Background Check
+          </a>
+        </td>
+        <td>
+          Have you completed a background check?
+        </td>
+        <td>
+          <button
+            onClick={[Function]}
+          >
+            <i
+              className="fas fa-trash-alt"
+            />
+          </button>
+        </td>
+        <td>
+          <i
+            className="fas fa-pen-square"
+            onClick={[Function]}
+          />
+        </td>
+      </tr>
+      <tr
+        className="faq-row existing"
+      >
+        <td>
+          <a
+            href="/admin/faqs/192"
+            onClick={[Function]}
+          >
+            Employees
+          </a>
+        </td>
+        <td>
+          How many employees does your company have?
+        </td>
+        <td>
+          <button
+            onClick={[Function]}
+          >
+            <i
+              className="fas fa-trash-alt"
+            />
+          </button>
+        </td>
+        <td>
+          <i
+            className="fas fa-pen-square"
+            onClick={[Function]}
+          />
+        </td>
+      </tr>
+      <tr
+        className="faq-row existing"
+      >
+        <td>
+          <a
+            href="/admin/faqs/232"
+            onClick={[Function]}
+          >
+            Games
+          </a>
+        </td>
+        <td>
+          You got games on your phone?
+        </td>
+        <td>
+          <button
+            onClick={[Function]}
+          >
+            <i
+              className="fas fa-trash-alt"
+            />
+          </button>
+        </td>
+        <td>
+          <i
+            className="fas fa-pen-square"
+            onClick={[Function]}
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`FAQs summary DOM 1`] = `
 <div>
   <h3>
     Frequently Asked Questions
