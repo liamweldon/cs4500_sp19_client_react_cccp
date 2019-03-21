@@ -1,62 +1,52 @@
 import React from "react";
 import ServiceAnswerService from "../services/ServiceAnswerService";
-import ServiceQuestionService from "../services/ServiceQuestionService";
 import { Link } from "react-router-dom";
 import "./ServiceQuestions.scss";
 import "./table.scss";
 
 class ServiceAnswers extends React.Component {
-  constructor(props) {
-    super(props);
-    this.saService = ServiceAnswerService.getInstance();
-    this.sqService = ServiceQuestionService.getInstance();
-    this.state = {
-      questions: [],
-      newAnswer: "",
-      selectedQuestion: ""
-    };
-  }
-  componentDidMount() {
-    this.getServiceQuestions();
-  }
+    constructor(props) {
+        super(props)
+        this.serviceAnswerService = ServiceAnswerService.getInstance()
+        this.state = {
+            serviceAnswers: [],
+            newAnswer: ""
+        }
+    }
+    componentDidMount() {
+        this.getServiceAnswers()
+    }
 
-  handleQuestionSelector = evt => {
-    this.setState({ selectedQuestion: evt.target.value });
-  };
-
-  handleAnswerInput = evt => {
-    this.setState({ newAnswer: evt.target.value });
-  };
-
-  getServiceQuestions() {
-    this.sqService.findAllServiceQuestions().then(questions => {
-      if (questions.length) {
+  getServiceAnswers() {
+    this.serviceAnswerService.findAllServiceAnswers().then(serviceAnswers => {
+      if (serviceAnswers.length) {
         this.setState({
-          questions: questions,
-          selectedQuestion: questions[0].id
+          serviceAnswers: serviceAnswers
         });
       }
     });
   }
 
-  addAnswer = () => {
-    const { selectedQuestion, newAnswer } = this.state;
-    this.saService
-      .addServiceAnswer(selectedQuestion, { answer: newAnswer })
+  addServiceAnswer = () => {
+    const newAnswer  = this.state.newAnswer;
+    this.serviceAnswerService
+      .addServiceAnswer({ answer: newAnswer })
       .then(res => {
-        this.getServiceQuestions();
+        this.getServiceAnswers();
         this.setState({ newAnswer: "" });
       });
   };
 
-  deleteAnswer = (questionId, aId) => {
-    this.saService
-      .deleteServiceAnswer(questionId, aId)
-      .then(res => this.getServiceQuestions());
+
+  deleteServiceAnswer = (aId) => {
+    this.serviceAnswerService
+      .deleteServiceAnswer(aId)
+      .then(res => this.getServiceAnswers());
   };
 
+
   render() {
-    const { questions, selectedQuestion, newAnswer } = this.state;
+    const { serviceAnswers, newAnswer } = this.state;
 
     return (
       <div>
@@ -69,21 +59,10 @@ class ServiceAnswers extends React.Component {
               <td />
             </tr>
             <tr key={-1}>
+              <td />
+              <td />
               <td>
-                <select
-                  value={selectedQuestion}
-                  className="form-control"
-                  onChange={this.handleQuestionSelector}
-                >
-                  {questions.map(question => (
-                    <option value={question.id} key={question.id}>
-                      {question.title}
-                    </option>
-                  ))}
-                </select>
-              </td>
-              <td>
-                <input value={newAnswer} onChange={this.handleAnswerInput} />
+                <input value={this.state.newAnswer} name="answer" onChange={this.handleAnswerInput} />
               </td>
               <td>
                 <button onClick={this.addAnswer}>
@@ -92,27 +71,25 @@ class ServiceAnswers extends React.Component {
               </td>
               <td />
             </tr>
-            {questions.map(question => {
-              return question.answers.map(answer => (
-                <tr key={answer.id}>
-                  <td>{answer.question}</td>
+            {this.state.serviceAnswers.map((serviceAnswer) => (
+                <tr key={serviceAnswer.id}>
+                  <td>{serviceAnswer}</td>
                   <td>
-                    <Link to={`/admin/service-answers/${answer.id}`}>
-                      {answer.choiceAnswer}
+                    <Link to={`/admin/service-answers/${serviceAnswer.id}`}>
+                      {serviceAnswer.choiceAnswer}
                     </Link>
                   </td>
                   <td>
                     <button
                       onClick={() => {
-                        this.deleteAnswer(question.id, answer.id);
+                        this.deleteAnswer(serviceAnswer.id);
                       }}
                     >
                       <i className="fas fa-trash-alt" />
                     </button>
                   </td>
                 </tr>
-              ));
-            })}
+              ))}
           </tbody>
         </table>
       </div>
