@@ -11,14 +11,12 @@ class FAQAnswers extends React.Component {
     this.faqAnswerService = FAQAnswerService.getInstance();
     this.faqService = FAQService.getInstance();
     this.state = {
-      faqAnswers: [],
       faqs: [],
       newAnswer: "",
       selectedQuestion: ""
     };
   }
   componentDidMount() {
-    this.getFAAs();
     this.getFAQs();
   }
 
@@ -30,19 +28,12 @@ class FAQAnswers extends React.Component {
     this.setState({ newAnswer: evt.target.value });
   };
 
-  getFAAs() {
-    this.faqAnswerService.findAllFAAs().then(faqAnswers => {
-      this.setState({
-        faqAnswers: faqAnswers.length ? faqAnswers : []
-      });
-    });
-  }
-
   getFAQs() {
     this.faqService.findAllFAQs().then(faqs => {
       if (faqs.length) {
         this.setState({
-          faqs: faqs
+          faqs: faqs,
+          selectedQuestion: faqs[0].id
         });
       }
     });
@@ -50,15 +41,18 @@ class FAQAnswers extends React.Component {
 
   addAnswer = () => {
     const { selectedQuestion, newAnswer } = this.state;
-    this.faqAnswerService.addFAA({answer: newAnswer}).then(res => {
-      this.faqService.linkFAAtoFAQ(res.id, selectedQuestion).then(res => {
-        this.getFAAs();
-      })
-    });
+    this.faqAnswerService
+      .addFAA(selectedQuestion, { answer: newAnswer })
+      .then(res => {
+        this.getFAQs();
+        this.setState({ newAnswer: "" });
+      });
   };
 
-  deleteAnswer = id => {
-    this.faqAnswerService.deleteFAA(id).then(res => this.getFAAs());
+  deleteAnswer = (questionId, faaId) => {
+    this.faqAnswerService
+      .deleteFAA(questionId, faaId)
+      .then(res => this.getFAQs());
   };
 
   render() {
@@ -72,6 +66,7 @@ class FAQAnswers extends React.Component {
             <tr className="header-row">
               <td>Question</td>
               <td>Answer</td>
+              <td />
             </tr>
             <tr key={-1}>
               <td>
@@ -97,16 +92,27 @@ class FAQAnswers extends React.Component {
               </td>
               <td />
             </tr>
-            {this.state.faqAnswers.map(faqAnswer => (
-              <tr key={faqAnswer.id}>
-                <td>{faqAnswer.question}</td>
-                <td>
-                  <Link to={`/admin/faas/${faqAnswer.id}`}>
-                    {faqAnswer.answer}
-                  </Link>
-                </td>
-              </tr>
-            ))}
+            {faqs.map(faq => {
+              return faq.answers.map(faqAnswer => (
+                <tr key={faqAnswer.id}>
+                  <td>{faqAnswer.question}</td>
+                  <td>
+                    <Link to={`/admin/faas/${faqAnswer.id}`}>
+                      {faqAnswer.answer}
+                    </Link>
+                  </td>
+                  <td>
+                    <button
+                      onClick={() => {
+                        this.deleteAnswer(faq.id, faqAnswer.id);
+                      }}
+                    >
+                      <i className="fas fa-trash-alt" />
+                    </button>
+                  </td>
+                </tr>
+              ));
+            })}
           </tbody>
         </table>
       </div>
