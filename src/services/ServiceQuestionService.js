@@ -13,6 +13,7 @@ export default class ServiceQuestionService {
 
     findAllServiceQuestions = () => fetch(`${API_ROOT}/api/service-questions`).then((response) => response.json());
     deleteServiceQuestion = (id) => fetch(`${API_ROOT}/api/service-questions/${id}`, {method: 'DELETE'}).then((response) => response.json());
+    linkAtoQ = (aID, qID) => fetch(`${API_ROOT}/api/service-questions/${qID}/sas/${aID}`).then(response => response.json());
 
         addServiceQuestion = (newServiceQuestion) =>
         fetch(`${API_ROOT}/api/service-questions/`, {
