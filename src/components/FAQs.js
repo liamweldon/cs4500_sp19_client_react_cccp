@@ -14,7 +14,7 @@ const FAQs = ({faqs, editing, newQuestion, eventHandlers}) => (
           <td />
           <td />
         </tr>
-        <tr key={-1}>
+        <tr key={-1} className="faq-row new">
           <td>
             <input value={newQuestion.title} name="title" onChange={eventHandlers.handleNewQuestionInputChange} />
           </td>
@@ -29,7 +29,7 @@ const FAQs = ({faqs, editing, newQuestion, eventHandlers}) => (
           <td />
         </tr>
         {faqs.map((faq) => (
-          <tr key={faq.id}>
+          <tr key={faq.id} className="faq-row existing">
             <td>
               {faq.id in editing ? (
                 <input
