@@ -46,8 +46,6 @@ class ServiceAnswers extends React.Component {
 
 
   render() {
-    const { serviceAnswers, newAnswer } = this.state;
-
     return (
       <div>
         <h3>Service Answers</h3>
