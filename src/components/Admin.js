@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
 import Services from './Services';
-import FAQs from './FAQs';
+import FAQsContainer from './FAQsContainer';
 import FAQDetails from './FAQDetails';
 import ServiceDetails from "./ServiceDetails";
 import Users from './Users';
@@ -33,7 +33,7 @@ const Admin = () => (
                     <br />
                 </div>
                 <div className="col-9">
-                    <Route path="/admin/faqs" exact component={FAQs} />
+                    <Route path="/admin/faqs" exact component={FAQsContainer} />
                     <Route path="/admin/faas" exact component={FAQAnswers} />
                     <Route path="/admin/faas/:id" exact component={FAQAnswerDetails} />
                     <Route path="/admin/services" exact component={Services} />
