@@ -2,7 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
 import Services from './Services';
 import FAQsContainer from './FAQsContainer';
-import FAQDetails from './FAQDetails';
+import FAQDetailsContainer from './FAQDetailsContainer';
 import ServiceDetails from "./ServiceDetails";
 import Users from './Users';
 import UserDetails from './UserDetails';
@@ -40,7 +40,7 @@ const Admin = () => (
                     <Route path="/admin/services/:id" exact component={ServiceDetails} />
                     <Route path="/admin/users" exact component={Users} />
                     <Route path="/admin/users/:id" exact component={UserDetails}/>
-                    <Route path="/admin/faqs/:id" exact component={FAQDetails} />
+                    <Route path="/admin/faqs/:id" exact component={FAQDetailsContainer} />
                     <Route path="/admin/service-questions" exact component={ServiceQuestions} />
                     <Route path="/admin/service-questions/:id" exact component={ServiceQuestionDetails} />
                     <Route path="/admin/service-answers" exact component={ServiceAnswers} />
