@@ -1,49 +1,74 @@
 import React from "react";
-import ServiceAnswerService from "../services/ServiceAnswerService";
 import { Link } from "react-router-dom";
 import "./ServiceQuestions.scss";
 import "./table.scss";
 
-class ServiceAnswers extends React.Component {
-    constructor(props) {
-        super(props)
-        this.serviceAnswerService = ServiceAnswerService.getInstance()
-        this.state = {
-            serviceAnswers: []
-        }
-    }
-    componentDidMount() {
-        this.serviceAnswerService
-            .findAllServiceAnswers()
-            .then(serviceAnswers =>
-                this.setState({
-                    serviceAnswers: serviceAnswers
-                })
-            )
-    }
-    render() {
-        return(
+
+const ServiceAnswers = ({serviceAnswers, serviceQuestions, editing, newAnswer, eventHandlers}) => (
             <div>
                 <h3>Service Answers</h3>
                 <table className="table">
                     <tbody>
                     <tr className="header-row">
                             <td>Question</td>
+                            <td>Type</td>
                             <td>Answer</td>
-                    </tr>
-                    {this.state.serviceAnswers.map((serviceAnswer) => (
-                            <tr key={serviceAnswer.id}>
-                                <td>
-                                    {serviceAnswer.serviceQuestion}
-                                </td>
-                                <td><Link to={`/admin/service-answers/${serviceAnswer.id}`}>{serviceAnswer.id}</Link></td>
-                            </tr>
+                         </tr>
+                        <tr key={-1}>
+                        <select
+                            value={newAnswer.question}
+                            name="question"
+                            onChange={eventHandlers.handleNewServiceAnswerInputChange}>
+                            {serviceQuestions.map(serviceQuestion => (
+                              <option value={serviceQuestion.question}>{serviceQuestion.question}</option>
+                            ))}
+                        </select>
+                          <td>
+                            <select
+                              name="type"
+                              onChange={eventHandlers.handleNewServiceAnswerInputChange}>
+                              <option value="Choice">Choice</option>
+                              <option value="True/False">True/False</option>
+                              <option value="Range">Range</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input
+                              value={newAnswer.answer}
+                              name="answer"
+                              onChange={eventHandlers.handleNewServiceAnswerInputChange}
+                            />
+                          </td>
+                        <td>
+                          <button onClick={eventHandlers.addServiceAnswer}>
+                            Create +
+                          </button>
+                        </td>
+                        </tr>
+                    {serviceAnswers.map((serviceAnswer) => (
+                        <tr key={serviceAnswer.id}>
+                        <td>
+                        {serviceQuestions.map(serviceQuestion => (
+                            <option value={serviceQuestion.question}>{serviceQuestion.question}</option>
                         ))}
+                        </td>
+                        <td>
+                        </td>
+                        <td><Link to={`/admin/service-answers/${serviceAnswer.id}`}>{serviceAnswer.answer}</Link></td>
+                        <td>
+                          <button
+                            onClick={() => {
+                              eventHandlers.deleteServiceAnswer(serviceAnswer.id);
+                            }}
+                          >
+                            <i className="fas fa-trash-alt" />
+                          </button>
+                          </td>
+                        </tr>
+                    ))}
                     </tbody>
                 </table>
             </div>
         )
-    }
-}
 
 export default ServiceAnswers;
