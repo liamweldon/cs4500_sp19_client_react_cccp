@@ -1,8 +1,9 @@
 import React from 'react';
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
-import Services from './Services';
 import FAQsContainer from './FAQsContainer';
 import FAQDetailsContainer from './FAQDetailsContainer';
+import ServicesContainer from './ServicesContainer';
+import ServiceService from "../services/ServiceService";
 import ServiceDetails from "./ServiceDetails";
 import Users from './Users';
 import UserDetails from './UserDetails';
@@ -36,7 +37,7 @@ const Admin = () => (
                     <Route path="/admin/faqs" exact component={FAQsContainer} />
                     <Route path="/admin/faas" exact component={FAQAnswers} />
                     <Route path="/admin/faas/:id" exact component={FAQAnswerDetails} />
-                    <Route path="/admin/services" exact component={Services} />
+                    <Route path="/admin/services" exact render={() => <ServicesContainer service={ServiceService.getInstance()}/>} />
                     <Route path="/admin/services/:id" exact component={ServiceDetails} />
                     <Route path="/admin/users" exact component={Users} />
                     <Route path="/admin/users/:id" exact component={UserDetails}/>

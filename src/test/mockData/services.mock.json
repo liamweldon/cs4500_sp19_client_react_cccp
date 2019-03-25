@@ -1,0 +1,26 @@
+[
+  {
+    "id": 123,
+    "serviceName": "House Cleaners",
+    "serviceDescription": "Cleaning for your house!",
+    "providers": [],
+    "serviceCategories": [],
+    "serviceQuestions": []
+  },
+  {
+    "id": 234,
+    "serviceName": "Interior Painters",
+    "serviceDescription": "Painting for your home!",
+    "providers": [],
+    "serviceCategories": [],
+    "serviceQuestions": []
+  },
+  {
+    "id": 321,
+    "serviceName": "Math Tutoring",
+    "serviceDescription": "Algebra or calculus?",
+    "providers": [],
+    "serviceCategories": [],
+    "serviceQuestions": []
+  }
+]
