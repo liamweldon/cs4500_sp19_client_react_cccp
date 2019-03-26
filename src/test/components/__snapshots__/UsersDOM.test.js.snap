@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Deletion renders correctly in DOM 1`] = `
+<div>
+  <div>
+    <h3>
+      User Details
+    </h3>
+    <select
+      className="form-control"
+      onChange={[Function]}
+    >
+      <option
+        defaultValue={123}
+        value={123}
+      >
+        123
+      </option>
+      <option
+        defaultValue={234}
+        value={234}
+      >
+        234
+      </option>
+      <option
+        defaultValue={345}
+        value={345}
+      >
+        345
+      </option>
+    </select>
+    <br />
+    <br />
+    <label>
+      ID
+    </label>
+    <input
+      className="form-control"
+      onChange={[Function]}
+    />
+    <br />
+    <label>
+      Username
+    </label>
+    <input
+      className="form-control"
+      onChange={[Function]}
+    />
+    <br />
+    <label>
+      Password
+    </label>
+    <input
+      className="form-control"
+      onChange={[Function]}
+    />
+    <br />
+    <label>
+      First Name
+    </label>
+    <input
+      className="form-control"
+      onChange={[Function]}
+    />
+    <br />
+    <label>
+      Last Name
+    </label>
+    <input
+      className="form-control"
+      onChange={[Function]}
+    />
+    <br />
+  </div>
+  <div>
+    <button
+      className="btn btn-primary"
+      onClick={[Function]}
+    >
+      Create
+    </button>
+     
+    <button
+      className="btn btn-success"
+      onClick={[Function]}
+    >
+      Update
+    </button>
+     
+    <button
+      className="btn btn-danger"
+      onClick={[Function]}
+    >
+      Delete
+    </button>
+     
+    <button
+      className="btn btn-danger"
+    >
+      Cancel
+    </button>
+    <br />
+     
+  </div>
+</div>
+`;
