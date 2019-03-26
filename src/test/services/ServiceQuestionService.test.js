@@ -1,10 +1,12 @@
 import ServiceQuestionService from '../../services/ServiceQuestionService';
+import mockServiceQuestion from '../services/mocks/MockServiceQuestionService'
+import serviceQuestions from '../mockData/service-questions.mock.json'
 import json from '../mockData/service-questions.mock.json';
 
-let serviceQuestionService = ServiceQuestionService.getInstance();
+const serviceQuestionService = ServiceQuestionService.getInstance();
 
 global.fetch = jest.fn().mockImplementation((url) => {
-  if (url.includes('/service-question')) {
+  if (url.includes('/service-questions')) {
     return new Promise((resolve, reject) => {
       resolve({
         json: function() {

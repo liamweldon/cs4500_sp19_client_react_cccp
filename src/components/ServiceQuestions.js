@@ -25,7 +25,7 @@ import {Link} from 'react-router-dom';
                       name="serviceName"
                       onChange={eventHandlers.handleNewServiceQuestionInputChange}>
                       {services.map(service => (
-                        <option value={service.serviceName}>{service.serviceName}</option>
+                        <option key={service.id} value={service.serviceName}>{service.serviceName}</option>
                       ))}
                   </select>
                 </td>
@@ -33,9 +33,9 @@ import {Link} from 'react-router-dom';
                   <select
                     name="type"
                     onChange={eventHandlers.handleNewServiceQuestionInputChange}>
-                    <option value="Choice">Choice</option>
-                    <option value="True/False">True/False</option>
-                    <option value="Range">Range</option>
+                    <option key={1} value="Choice">Choice</option>
+                    <option key={2} value="True/False">True/False</option>
+                    <option key={3} value="Range">Range</option>
                   </select>
                 </td>
                 <td>
@@ -52,7 +52,7 @@ import {Link} from 'react-router-dom';
                 </td>
               </tr>
               {serviceQuestions.map((serviceQuestion) => (
-                      <tr key={serviceQuestion.id}>
+                      <tr className="serviceQuestionRow" key={serviceQuestion.id}>
                           <td>
                               {serviceQuestion.serviceName in editing ? (
                                 <input
