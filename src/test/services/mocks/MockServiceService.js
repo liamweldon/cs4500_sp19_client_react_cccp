@@ -2,7 +2,7 @@ import React from 'react';
 import { API_ROOT } from "../../../api-config";
 
 const mockService = (s) => jest.fn().mockImplementation((url, config) => {
-    if(!config) {
+  if(!config) {
       if (url.indexOf(`${API_ROOT}/api/services`) != -1) {
       return new Promise((resolve, reject) => {
         resolve({json: function() {
@@ -13,6 +13,7 @@ const mockService = (s) => jest.fn().mockImplementation((url, config) => {
     } else if (config.method === 'post') {
       let service = JSON.parse(config.body);
       service.id = 555;
+
       s.push(service);
       return new Promise((resolve, reject) => {
         resolve({json: function() {
