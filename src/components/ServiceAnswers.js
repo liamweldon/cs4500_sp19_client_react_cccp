@@ -14,7 +14,7 @@ const ServiceAnswers = ({serviceAnswers, serviceQuestions, editing, newAnswer, e
                             <td>Type</td>
                             <td>Answer</td>
                          </tr>
-                        <tr key={-1}>
+                        <tr key={-1} className="answer-row new">
                         <select
                             value={newAnswer.question}
                             name="question"
@@ -46,17 +46,17 @@ const ServiceAnswers = ({serviceAnswers, serviceQuestions, editing, newAnswer, e
                         </td>
                         </tr>
                     {serviceAnswers.map((serviceAnswer) => (
-                        <tr key={serviceAnswer.id}>
+                        <tr key={serviceAnswer.id} className="answer-row existing">
                         <td>
-                        {serviceQuestions.map(serviceQuestion => (
-                            <option value={serviceQuestion.question}>{serviceQuestion.question}</option>
-                        ))}
+                        {serviceAnswer.question}
                         </td>
                         <td>
+                        {serviceAnswer.type}
                         </td>
-                        <td><Link to={`/admin/service-answers/${serviceAnswer.id}`}>{serviceAnswer.answer}</Link></td>
+                        <td><Link to={`/admin/service-answers/${serviceAnswer.id}`}>{serviceAnswer.id}</Link></td>
                         <td>
                           <button
+                            className="delete-btn"
                             onClick={() => {
                               eventHandlers.deleteServiceAnswer(serviceAnswer.id);
                             }}

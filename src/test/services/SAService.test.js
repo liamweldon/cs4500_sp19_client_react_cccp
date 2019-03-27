@@ -18,7 +18,7 @@ global.fetch = jest.fn().mockImplementation((url) => {
 test('findAllServiceAnswers', () => {
   return saService.findAllServiceAnswers().then((answers) => {
     expect(answers).toBeDefined();
-    expect(answers.length).toBe(3);
+    expect(answers.length).toBe(2);
     expect(answers[0].choiceAnswer).toBe(1);
   });
 });
