@@ -12,15 +12,16 @@ export default class UserService {
 
     findUserById = (userId) => fetch(`${API_ROOT}/api/users/${userId}`).then((response) => response.json());
     findAllUsers = () => fetch(`${API_ROOT}/api/users`).then((response) => response.json());
-    // TODO update urls
-    createUser = user =>
-        fetch(`${API_ROOT}/api/users`,
+
+    createUser = user => {
+        return fetch(`${API_ROOT}/api/users`,
             {
                 method: 'POST',
                 body: JSON.stringify(user),
                 headers: {'content-type': 'application/json'}
             })
             .then(response => response.json())
+    };
 
     updateUser = user =>
         fetch(`${API_ROOT}/api/users/${user.id}`,
@@ -31,9 +32,10 @@ export default class UserService {
             })
             .then(response => response.json())
 
-    deleteUser = user =>
-        fetch(`${API_ROOT}/api/users/${user.id}`,
+    deleteUser = id => {
+        return fetch(`${API_ROOT}/api/users/${id}`,
             {
                 method: 'DELETE',
             })
+    }
 }
