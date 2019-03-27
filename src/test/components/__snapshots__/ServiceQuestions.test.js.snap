@@ -1,0 +1,220 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Service Question Summary Snapshot and DOM 1`] = `
+<div>
+  <h3>
+    Service Questions
+  </h3>
+  <table
+    className="table"
+  >
+    <tbody>
+      <tr
+        className="header-row"
+      >
+        <td>
+          Service
+        </td>
+        <td>
+          Type
+        </td>
+        <td>
+          Question
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <select
+            name="serviceName"
+            value="Service Name"
+          >
+            <option
+              value="House Cleaners"
+            >
+              House Cleaners
+            </option>
+            <option
+              value="Interior Painters"
+            >
+              Interior Painters
+            </option>
+            <option
+              value="Math Tutoring"
+            >
+              Math Tutoring
+            </option>
+          </select>
+        </td>
+        <td>
+          <select
+            name="type"
+          >
+            <option
+              value="Choice"
+            >
+              Choice
+            </option>
+            <option
+              value="True/False"
+            >
+              True/False
+            </option>
+            <option
+              value="Range"
+            >
+              Range
+            </option>
+          </select>
+        </td>
+        <td>
+          <input
+            name="question"
+            value="Question"
+          />
+        </td>
+        <td>
+          <button>
+            Create +
+          </button>
+        </td>
+      </tr>
+      <tr
+        className="serviceQuestionRow"
+      >
+        <td>
+          Pet Sitting
+        </td>
+        <td>
+          True/False
+        </td>
+        <td>
+          <a
+            href="/admin/service-questions/1"
+            onClick={[Function]}
+          >
+            Can you take care of both cats and dogs?
+          </a>
+        </td>
+        <td />
+        <td>
+          <button
+            onClick={[Function]}
+          >
+            <i
+              className="fas fa-trash-alt"
+            />
+          </button>
+        </td>
+        <td>
+          <i
+            className="fas fa-pen-square"
+            onClick={[Function]}
+          />
+        </td>
+      </tr>
+      <tr
+        className="serviceQuestionRow"
+      >
+        <td>
+          Fitness
+        </td>
+        <td>
+          Choice
+        </td>
+        <td>
+          <a
+            href="/admin/service-questions/2"
+            onClick={[Function]}
+          >
+            Do you even lift?
+          </a>
+        </td>
+        <td />
+        <td>
+          <button
+            onClick={[Function]}
+          >
+            <i
+              className="fas fa-trash-alt"
+            />
+          </button>
+        </td>
+        <td>
+          <i
+            className="fas fa-pen-square"
+            onClick={[Function]}
+          />
+        </td>
+      </tr>
+      <tr
+        className="serviceQuestionRow"
+      >
+        <td>
+          Housekeeping
+        </td>
+        <td>
+          Choice
+        </td>
+        <td>
+          <a
+            href="/admin/service-questions/3"
+            onClick={[Function]}
+          >
+            Do you clean houses or apartments?
+          </a>
+        </td>
+        <td />
+        <td>
+          <button
+            onClick={[Function]}
+          >
+            <i
+              className="fas fa-trash-alt"
+            />
+          </button>
+        </td>
+        <td>
+          <i
+            className="fas fa-pen-square"
+            onClick={[Function]}
+          />
+        </td>
+      </tr>
+      <tr
+        className="serviceQuestionRow"
+      >
+        <td>
+          Handymen
+        </td>
+        <td>
+          True/False
+        </td>
+        <td>
+          <a
+            href="/admin/service-questions/4"
+            onClick={[Function]}
+          >
+            Do you own a hammer?
+          </a>
+        </td>
+        <td />
+        <td>
+          <button
+            onClick={[Function]}
+          >
+            <i
+              className="fas fa-trash-alt"
+            />
+          </button>
+        </td>
+        <td>
+          <i
+            className="fas fa-pen-square"
+            onClick={[Function]}
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
