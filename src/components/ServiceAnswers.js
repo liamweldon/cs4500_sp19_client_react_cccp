@@ -14,7 +14,7 @@ const ServiceAnswers = ({serviceAnswers, serviceQuestions, editing, newAnswer, e
                             <td>Type</td>
                             <td>Answer</td>
                          </tr>
-                        <tr key={-1} className="answer-row new">
+                        <tr key={-1}>
                         <select
                             value={newAnswer.question}
                             name="question"
@@ -46,7 +46,7 @@ const ServiceAnswers = ({serviceAnswers, serviceQuestions, editing, newAnswer, e
                         </td>
                         </tr>
                     {serviceAnswers.map((serviceAnswer) => (
-                        <tr key={serviceAnswer.id} className="answer-row existing">
+                        <tr key={serviceAnswer.id} className="answer-row">
                         <td>
                         {serviceAnswer.question}
                         </td>

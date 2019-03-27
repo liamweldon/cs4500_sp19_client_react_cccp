@@ -1,11 +1,9 @@
 import React from 'react';
 import { API_ROOT } from "../../../api-config";
-import serviceAnswers from "../../mockData/serviceanswer.mock.json"
 
-
-const mockSAService = (s) => jest.fn().mockImplementation((url, config) => {
+const mockServiceAnswer = (s) => jest.fn().mockImplementation((url, config) => {
     if(!config) {
-      if (url.indexOf('${API_ROOT}/api/service-answers') != -1) {
+      if (url.indexOf(`${API_ROOT}/api/service-answer`) != -1) {
       return new Promise((resolve, reject) => {
         resolve({json: function() {
           return s;
@@ -13,12 +11,12 @@ const mockSAService = (s) => jest.fn().mockImplementation((url, config) => {
       });
       }
     } else if (config.method === 'post') {
-      let answer = JSON.parse(config.body);
-      answer.id = 1;
-      s.push(answer);
+      let serviceAnswer = JSON.parse(config.body);
+      serviceAnswer.id = 4;
+      s.push(serviceAnswer);
       return new Promise((resolve, reject) => {
         resolve({json: function() {
-          return service-answer;
+          return serviceAnswer;
         }})
       });
     } else if (config.method === 'delete') {
@@ -31,4 +29,4 @@ const mockSAService = (s) => jest.fn().mockImplementation((url, config) => {
     }
   });
 
-export default mockSAService;
+export default mockServiceAnswer;
