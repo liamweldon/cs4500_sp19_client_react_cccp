@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "serviceName": "Pet Sitting",
+    "type": "True/False",
+    "question": "Can you take care of both cats and dogs?"
+  },
+  {
+    "id": 4,
+    "serviceName": "Handymen",
+    "type": "True/False",
+    "question": "Do you own a hammer?"
+  }
+]

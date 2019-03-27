@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "type": "Choice",
+    "question": "how many bathrooms are there?",
+    "choiceAnswer": 1,
+    "serviceQuestions": []
+  },
+  {
+    "id": 2,
+    "type": "Choice",
+    "question": "when are you available?",
+    "choiceAnswer": 1,
+    "serviceQuestions": []
+
+  }
+]
