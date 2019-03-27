@@ -11,12 +11,31 @@ const test_new_service = {
   serviceQuestions: []
 };
 
+const test_update_service = {
+  id: 678,
+  serviceName: "Test3 Updated",
+  serviceDescription: "Test3 Updated!",
+  providers: [],
+  serviceCategories: [],
+  serviceQuestions: []
+};
+
 // Service mocking code
 const serviceService = ServiceService.getInstance();
 
 // Mock the service here
 beforeAll(() => {
   global.fetch = mockService(services);
+});
+
+test("Test that finding a specific service works properly", () => {
+  return serviceService.findServiceById(456).then(service => {
+    expect(service).toBeDefined();
+
+    expect(service.id).toBe(456);
+    expect(service.serviceName).toBe("Test1");
+    expect(service.serviceDescription).toBe("Test1!");
+  });
 });
 
 // Test service mocking code behaves properly
@@ -41,6 +60,16 @@ test("Test that creation works properly", () => {
     expect(services[1].id).toBe(234);
     expect(services[2].id).toBe(321);
     expect(services[3].id).toBe(555);
+  });
+});
+
+test("Test that finding a specific service works properly", () => {
+  return serviceService.updateSercice(test_update_service).then(service => {
+    expect(service).toBeDefined();
+
+    expect(service.id).toBe(678);
+    expect(service.serviceName).toBe("Test3 Updated");
+    expect(service.serviceDescription).toBe("Test3 Updated!");
   });
 });
 
