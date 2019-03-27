@@ -9,6 +9,7 @@ import UserDetailsContainer from './UserDetailsContainer';
 import UsersContainer from './UsersContainer';
 import FAQAnswers from "./FAQAnswers";
 import ServiceQuestions from './ServiceQuestions';
+import ServiceQuestionsContainer from './ServiceQuestionsContainer'
 import ServiceQuestionDetails from './ServiceQuestionDetails';
 import ServiceAnswers from './ServiceAnswers';
 import ServiceAnswerDetails from './ServiceAnswerDetails';
@@ -43,7 +44,7 @@ const Admin = () => (
                     <Route path="/admin/users" exact component={UsersContainer}/>
                     <Route path="/admin/users/:id" exact component={UserDetailsContainer}/>
                     <Route path="/admin/faqs/:id" exact component={FAQDetailsContainer}/>
-                    <Route path="/admin/service-questions" exact component={ServiceQuestions}/>
+                    <Route path="/admin/service-questions" exact component={ServiceQuestionsContainer}/>
                     <Route path="/admin/service-questions/:id" exact component={ServiceQuestionDetails}/>
                     <Route path="/admin/service-answers" exact component={ServiceAnswers}/>
                     <Route path="/admin/service-answers/:id" exact component={ServiceAnswerDetails}/>
