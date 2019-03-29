@@ -1,0 +1,555 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Creation renders properly in DOM 1`] = `
+<div>
+  <h3>
+    Services
+  </h3>
+  <table
+    className="table"
+  >
+    <tbody>
+      <tr>
+        <td>
+          <div
+            className="row"
+          >
+            <div
+              className="col-5"
+            >
+              <h5>
+                Service Name
+              </h5>
+            </div>
+            <div
+              className="col-5"
+            >
+              <h5>
+                Description
+              </h5>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div
+            className="row"
+          >
+            <div
+              className="col-5"
+            >
+              <input
+                onChange={[Function]}
+                value="Service Name"
+              />
+            </div>
+            <div
+              className="col-5"
+            >
+              <input
+                onChange={[Function]}
+                value="Description"
+              />
+            </div>
+            <div
+              className="col-1"
+            >
+              <button
+                style={
+                  Object {
+                    "backgroundColor": "blue",
+                    "borderColor": "blue",
+                  }
+                }
+              >
+                <i
+                  className="fa fa-plus"
+                  style={
+                    Object {
+                      "color": "white",
+                      "fontSize": "50px",
+                    }
+                  }
+                />
+              </button>
+            </div>
+            <div
+              className="col-1"
+            >
+              <button
+                style={
+                  Object {
+                    "backgroundColor": "green",
+                    "borderColor": "green",
+                  }
+                }
+              >
+                <i
+                  className="fa fa-check"
+                  style={
+                    Object {
+                      "color": "white",
+                      "fontSize": "50px",
+                    }
+                  }
+                />
+              </button>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr
+        className="serviceRow"
+      >
+        <td>
+          <div
+            className="row"
+          >
+            <div
+              className="col-5"
+            >
+              <a
+                href="/admin/services/123"
+              >
+                House Cleaners
+              </a>
+            </div>
+            <div
+              className="col-5"
+            >
+              <a
+                href="/admin/services/123"
+              >
+                Cleaning for your house!
+              </a>
+            </div>
+            <div
+              className="col-1"
+            >
+              <button
+                className="delete-button123"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "red",
+                    "borderColor": "red",
+                  }
+                }
+              >
+                <i
+                  className="fa fa-times"
+                  style={
+                    Object {
+                      "color": "white",
+                      "fontSize": "50px",
+                    }
+                  }
+                />
+              </button>
+            </div>
+            <div
+              className="col-1"
+            >
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "blue",
+                    "borderColor": "blue",
+                  }
+                }
+              >
+                <i
+                  className="fa fa-edit"
+                  style={
+                    Object {
+                      "color": "white",
+                      "fontSize": "50px",
+                    }
+                  }
+                />
+              </button>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr
+        className="serviceRow"
+      >
+        <td>
+          <div
+            className="row"
+          >
+            <div
+              className="col-5"
+            >
+              <a
+                href="/admin/services/234"
+              >
+                Interior Painters
+              </a>
+            </div>
+            <div
+              className="col-5"
+            >
+              <a
+                href="/admin/services/234"
+              >
+                Painting for your home!
+              </a>
+            </div>
+            <div
+              className="col-1"
+            >
+              <button
+                className="delete-button234"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "red",
+                    "borderColor": "red",
+                  }
+                }
+              >
+                <i
+                  className="fa fa-times"
+                  style={
+                    Object {
+                      "color": "white",
+                      "fontSize": "50px",
+                    }
+                  }
+                />
+              </button>
+            </div>
+            <div
+              className="col-1"
+            >
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "blue",
+                    "borderColor": "blue",
+                  }
+                }
+              >
+                <i
+                  className="fa fa-edit"
+                  style={
+                    Object {
+                      "color": "white",
+                      "fontSize": "50px",
+                    }
+                  }
+                />
+              </button>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr
+        className="serviceRow"
+      >
+        <td>
+          <div
+            className="row"
+          >
+            <div
+              className="col-5"
+            >
+              <a
+                href="/admin/services/321"
+              >
+                Math Tutoring
+              </a>
+            </div>
+            <div
+              className="col-5"
+            >
+              <a
+                href="/admin/services/321"
+              >
+                Algebra or calculus?
+              </a>
+            </div>
+            <div
+              className="col-1"
+            >
+              <button
+                className="delete-button321"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "red",
+                    "borderColor": "red",
+                  }
+                }
+              >
+                <i
+                  className="fa fa-times"
+                  style={
+                    Object {
+                      "color": "white",
+                      "fontSize": "50px",
+                    }
+                  }
+                />
+              </button>
+            </div>
+            <div
+              className="col-1"
+            >
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "blue",
+                    "borderColor": "blue",
+                  }
+                }
+              >
+                <i
+                  className="fa fa-edit"
+                  style={
+                    Object {
+                      "color": "white",
+                      "fontSize": "50px",
+                    }
+                  }
+                />
+              </button>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr
+        className="serviceRow"
+      >
+        <td>
+          <div
+            className="row"
+          >
+            <div
+              className="col-5"
+            >
+              <a
+                href="/admin/services/456"
+              >
+                Test1
+              </a>
+            </div>
+            <div
+              className="col-5"
+            >
+              <a
+                href="/admin/services/456"
+              >
+                Test1!
+              </a>
+            </div>
+            <div
+              className="col-1"
+            >
+              <button
+                className="delete-button456"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "red",
+                    "borderColor": "red",
+                  }
+                }
+              >
+                <i
+                  className="fa fa-times"
+                  style={
+                    Object {
+                      "color": "white",
+                      "fontSize": "50px",
+                    }
+                  }
+                />
+              </button>
+            </div>
+            <div
+              className="col-1"
+            >
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "blue",
+                    "borderColor": "blue",
+                  }
+                }
+              >
+                <i
+                  className="fa fa-edit"
+                  style={
+                    Object {
+                      "color": "white",
+                      "fontSize": "50px",
+                    }
+                  }
+                />
+              </button>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr
+        className="serviceRow"
+      >
+        <td>
+          <div
+            className="row"
+          >
+            <div
+              className="col-5"
+            >
+              <a
+                href="/admin/services/567"
+              >
+                Test2
+              </a>
+            </div>
+            <div
+              className="col-5"
+            >
+              <a
+                href="/admin/services/567"
+              >
+                Test2!
+              </a>
+            </div>
+            <div
+              className="col-1"
+            >
+              <button
+                className="delete-button567"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "red",
+                    "borderColor": "red",
+                  }
+                }
+              >
+                <i
+                  className="fa fa-times"
+                  style={
+                    Object {
+                      "color": "white",
+                      "fontSize": "50px",
+                    }
+                  }
+                />
+              </button>
+            </div>
+            <div
+              className="col-1"
+            >
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "blue",
+                    "borderColor": "blue",
+                  }
+                }
+              >
+                <i
+                  className="fa fa-edit"
+                  style={
+                    Object {
+                      "color": "white",
+                      "fontSize": "50px",
+                    }
+                  }
+                />
+              </button>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr
+        className="serviceRow"
+      >
+        <td>
+          <div
+            className="row"
+          >
+            <div
+              className="col-5"
+            >
+              <a
+                href="/admin/services/678"
+              >
+                Test3
+              </a>
+            </div>
+            <div
+              className="col-5"
+            >
+              <a
+                href="/admin/services/678"
+              >
+                Test3!
+              </a>
+            </div>
+            <div
+              className="col-1"
+            >
+              <button
+                className="delete-button678"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "red",
+                    "borderColor": "red",
+                  }
+                }
+              >
+                <i
+                  className="fa fa-times"
+                  style={
+                    Object {
+                      "color": "white",
+                      "fontSize": "50px",
+                    }
+                  }
+                />
+              </button>
+            </div>
+            <div
+              className="col-1"
+            >
+              <button
+                onClick={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "blue",
+                    "borderColor": "blue",
+                  }
+                }
+              >
+                <i
+                  className="fa fa-edit"
+                  style={
+                    Object {
+                      "color": "white",
+                      "fontSize": "50px",
+                    }
+                  }
+                />
+              </button>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

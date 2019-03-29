@@ -1,14 +1,13 @@
 import React from "react";
 import TestRenderer from "react-test-renderer";
 
-import Services from "../../components/Services";
+import ServiceDetails from "../../components/ServiceDetails";
 import ServiceService from "../../services/ServiceService";
 
-import services from "../mockData/services.mock.json";
+import mockServices from "../mockData/services.mock.json";
 import mockServiceService from "../services/mocks/MockServiceService";
 
-// Provide an initial service to populate the edit fields. Replicate the one in the container
-// for consistency.
+// Provide an initial service to populate the edit fields. Replicate the one in the container for consistency.
 let mock_initial_service = {
   id: 0,
   serviceName: "Service Name",
@@ -18,7 +17,7 @@ let mock_initial_service = {
 // Mock the service here
 const serviceService = ServiceService.getInstance();
 beforeEach(() => {
-  global.fetch = mockServiceService(services);
+  global.fetch = mockServiceService(mockServices);
 });
 
 // DOM testing code
@@ -28,13 +27,13 @@ test("Deletion renders correctly in DOM", () => {
     .findAllServices()
     .then(services => {
       let component = TestRenderer.create(
-        <Services services={services} service={mock_initial_service} />
+        <ServiceDetails services={services} service={mock_initial_service} />
       );
       let tree = component.toJSON();
       expect(tree).toMatchSnapshot();
 
       let testInstance = component.root;
-      let rows = testInstance.findAllByProps({ className: "serviceRow" });
+      let rows = testInstance.props.services;
       expect(rows.length).toBe(3);
 
       // Delete a service via our mocked ServiceService. In the normal case,
@@ -47,15 +46,16 @@ test("Deletion renders correctly in DOM", () => {
         .deleteService(123)
         .then(() => {
           component = TestRenderer.create(
-            <Services services={services} service={mock_initial_service} />
+            <ServiceDetails
+              services={services}
+              service={mock_initial_service}
+            />
           );
           let tree = component.toJSON();
           expect(tree).toMatchSnapshot();
 
           let newTestInstance = component.root;
-          let newRows = newTestInstance.findAllByProps({
-            className: "serviceRow"
-          });
+          let newRows = newTestInstance.props.services;
           expect(newRows.length).toBe(2);
         })
         .catch(function(error) {});

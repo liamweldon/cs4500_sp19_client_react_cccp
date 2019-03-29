@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Deletion renders correctly in DOM 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col"
+    >
+      <h3>
+        Service Details
+      </h3>
+      <select
+        className="form-control"
+        onChange={[Function]}
+        value={0}
+      >
+        <option
+          defaultValue={false}
+          value={123}
+        >
+          House Cleaners
+        </option>
+        <option
+          defaultValue={false}
+          value={234}
+        >
+          Interior Painters
+        </option>
+        <option
+          defaultValue={false}
+          value={321}
+        >
+          Math Tutoring
+        </option>
+        <option
+          defaultValue={false}
+          value={456}
+        >
+          Test1
+        </option>
+        <option
+          defaultValue={false}
+          value={567}
+        >
+          Test2
+        </option>
+        <option
+          defaultValue={false}
+          value={678}
+        >
+          Test3
+        </option>
+      </select>
+    </div>
+  </div>
+  <br />
+  <div
+    className="row"
+  >
+    <div
+      className="col"
+    >
+      <label>
+        Service Title
+      </label>
+      <input
+        className="form-control"
+        defaultValue="Service Name"
+        onChange={[Function]}
+        type="text"
+      />
+    </div>
+  </div>
+  <br />
+  <div
+    className="row"
+  >
+    <div
+      className="col"
+    >
+      <label>
+        Service Description
+      </label>
+      <input
+        className="form-control"
+        defaultValue="Description"
+        onChange={[Function]}
+        type="text"
+      />
+    </div>
+  </div>
+  <br />
+  <div
+    className="row"
+  >
+    <div
+      className="col"
+    >
+      <button
+        className="btn btn-danger"
+        onClick={[Function]}
+        type="button"
+      >
+        Cancel
+      </button>
+    </div>
+    <div
+      className="col"
+    >
+      <button
+        className="btn btn-danger"
+        onClick={[Function]}
+        type="button"
+      >
+        Delete
+      </button>
+    </div>
+    <div
+      className="col"
+    >
+      <button
+        className="btn btn-primary"
+        onClick={[Function]}
+        type="button"
+      >
+        Edit
+      </button>
+    </div>
+    <div
+      className="col"
+    >
+      <button
+        className="btn btn-success"
+        onClick={[Function]}
+        type="button"
+      >
+        Create
+      </button>
+    </div>
+  </div>
+</div>
+`;
