@@ -1,0 +1,208 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Service Answer Summary Snapshot and DOM 1`] = `
+<div>
+  <h3>
+    Service Answers
+  </h3>
+  <table
+    className="table"
+  >
+    <tbody>
+      <tr
+        className="header-row"
+      >
+        <td>
+          Question
+        </td>
+        <td>
+          Type
+        </td>
+        <td>
+          Answer
+        </td>
+      </tr>
+      <tr>
+        <select
+          name="question"
+          value="Question"
+        >
+          <option
+            value="Can you take care of both cats and dogs?"
+          >
+            Can you take care of both cats and dogs?
+          </option>
+          <option
+            value="Do you own a hammer?"
+          >
+            Do you own a hammer?
+          </option>
+        </select>
+        <td>
+          <select
+            name="type"
+          >
+            <option
+              value="Choice"
+            >
+              Choice
+            </option>
+            <option
+              value="True/False"
+            >
+              True/False
+            </option>
+            <option
+              value="Range"
+            >
+              Range
+            </option>
+          </select>
+        </td>
+        <td>
+          <input
+            name="answer"
+            value="Answer"
+          />
+        </td>
+        <td>
+          <button>
+            Create +
+          </button>
+        </td>
+      </tr>
+      <tr
+        className="answer-row"
+      >
+        <td>
+          how many bathrooms are there?
+        </td>
+        <td>
+          Choice
+        </td>
+        <td>
+          <a
+            href="/admin/service-answers/1"
+            onClick={[Function]}
+          >
+            1
+          </a>
+        </td>
+        <td>
+          <button
+            className="delete-btn"
+            onClick={[Function]}
+          >
+            <i
+              className="fas fa-trash-alt"
+            />
+          </button>
+        </td>
+      </tr>
+      <tr
+        className="answer-row"
+      >
+        <td>
+          when are you available?
+        </td>
+        <td>
+          Choice
+        </td>
+        <td>
+          <a
+            href="/admin/service-answers/2"
+            onClick={[Function]}
+          >
+            2
+          </a>
+        </td>
+        <td>
+          <button
+            className="delete-btn"
+            onClick={[Function]}
+          >
+            <i
+              className="fas fa-trash-alt"
+            />
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`ServiceAnswers Summary Snapshots 1`] = `
+            <div>
+                <h3>Service Answers</h3>
+                <table className="table">
+                    <tbody>
+                    <tr className="header-row">
+                            <td>Question</td>
+                            <td>Type</td>
+                            <td>Answer</td>
+                         </tr>
+                        <tr key={-1}>
+                        <select
+                            value="Question"
+                            name="question">
+                            <option value="Do you have previous experience?">Do you have previous experience?</option>
+                            <option value="Do you live within a 20 mile radius?">Do you live within a 20 mile radius?</option>
+                            <option value="Are you available within the next week?">Are you available within the next week?</option>
+                            <option value="Do you take cash?">Do you take cash?</option>
+                        </select>
+                          <td>
+                            <select
+                              name="type"
+                              value="Type">
+                              <option value="Choice">Choice</option>
+                              <option value="True/False">True/False</option>
+                              <option value="Range">Range</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input
+                              value="Answer"
+                              name="answer"
+                            />
+                          </td>
+                        <td>
+                          <button onClick={[Function]}>
+                            Create +
+                          </button>
+                        </td>
+                        </tr>
+                        <tr className="answer-row">
+                        <td></td>
+                        <td></td>
+                        <td>
+                        <a href="/admin/service-answers/1">1</a>
+                        </td>
+                        <td>
+                          <button
+                            className="delete-btn"
+                            onClick={[Function]}
+                          >
+                            <i className="fas fa-trash-alt" />
+                          </button>
+                          </td>
+                        </tr>
+                        <tr className="answer-row">
+                        <td></td>
+                        <td></td>
+                        <td>
+                        <a href="/admin/service-answers/2">2</a>
+                        </td>
+                        <td>
+                          <button
+                            className="delete-btn"
+                            onClick={[Function]}
+                          >
+                            <i className="fas fa-trash-alt" />
+                          </button>
+                          </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+  `;

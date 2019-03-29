@@ -15,14 +15,17 @@ export default class ServiceQuestionService {
     deleteServiceQuestion = (id) => fetch(`${API_ROOT}/api/service-questions/${id}`, {method: 'DELETE'}).then((response) => response.json());
 //    linkAtoQ = (aID, qID) => fetch(`${API_ROOT}/api/service-questions/${qID}/sas/${aID}`).then(response => response.json());
 
-        addServiceQuestion = (newServiceQuestion) =>
-        fetch(`${API_ROOT}/api/service-questions/`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(newServiceQuestion)
-        }).then((response) => response.json());
+    addServiceQuestion = (newServiceQuestion) => {
+      delete newServiceQuestion.id;
+      fetch(`${API_ROOT}/api/service-questions`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newServiceQuestion)
+      }).then((response) => response.json())
+    }
+
 
         editServiceQuestion = (id, newServiceQuestion) =>
         fetch(`${API_ROOT}/api/service-questions/${id}`, {
