@@ -42,7 +42,7 @@ test("Test that finding a specific service works properly", () => {
 test("Test that finding all services works properly", () => {
   return serviceService.findAllServices().then(services => {
     expect(services).toBeDefined();
-    expect(services).toHaveLength(3);
+    expect(services.length).toBe(3);
     expect(services[0].id).toBe(123);
     expect(services[1].id).toBe(234);
     expect(services[2].id).toBe(321);
@@ -64,7 +64,7 @@ test("Test that creation works properly", () => {
 });
 
 test("Test that finding a specific service works properly", () => {
-  return serviceService.updateSercice(test_update_service).then(service => {
+  return serviceService.updateService(test_update_service).then(service => {
     expect(service).toBeDefined();
 
     expect(service.id).toBe(678);
@@ -74,7 +74,7 @@ test("Test that finding a specific service works properly", () => {
 });
 
 test("Test that delete works properly", () => {
-  serviceService.deleteService(123).then(response => {
+  return serviceService.deleteService(123).then(response => {
     expect(services).toBeDefined();
     expect(services).toHaveLength(3);
     expect(services[0].id).toBe(234);
