@@ -3,7 +3,7 @@ import { API_ROOT } from "../../../api-config";
 
 const mockFAQ = (s) => jest.fn().mockImplementation((url, config) => {
     if(!config) {
-      if (url.indexOf(`${API_ROOT}/api/faqs`) != -1) {
+      if (url.indexOf(`${API_ROOT}/api/faqs`) !== -1) {
       return new Promise((resolve, reject) => {
         resolve({json: function() {
           return s;
@@ -20,7 +20,7 @@ const mockFAQ = (s) => jest.fn().mockImplementation((url, config) => {
         }})
       });
     } else if (config.method === 'delete') {
-      if (url.indexOf(`${API_ROOT}/api/faqs/0`) != -1) {
+      if (url.indexOf(`${API_ROOT}/api/faqs/0`) !== -1) {
         delete s[0];
         return new Promise((resolve, reject) => {
         resolve({json: function() {}})
