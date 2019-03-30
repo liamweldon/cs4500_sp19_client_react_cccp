@@ -7,13 +7,12 @@ import ServiceService from "../services/ServiceService";
 import ServiceDetails from "./ServiceDetails";
 import UserDetailsContainer from './UserDetailsContainer';
 import UsersContainer from './UsersContainer';
-import FAQAnswers from "./FAQAnswers";
-import ServiceQuestions from './ServiceQuestions';
 import ServiceQuestionsContainer from './ServiceQuestionsContainer'
 import ServiceQuestionDetails from './ServiceQuestionDetails';
 import ServiceAnswersContainer from './ServiceAnswersContainer';
 import ServiceAnswerDetails from './ServiceAnswerDetails';
-import FAQAnswerDetails from "./FAQAnswerDetails";
+import FAQAnswerDetails from "./faq_answers/FAQAnswerDetails";
+import FAQAnswersContainer from "./faq_answers/FAQAnswersContainer";
 
 const Admin = () => (
     <div>
@@ -36,7 +35,7 @@ const Admin = () => (
                 </div>
                 <div className="col-9">
                     <Route path="/admin/faqs" exact component={FAQsContainer}/>
-                    <Route path="/admin/faas" exact component={FAQAnswers}/>
+                    <Route path="/admin/faas" exact component={FAQAnswersContainer}/>
                     <Route path="/admin/faas/:id" exact component={FAQAnswerDetails}/>
                     <Route path="/admin/services" exact
                            render={() => <ServicesContainer service={ServiceService.getInstance()}/>}/>
