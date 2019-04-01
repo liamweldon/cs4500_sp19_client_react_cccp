@@ -1,20 +1,18 @@
 import React from 'react';
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
-import FAQsContainer from './FAQsContainer';
-import FAQDetailsContainer from './FAQDetailsContainer';
-import ServicesContainer from './ServicesContainer';
-import ServiceService from "../services/ServiceService";
-import ServiceDetails from "./ServiceDetails";
-import UserDetailsContainer from './UserDetailsContainer';
-import UsersContainer from './UsersContainer';
-import FAQAnswers from "./FAQAnswers";
-import ServiceQuestions from './ServiceQuestions';
-import ServiceQuestionsContainer from './ServiceQuestionsContainer'
+import FAQsContainer from '../containers/FAQsContainer';
+import FAQDetailsContainer from '../containers/FAQDetailsContainer';
+import ServicesContainer from '../containers/ServicesContainer';
+import UserDetailsContainer from '../containers/UserDetailsContainer';
+import UsersContainer from '../containers/UsersContainer';
+import ServiceQuestionsContainer from '../containers/ServiceQuestionsContainer';
+import ServiceAnswersContainer from '../containers/ServiceAnswersContainer';
+import ServiceService from '../services/ServiceService';
+import ServiceDetails from './ServiceDetails';
 import ServiceQuestionDetails from './ServiceQuestionDetails';
-import ServiceAnswersContainer from './ServiceAnswersContainer';
 import ServiceAnswerDetails from './ServiceAnswerDetails';
-import FAQAnswerDetails from "./FAQAnswerDetails";
-
+import FAQAnswerDetails from './FAQAnswerDetails';
+import FAQAnswers from './FAQAnswers';
 const Admin = () => (
     <div>
         <h2>Admin</h2>
