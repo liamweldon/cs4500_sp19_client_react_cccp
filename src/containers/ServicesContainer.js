@@ -1,6 +1,6 @@
 import React from "react";
-import Services from "./Services";
-import "./table.scss";
+import Services from "../components/Services";
+import "../components/table.scss";
 
 class ServicesContainer extends React.Component {
   constructor(props) {

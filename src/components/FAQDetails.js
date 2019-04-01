@@ -1,5 +1,4 @@
 import React from 'react'
-import FAQService from '../services/FAQService'
 import {Link} from 'react-router-dom';
 import './FAQDetails.scss'
 const FAQDetails = ({faqs, faq, selectFAQ, addFAQ, deleteFAQ, updateFAQ, setFAQ}) => (
