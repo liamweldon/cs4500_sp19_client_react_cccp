@@ -1,5 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
+
 import FAQsContainer from '../containers/FAQsContainer';
 import FAQDetailsContainer from '../containers/FAQDetailsContainer';
 import ServicesContainer from '../containers/ServicesContainer';
@@ -9,7 +10,7 @@ import ServiceQuestionsContainer from '../containers/ServiceQuestionsContainer';
 import ServiceAnswersContainer from '../containers/ServiceAnswersContainer';
 import ServiceService from '../services/ServiceService';
 import ServiceDetails from './ServiceDetails';
-import ServiceQuestionDetails from './ServiceQuestionDetails';
+import ServiceQuestionDetailsContainer from '../containers/ServiceQuestionDetailsContainer';
 import ServiceAnswerDetails from './ServiceAnswerDetails';
 import FAQAnswerDetails from './FAQAnswerDetails';
 import FAQAnswers from './FAQAnswers';
@@ -43,7 +44,7 @@ const Admin = () => (
                     <Route path="/admin/users/:id" exact component={UserDetailsContainer}/>
                     <Route path="/admin/faqs/:id" exact component={FAQDetailsContainer}/>
                     <Route path="/admin/service-questions" exact component={ServiceQuestionsContainer}/>
-                    <Route path="/admin/service-questions/:id" exact component={ServiceQuestionDetails}/>
+                    <Route path="/admin/service-questions/:id" exact component={ServiceQuestionDetailsContainer}/>
                     <Route path="/admin/service-answers" exact component={ServiceAnswersContainer}/>
                     <Route path="/admin/service-answers/:id" exact component={ServiceAnswerDetails}/>
                 </div>
