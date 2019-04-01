@@ -1,10 +1,10 @@
 import React from 'react';
 import ServiceAnswerService from '../services/ServiceAnswerService';
 import ServiceQuestionService from '../services/ServiceQuestionService';
-import './table.scss';
-import './ServiceQuestions.scss';
+import '../components/table.scss';
+import '../components/ServiceQuestions.scss';
 import {omit} from 'lodash';
-import ServiceAnswers from './ServiceAnswers.js';
+import ServiceAnswers from '../components/ServiceAnswers.js';
 
 class ServiceAnswersContainer extends React.Component {
     constructor(props) {
