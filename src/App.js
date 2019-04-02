@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import Admin from './components/Admin';
+import Home from './components/Home';
 
 class App extends Component {
   render() {
@@ -13,6 +14,8 @@ class App extends Component {
           <div>
             <Link to="/admin">Admin</Link>
             <Route path="/admin" component={Admin} />
+            <Link to="/home">Home</Link>
+            <Route path="/home" component={Home} />
           </div>
         </Router>
       </div>
