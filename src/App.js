@@ -4,6 +4,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import Admin from './components/Admin';
 import ProviderContainer from './containers/ProviderContainer';
+import Home from './components/Home';
 
 class App extends Component {
   render() {
@@ -15,6 +16,8 @@ class App extends Component {
             <Link to="/admin">Admin</Link> | <Link to="/provider">Provider</Link>
             <Route path="/admin" component={Admin} />
             <Route path="/provider" exact component={ProviderContainer} />
+            <Link to="/home">Home</Link>
+            <Route path="/home" component={Home} />
           </div>
         </Router>
       </div>
