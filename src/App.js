@@ -15,17 +15,11 @@ class App extends Component {
             pillServiceCategories: serviceCategories
         }
     }
-
-
-    getServiceCategories = () => {
-    this.serviceCategoryService.findAllServiceCategories(4).then((serviceCategories) => {
-    this.setState({
-                      pillServiceCategories: serviceCategories
-                  });
-            });
-        };
     componentDidMount() {
-        this.getServiceCategories();
+        this.serviceCategoryService.findAllServiceCategories(4)
+            .then(serviceCategories => this.setState({
+            pillServiceCategories: serviceCategories
+        }))
     }
     render() {
         return (
@@ -36,11 +30,9 @@ class App extends Component {
             <Link to="/services"> Services</Link> |
             <Link to="/providers"> Providers</Link> |
             <Link to="/admin"> Admin</Link> |
-            <Link to="/providers"> Provider</Link>
             <br/>
             <br/>
             <br/>
-
         <Route
         path="/home"
         exact
@@ -51,7 +43,6 @@ class App extends Component {
         component={Admin}/>
         </div>
         </Router>
-        {/*<h1>ServicesRus</h1>*/}
     </div>
     );
     }
