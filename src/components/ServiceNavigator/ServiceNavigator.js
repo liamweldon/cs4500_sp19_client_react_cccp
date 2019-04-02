@@ -4,7 +4,7 @@ import ServiceCategoryList from './ServiceCategoryList'
 import ServiceCategorySectionList from './ServiceCategorySectionList'
 import SearchBar from '../SearchBar'
 
-const ServiceNavigator = categories =>
+const ServiceNavigator = ({categories}) =>
     <div>
         <div className="row">
             <div className="col-8">
@@ -22,11 +22,11 @@ const ServiceNavigator = categories =>
         <div className="row">
             <div className="col-3">
                 <ServiceCategoryList
-                    categories={{categories}}/>
+                    categories={categories}/>
             </div>
             <div className="col-9">
                 <ServiceCategorySectionList
-                    categories={{categories}}/>
+                    categories={categories}/>
             </div>
         </div>
     </div>

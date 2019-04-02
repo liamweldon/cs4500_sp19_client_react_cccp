@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ServiceCategoryList = categories => {
+const ServiceCategoryList = ({categories}) => {
    console.log("CATEGORIES");
    console.log(categories);
    return (<ul className="list-group">
@@ -8,7 +8,7 @@ const ServiceCategoryList = categories => {
             categories.map(serviceCategory =>
                 <li key={serviceCategory.id}
                     className="list-group-item no-border">
-                    <a href={`#${serviceCategory.id}`}>{serviceCategory.title}</a>
+                    <a href={`#${serviceCategory.id}`}>{serviceCategory.serviceCategoryName}</a>
                 </li>
             )
         }

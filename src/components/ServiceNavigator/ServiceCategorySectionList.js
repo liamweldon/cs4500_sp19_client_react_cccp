@@ -1,10 +1,10 @@
 import React from 'react'
 import ServiceCategorySection from './ServiceCategorySection'
 
-const ServiceCategorySectionList = ({serviceCategories}) =>
+const ServiceCategorySectionList = ({categories}) =>
     <ul className="list-group no-border">
         {
-            serviceCategories.map(serviceCategory =>
+            categories.map(serviceCategory =>
                 <li key={serviceCategory.id}
                     className="list-group-item no-border">
                     <ServiceCategorySection

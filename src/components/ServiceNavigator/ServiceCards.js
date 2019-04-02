@@ -10,7 +10,7 @@ const ServiceCards = ({services}) =>
                          className="card-img-top"/>
                     <div className="card-body">
                         <p className="card-text">
-                            <a href="/providers"> {service.title}</a>
+                            <a href="/providers"> {service.serviceName}</a>
                         </p>
                     </div>
                 </div>
