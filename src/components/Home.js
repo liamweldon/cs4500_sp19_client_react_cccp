@@ -1,6 +1,8 @@
 import React from 'react'
 import SearchBar from './SearchBar'
 import ServiceService from '../services/ServiceService';
+import ServiceCategoryService from '../services/ServiceCategoryService';
+import ServiceNavigatorContainer from '../containers/ServiceNavigatorContainer';
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
 
 
@@ -26,6 +28,13 @@ const Home = ({history}) =>
         <br/>
         <div>
             <p>PILLS</p>
+        </div>
+        <div>
+          <Link to="/home/services/">Services</Link>
+          <Route path="/home/services/" exact
+                 render={() => <ServiceNavigatorContainer 
+                                ServiceService={ServiceService.getInstance()}
+                                serviceCategoryService={ServiceCategoryService.getInstance()}/>}/>
         </div>
         <br/>
         <br/>
