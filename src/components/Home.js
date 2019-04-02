@@ -4,9 +4,10 @@ import ServiceService from '../services/ServiceService';
 import ServiceCategoryService from '../services/ServiceCategoryService';
 import ServiceNavigatorContainer from '../containers/ServiceNavigatorContainer';
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
+import ServiceTabNavigator from './ServiceTabNavigator'
 
 
-const Home = ({history}) =>
+const Home = ({history, tabServiceCategories}) =>
     <div>
         <div className="row">
             <div className="col-8">
@@ -40,6 +41,7 @@ const Home = ({history}) =>
         <br/>
         <br/>
         <p>SERVICE TABS</p>
+        <ServiceTabNavigator serviceCategories={tabServiceCategories}/>
     </div>
 
 

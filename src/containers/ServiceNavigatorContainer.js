@@ -14,6 +14,8 @@ class ServiceNavigatorContainer extends React.Component {
   }
 
   componentDidMount() {
+    console.log("Mounting");
+    console.log(this.findAllCategories());
     this.findAllCategories();
   }
 

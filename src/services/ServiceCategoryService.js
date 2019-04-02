@@ -12,11 +12,12 @@ export default class ServiceCategoryService {
 
   findCategoryById = categoryId =>
     fetch(`${API_ROOT}/api/categories/${categoryId}/`).then(response =>
-      response.json());
+      response.json()
+    );
 
-  findAllCategories = () =>
+  findAllServiceCategories = () =>
     fetch(`${API_ROOT}/api/categories`).then(response => response.json());
 
-  findAllServicesForCategory = categoryId =>
+  findAllServicesForCategory = (categoryId) =>
      fetch(`${API_ROOT}/api/categories/${categoryId}/services/`).then(response => response.json());
 }
