@@ -2,9 +2,10 @@ import React from 'react'
 import SearchBar from './SearchBar'
 import ServiceService from '../services/ServiceService';
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
+import ServiceCategoryPills from './ServiceCategoryPills/ServiceCategoryPills'
+import serviceCategories from '../data/service-categories.mock.json'
 
-
-const Home = ({history}) =>
+const Home = ({history, pillServiceCategories}) =>
     <div>
         <div className="row">
             <div className="col-8">
@@ -24,9 +25,9 @@ const Home = ({history}) =>
         <br/>
         <br/>
         <br/>
-        <div>
-            <p>PILLS</p>
-        </div>
+    <div>
+    <ServiceCategoryPills serviceCategories={pillServiceCategories}/>
+    </div>
         <br/>
         <br/>
         <br/>

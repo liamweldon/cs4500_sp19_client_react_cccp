@@ -7,10 +7,10 @@ export default class ServiceCategoryService {
         return this.instance
     }
     findServiceCategoryById = categoryId =>
-    fetch(`http://localhost:8080/api/service-categories/${categoryId}`)
+    fetch(`http://localhost:8181/api/categories/${categoryId}`)
     .then(response => response.json())
     findAllServiceCategories = limit =>
-    fetch(limit ? `http://localhost:8080/api/service-categories?limit=${limit}` :
-    `http://localhost:8080/api/service-categories`)
+    fetch(limit ? `http://localhost:8181/api/categories?limit=${limit}` :
+    `http://localhost:8181/api/categories`)
     .then(response => response.json())
     }
