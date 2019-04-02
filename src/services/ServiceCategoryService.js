@@ -1,3 +1,5 @@
+import { API_ROOT } from "../api-config";
+
 export default class ServiceCategoryService {
     static instance = null;
     static getInstance() {
@@ -7,9 +9,9 @@ export default class ServiceCategoryService {
         return this.instance
     }
     findServiceCategoryById = categoryId =>
-        fetch(`http://localhost:8080/api/service-categories/${categoryId}`)
+        fetch(`${API_ROOT}/api/categories/${categoryId}`)
             .then(response => response.json())
-    findAllServiceCategories = () =>
-        fetch("http://localhost:8080/api/service-categories")
+    findAllServiceCategories = limit =>
+        fetch(`${API_ROOT}/api/categories`)
             .then(response => response.json())
 }
