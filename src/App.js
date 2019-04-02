@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import serviceCategories from './data/service-categories.mock.json'
+import ServiceCategoryService from './services/ServiceCategoryService'
 
 import Admin from './components/Admin';
 
