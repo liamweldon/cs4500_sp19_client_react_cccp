@@ -1,0 +1,40 @@
+.provider {
+  margin-left: 7em;
+  margin-right: 7em;
+  margin-top: 3em;
+  margin-bottom: 1em;
+
+  .section {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 1em;
+    padding-top: 1em;
+  }
+
+  img {
+    margin-right: 1em;
+    margin-bottom: 1em;
+  }
+
+  i {
+    margin-right: 0.5em;
+  }
+
+  .row {
+    display: flex;
+    margin: 0; // override default margin -15
+    margin-bottom: 1em;
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .faqs {
+    .faq {
+      border-bottom: 1px solid lightgray;
+      padding-bottom: 1em;
+      padding-top: 1em;
+    }
+  }
+}
