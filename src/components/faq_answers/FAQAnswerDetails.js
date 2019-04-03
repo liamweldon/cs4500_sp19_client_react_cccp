@@ -1,5 +1,5 @@
 import React from 'react';
-import FAQAnswerService from '../services/FAQAnswerService';
+import FAQAnswerService from '../../services/FAQAnswerService';
 
 class FAQAnswerDetails extends React.Component {
   constructor(props) {
