@@ -1,6 +1,8 @@
 import React from 'react'
 import SearchBar from './SearchBar'
 import ServiceService from '../services/ServiceService';
+import ServiceCategoryService from '../services/ServiceCategoryService';
+import ServiceNavigatorContainer from '../containers/ServiceNavigatorContainer';
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
 import ServiceCategoryPills from './ServiceCategoryPills/ServiceCategoryPills'
 import serviceCategories from '../data/service-categories.mock.json'
@@ -22,7 +24,6 @@ const Home = ({history, pillServiceCategories}) =>
     <a href="#">Log in</a>
     </div>
     </div>
-
     <br/>
     <br/>
     <br/>

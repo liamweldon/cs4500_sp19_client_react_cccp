@@ -3,9 +3,9 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import serviceCategories from './data/service-categories.mock.json'
 import ServiceCategoryService from './services/ServiceCategoryService'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-
 import Admin from './components/Admin';
 import Home from './components/Home';
+import ServiceNavigatorContainer from './containers/ServiceNavigatorContainer'
 
 class App extends Component {
     constructor(props) {
@@ -21,6 +21,7 @@ class App extends Component {
             pillServiceCategories: serviceCategories
         }))
     }
+
     render() {
         return (
             <div className="container">
@@ -41,6 +42,9 @@ class App extends Component {
         path="/admin"
         exact
         component={Admin}/>
+        <Route path="/services" exact
+             render={() => <ServiceNavigatorContainer
+                            serviceCategoryService={this.serviceCategoryService}/>}/>
         </div>
         </Router>
     </div>
