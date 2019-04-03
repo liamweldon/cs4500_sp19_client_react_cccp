@@ -63,4 +63,4 @@ class ServiceQuestionDetails extends React.Component {
     }
 }
 
-export default ServiceQuestionDetails
+export default ServiceQuestionDetails;

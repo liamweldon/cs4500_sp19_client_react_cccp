@@ -1,9 +1,8 @@
 import React from 'react'
 import ServiceQuestionService from '../services/ServiceQuestionService';
 import ServiceService from "../services/ServiceService";
-import ServiceQuestions from './ServiceQuestions.js';
-import './table.scss';
-import {Link} from 'react-router-dom';
+import ServiceQuestions from '../components/ServiceQuestions.js';
+import '../components/table.scss';
 import {omit} from 'lodash';
 
 class ServiceQuestionsContainer extends React.Component {

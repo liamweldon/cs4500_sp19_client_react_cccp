@@ -1,5 +1,5 @@
 import React from "react";
-import UsersDetails from "./UserDetails";
+import UsersDetails from "../components/UserDetails";
 import UserService from "../services/UserService";
 
 class UsersDetailsContainer extends React.Component {

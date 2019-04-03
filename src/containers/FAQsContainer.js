@@ -1,8 +1,8 @@
 import React from 'react';
 import FAQService from '../services/FAQService';
-import './table.scss';
-import './FAQs.scss';
-import FAQs from './FAQs.js';
+import '../components/table.scss';
+import '../components/FAQs.scss';
+import FAQs from '../components/FAQs.js';
 import {omit} from 'lodash';
 
 class FAQsContainer extends React.Component {
