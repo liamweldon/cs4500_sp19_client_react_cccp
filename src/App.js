@@ -5,12 +5,7 @@ import ServiceCategoryService from './services/ServiceCategoryService'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Admin from './components/Admin';
 import Home from './components/Home';
-<<<<<<< HEAD
-import ServiceCategoryService from './services/ServiceCategoryService'
-import serviceCategories from './data/service-categories.mock.json'
 import ServiceNavigatorContainer from './containers/ServiceNavigatorContainer'
-=======
->>>>>>> 88932b70694cd4105e52aae7ec9a1e5b6c589a47
 
 class App extends Component {
     constructor(props) {
@@ -47,6 +42,9 @@ class App extends Component {
         path="/admin"
         exact
         component={Admin}/>
+        <Route path="/services" exact
+             render={() => <ServiceNavigatorContainer
+                            serviceCategoryService={this.serviceCategoryService}/>}/>
         </div>
         </Router>
     </div>
