@@ -6,7 +6,7 @@ const ServiceCards = ({services}) =>
             services.map(service =>
                 <div key={service.id}
                      className="card no-border col-6">
-                    <img src="https://picsum.photos/300/200"
+                    <img src={service.serviceImageUrl}
                          className="card-img-top"/>
                     <div className="card-body">
                         <p className="card-text">
