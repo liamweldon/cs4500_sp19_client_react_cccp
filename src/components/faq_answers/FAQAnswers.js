@@ -14,7 +14,7 @@ const FAQAnswers = ({ faqs, selectedQuestion, newAnswer, eventHandlers }) => {
             <td>Answer</td  >
             <td />
           </tr>
-          <tr key={-1}>
+          <tr className="faa-row" key={-1}>
             <td>
               <select
                 value={selectedQuestion}
