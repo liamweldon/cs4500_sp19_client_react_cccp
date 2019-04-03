@@ -4,8 +4,11 @@ import ServiceService from '../services/ServiceService';
 import ServiceCategoryService from '../services/ServiceCategoryService';
 import ServiceNavigatorContainer from '../containers/ServiceNavigatorContainer';
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
-import ServiceTabNavigator from './ServiceTabNavigator'
+import ServiceCategoryPills from './ServiceCategoryPills/ServiceCategoryPills'
+import serviceCategories from '../data/service-categories.mock.json'
+import ServiceTabNavigator from './ServiceTabNavigator/ServiceTabNavigator'
 
+<<<<<<< HEAD
 
 const Home = ({history, tabServiceCategories}) =>
     <div>
@@ -44,6 +47,17 @@ const Home = ({history, tabServiceCategories}) =>
         <ServiceTabNavigator serviceCategories={tabServiceCategories}/>
     </div>
 
-
+    <br/>
+    <br/>
+    <br/>
+    <div>
+    <ServiceCategoryPills serviceCategories={pillServiceCategories}/>
+</div>
+<br/>
+<br/>
+<br/>
+<ServiceTabNavigator
+serviceCategories={serviceCategories}/>
+</div>
 
 export default Home

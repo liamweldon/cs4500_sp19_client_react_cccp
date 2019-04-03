@@ -1,50 +1,57 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import serviceCategories from './data/service-categories.mock.json'
+import ServiceCategoryService from './services/ServiceCategoryService'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Admin from './components/Admin';
-import ProviderContainer from './containers/ProviderContainer';
 import Home from './components/Home';
+<<<<<<< HEAD
 import ServiceCategoryService from './services/ServiceCategoryService'
 import serviceCategories from './data/service-categories.mock.json'
 import ServiceNavigatorContainer from './containers/ServiceNavigatorContainer'
+=======
+>>>>>>> 88932b70694cd4105e52aae7ec9a1e5b6c589a47
 
 class App extends Component {
     constructor(props) {
         super(props)
         this.serviceCategoryService = ServiceCategoryService.getInstance()
         this.state = {
-            tabServiceCategories: serviceCategories
+            pillServiceCategories: serviceCategories
         }
     }
-
     componentDidMount() {
-        this.serviceCategoryService.findAllServiceCategories()
+        this.serviceCategoryService.findAllServiceCategories(4)
             .then(serviceCategories => this.setState({
-                tabServiceCategories: serviceCategories
-            }))
+            pillServiceCategories: serviceCategories
+        }))
     }
-  render() {
-    return (
-      <div className="container-fluid">
-        <h1>ServicesRus</h1>
-        <Router>
-          <div>
-            <Link to="/admin">Admin</Link> | <Link to="/provider">Provider</Link> | <Link to="/home">Home</Link> | <Link to="/services/">Services</Link>
-            <Route path="/admin" component={Admin} />
-            <Route path="/provider" exact component={ProviderContainer} />
-            <Route
-                path="/home"
-                exact
-                render={() =>
-                    <Home tabServiceCategories={this.state.tabServiceCategories}/>}/>
-            <Route path="/services/" exact
-             render={() => <ServiceNavigatorContainer
-                            serviceCategoryService={ServiceCategoryService.getInstance()}/>}/>
-              </div>
+
+    render() {
+        return (
+            <div className="container">
+            <Router>
+            <div>
+            <Link to="/home">Home</Link> |
+            <Link to="/services"> Services</Link> |
+            <Link to="/providers"> Providers</Link> |
+            <Link to="/admin"> Admin</Link> |
+            <br/>
+            <br/>
+            <br/>
+        <Route
+        path="/home"
+        exact
+        render={() => <Home pillServiceCategories={this.state.pillServiceCategories}/>}/>
+        <Route
+        path="/admin"
+        exact
+        component={Admin}/>
+        </div>
         </Router>
-      </div>
+    </div>
     );
-  }
+    }
 }
 
 export default App;
