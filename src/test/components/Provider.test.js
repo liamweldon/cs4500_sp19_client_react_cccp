@@ -1,18 +1,19 @@
 import React from 'react';
-import Provider from '../../components/Provider';
+import Provider from '../../components/Provider/Provider';
 import ProviderContainer from '../../containers/ProviderContainer';
 import renderer from 'react-test-renderer';
 import faasJson from '../mockData/faa.mock.json';
+import providerJson from '../mockData/provider.mock.json';
 import {StaticRouter} from 'react-router';
 import Enzyme, {mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 Enzyme.configure({adapter: new Adapter()});
 
-/*test('Provider Summary Snapshots', () => {
+test('Provider Summary Snapshots', () => {
   const component = renderer.create(
-    <StaticRouter location="/admin/faqs" context={{}}>
-      <Provider faqs={faasJson} editing={{}} newQuestion={{title: '', question: ''}} eventHandlers={{}} />
+    <StaticRouter location="/provider" context={{}}>
+      <Provider faas={faasJson} provider={providerJson} />
     </StaticRouter>
   );
   let tree = component.toJSON();
@@ -21,16 +22,18 @@ Enzyme.configure({adapter: new Adapter()});
 
 test('Provider summary DOM', () => {
   let wrapper = mount(
-    <StaticRouter location="/admin/faqs" context={{}}>
+    <StaticRouter location="/provider" context={{}}>
       <ProviderContainer />
     </StaticRouter>
   );
 
-  let faqsComponent = wrapper.find(ProviderContainer);
+  let providerComponent = wrapper.find(ProviderContainer);
 
-  faqsComponent.getProvider = jest.fn().mockReturnValue(faasJson);
+  providerComponent.getProvider = jest.fn().mockReturnValue(providerJson);
+  providerComponent.getFAAs = jest.fn().mockReturnValue(faasJson);
   wrapper.update();
-  faqsComponent.setState({faqs: faasJson});
+  providerComponent.setState({faas: faasJson});
+  providerComponent.setState({provider: providerJson});
 
   const firstFaqEditBtn = wrapper.find('.fa-pen-square').at(0);
   // there should be a row in the table for each FAQ
@@ -53,4 +56,3 @@ test('Provider summary DOM', () => {
       .find('input').length
   ).toEqual(2);
 });
-*/
