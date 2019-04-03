@@ -1,7 +1,8 @@
 import React from 'react'
 
-const ServiceCategoryList = ({categories}) => {
-   return (<ul className="list-group">
+const ServiceCategoryList = ({categories}) =>
+  <div style={{ position: "fixed"}}>
+   <ul className="list-group">
         {
             categories.map(serviceCategory =>
                 <li key={serviceCategory.id}
@@ -10,8 +11,8 @@ const ServiceCategoryList = ({categories}) => {
                 </li>
             )
         }
-    </ul>)
-}
+    </ul>
+  </div>
     
 
 export default ServiceCategoryList
