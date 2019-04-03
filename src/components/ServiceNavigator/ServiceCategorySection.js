@@ -1,7 +1,6 @@
 import React from 'react'
 import ServiceCards from './ServiceCards'
 const ServiceCategorySection = ({serviceCategory}) => {
-    console.log(serviceCategory);
     return (<div>
         <a id={serviceCategory.id}/>
         <h2>{serviceCategory.serviceCategoryName}</h2>
@@ -13,7 +12,7 @@ const ServiceCategorySection = ({serviceCategory}) => {
                         serviceCategory.services.map(service =>
                             <div key={service.id}
                                 className="col-6 list-group-item no-border">
-                                <a href="/providers"> {service.serviceName}</a>
+                                <a href="/provider"> {service.serviceName}</a>
                             </div>
                         )
                     }

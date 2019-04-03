@@ -21,7 +21,8 @@ const ServiceNavigator = ({categories}) =>
         <br/>
         <div className="row">
             <div className="col-3">
-                <ServiceCategoryList
+                <ServiceCategoryList 
+                    className="categories-list"
                     categories={categories}/>
             </div>
             <div className="col-9">

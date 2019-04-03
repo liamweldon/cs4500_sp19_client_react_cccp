@@ -10,14 +10,10 @@ export default class ServiceCategoryService {
     return this.instance;
   }
 
-  findCategoryById = categoryId =>
-    fetch(`${API_ROOT}/api/categories/${categoryId}/`).then(response =>
-      response.json()
-    );
-
-  findAllServiceCategories = () =>
-    fetch(`${API_ROOT}/api/categories`).then(response => response.json());
-
-  findAllServicesForCategory = (categoryId) =>
-     fetch(`${API_ROOT}/api/categories/${categoryId}/services/`).then(response => response.json());
+  findServiceCategoryById = categoryId =>
+      fetch(`${API_ROOT}/api/categories/${categoryId}`)
+          .then(response => response.json())
+  findAllServiceCategories = limit =>
+      fetch(`${API_ROOT}/api/categories`)
+          .then(response => response.json())
 }

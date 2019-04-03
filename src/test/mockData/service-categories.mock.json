@@ -1,6 +1,6 @@
 [
   {
-    "id": "123", "title": "Home Improvements",
+    "id": "123", "serviceCategoryName": "Home Improvements",
     "services": [
       {"id": "1", "title": "Appliance Installation"},
       {"id": "2", "title": "Cabinetry"},
@@ -129,7 +129,7 @@
     ]
   },
   {
-    "id": "345", "title": "Pets",
+    "id": "345", "serviceCategoryName": "Pets",
     "serviceProviders": [],
     "questions": [],
     "services": [

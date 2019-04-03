@@ -1,8 +1,6 @@
 import React from 'react'
 
 const ServiceCategoryList = ({categories}) => {
-   console.log("CATEGORIES");
-   console.log(categories);
    return (<ul className="list-group">
         {
             categories.map(serviceCategory =>
