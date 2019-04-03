@@ -35,24 +35,7 @@ test('Provider summary DOM', () => {
   providerComponent.setState({faas: faasJson});
   providerComponent.setState({provider: providerJson});
 
-  const firstFaqEditBtn = wrapper.find('.fa-pen-square').at(0);
-  // there should be a row in the table for each FAQ
-  expect(wrapper.find('.faq-row.existing').length).toEqual(faasJson.length);
-  expect(
-    wrapper
-      .find('.faq-row.existing')
-      .at(0)
-      .find('input').length
-  ).toEqual(0);
-
-  // click the pen icon to trigger edit mode for the first faq
-  firstFaqEditBtn.props().onClick();
-  wrapper.update();
-
-  expect(
-    wrapper
-      .find('.faq-row.existing')
-      .at(0)
-      .find('input').length
-  ).toEqual(2);
+  expect(wrapper.find('.provider .faq').length).toEqual(faasJson.length);
+  expect(wrapper.find('.provider .description').text()).toEqual(providerJson.description);
+  expect(wrapper.find('.provider .name').text()).toEqual(providerJson.firstName);
 });
