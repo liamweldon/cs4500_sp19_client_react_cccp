@@ -1,6 +1,6 @@
 import React from 'react';
 import FAQs from '../../components/FAQs';
-import FAQsContainer from '../../components/FAQsContainer';
+import FAQsContainer from '../../containers/FAQsContainer';
 import renderer from 'react-test-renderer';
 import faqsJson from '../mockData/faq.mock.json';
 import {StaticRouter} from 'react-router';
