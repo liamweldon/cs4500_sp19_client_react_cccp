@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Provider Summary Snapshots 1`] = `
+<div
+  className="provider"
+>
+  <div
+    className="row"
+  >
+    <ul
+      className="nav nav-pills"
+    >
+      <li
+        className="nav-item"
+      >
+        <a
+          className="nav-link"
+          href="#about"
+        >
+          About
+        </a>
+      </li>
+      <li
+        className="nav-item"
+      >
+        <a
+          className="nav-link"
+          href="#reviews"
+        >
+          Reviews
+        </a>
+      </li>
+      <li
+        className="nav-item"
+      >
+        <a
+          className="nav-link"
+          href="#faqs"
+        >
+          FAQs
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div
+    className="row"
+  >
+    <img
+      alt="car"
+      src="https://picsum.photos/150/150"
+    />
+    <h2
+      className="name"
+    >
+      demi
+    </h2>
+  </div>
+  <div
+    className="description row"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+  </div>
+  <div
+    className="row section"
+    id="about"
+  >
+    <div
+      className="col overview"
+    >
+      <h4>
+         Overview 
+      </h4>
+      <label>
+        <i
+          className="fa fa-trophy"
+        />
+        Hired 
+        3
+         times
+      </label>
+      <label>
+        <i
+          className="fa fa-lock"
+        />
+        Background checked
+      </label>
+      <label>
+        <i
+          className="fa fa-users"
+        />
+        9
+         Employees
+      </label>
+      <label>
+        <i
+          className="fa fa-briefcase"
+        />
+        2
+         Years in business
+      </label>
+    </div>
+    <div
+      className="col payment"
+    >
+      <h4>
+         Payment Methods 
+      </h4>
+    </div>
+  </div>
+  <div
+    className="section"
+    id="reviews"
+  >
+    <h4>
+       Reviews 
+    </h4>
+  </div>
+  <div
+    className="row"
+    id="faqs"
+  />
+  <h4>
+     FAQs 
+  </h4>
+  <div
+    className="faqs"
+  >
+    <div
+      className="faq"
+    >
+      <h5>
+        Do you offer discounted services?
+      </h5>
+      <div>
+        No
+      </div>
+    </div>
+    <div
+      className="faq"
+    >
+      <h5>
+        How many employees does your company have?
+      </h5>
+      <div>
+        80
+      </div>
+    </div>
+  </div>
+</div>
+`;
