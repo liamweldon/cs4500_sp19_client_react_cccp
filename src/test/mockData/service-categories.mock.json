@@ -1,6 +1,6 @@
 [
   {
-    "id": "123", "title": "Home Improvements",
+    "id": "123", "serviceCategoryName": "Home Improvements",
     "services": [
       {"id": "1", "title": "Appliance Installation"},
       {"id": "2", "title": "Cabinetry"},
@@ -129,72 +129,72 @@
     ]
   },
   {
-    "id": "345", "title": "Pets",
+    "id": "345", "serviceCategoryName": "Pets",
     "serviceProviders": [],
     "questions": [],
     "services": [
-      {"id": "1", "title": "Cat Grooming"},
-      {"id": "2", "title": "Dog Training"},
-      {"id": "3", "title": "Pet Boarding"},
-      {"id": "4", "title": "Pet Sitting"},
-      {"id": "5", "title": "Dog Walking"},
-      {
-        "id": "6",
-        "title": "Dog Grooming",
-        "serviceProviders": [
-          {
-            "title": "Lucky Dogs Daycare & Pet Spa",
-            "rating": 4.4,
-            "reviews": 21,
-            "yearsInBusiness": "7",
-            "hires": 17,
-            "latestReview": "This weekend we  took her for a two-hour play time followed by ...",
-            "price": "$35/Dog"
-          },
-          {
-            "title": "Zenful Pawz LLC",
-            "rating": 5,
-            "reviews": 1,
-            "yearsInBusiness": "1",
-            "hires": 3,
-            "latestReview": "! She’s the best! I know my little Betty is in great care. We have been to many groomers & this is the best yet! We will continue to visit Izzy!",
-            "price": "contact for price"
-          },
-          {
-            "title": "Fluff & Buff Boutique",
-            "rating": 4.8,
-            "reviews": 35,
-            "yearsInBusiness": "5",
-            "hires": 23,
-            "latestReview": "Kate really knows how to handle dogs. Her love of animals shines and she takes great pride in her work. My dog always looks great after her care.",
-            "price": "contact for price"
-          }
-        ],
-        "questions": [
-          {"id": "1", "question": "Dog size",
-            "questionType": "MULTIPLE-CHOICE",
-            "choices": [
-              {"id": "1", "title": "Extra small (1 - 15 lbs)"},
-              {"id": "2", "title": "Small (16 - 25 lbs)"},
-              {"id": "3", "title": "Medium (26 - 40 lbs)"},
-              {"id": "4", "title": "Large (41 - 70 lbs)"},
-              {"id": "5", "title": "Extra large (70+ lbs)"}
-            ]},
-          {"id": "2", "question": "Dog coat type",
-            "questionType": "MULTIPLE-CHOICE",
-            "choices": [
-              {"id": "1", "title": "Smooth, skin-like coat"},
-              {"id": "2", "title": "Wavy or curly coat"},
-              {"id": "3", "title": "Silky coat with fine hair"},
-              {"id": "4", "title": "Wiry, bristly coat"},
-              {"id": "5", "title": "Thick, fluffy double-coat"}
-            ]}
-        ]},
-      {"id": "7", "title": "Dog Daycare"},
-      {"id": "8", "title": "Aquarium Services"},
-      {"id": "9", "title": "Animal Training (Non-canine)"},
-      {"id": "10", "title": "Behavior Modification (Non-canine)"}
-    ]},
+    {"id": "1", "title": "Cat Grooming"},
+    {"id": "2", "title": "Dog Training"},
+    {"id": "3", "title": "Pet Boarding"},
+    {"id": "4", "title": "Pet Sitting"},
+    {"id": "5", "title": "Dog Walking"},
+    {
+      "id": "6",
+      "title": "Dog Grooming",
+      "serviceProviders": [
+        {
+          "title": "Lucky Dogs Daycare & Pet Spa",
+          "rating": 4.4,
+          "reviews": 21,
+          "yearsInBusiness": "7",
+          "hires": 17,
+          "latestReview": "This weekend we  took her for a two-hour play time followed by ...",
+          "price": "$35/Dog"
+        },
+        {
+          "title": "Zenful Pawz LLC",
+          "rating": 5,
+          "reviews": 1,
+          "yearsInBusiness": "1",
+          "hires": 3,
+          "latestReview": "! She’s the best! I know my little Betty is in great care. We have been to many groomers & this is the best yet! We will continue to visit Izzy!",
+          "price": "contact for price"
+        },
+        {
+          "title": "Fluff & Buff Boutique",
+          "rating": 4.8,
+          "reviews": 35,
+          "yearsInBusiness": "5",
+          "hires": 23,
+          "latestReview": "Kate really knows how to handle dogs. Her love of animals shines and she takes great pride in her work. My dog always looks great after her care.",
+          "price": "contact for price"
+        }
+      ],
+      "questions": [
+        {"id": "1", "question": "Dog size",
+          "questionType": "MULTIPLE-CHOICE",
+          "choices": [
+            {"id": "1", "title": "Extra small (1 - 15 lbs)"},
+            {"id": "2", "title": "Small (16 - 25 lbs)"},
+            {"id": "3", "title": "Medium (26 - 40 lbs)"},
+            {"id": "4", "title": "Large (41 - 70 lbs)"},
+            {"id": "5", "title": "Extra large (70+ lbs)"}
+          ]},
+        {"id": "2", "question": "Dog coat type",
+          "questionType": "MULTIPLE-CHOICE",
+          "choices": [
+            {"id": "1", "title": "Smooth, skin-like coat"},
+            {"id": "2", "title": "Wavy or curly coat"},
+            {"id": "3", "title": "Silky coat with fine hair"},
+            {"id": "4", "title": "Wiry, bristly coat"},
+            {"id": "5", "title": "Thick, fluffy double-coat"}
+          ]}
+      ]},
+    {"id": "7", "title": "Dog Daycare"},
+    {"id": "8", "title": "Aquarium Services"},
+    {"id": "9", "title": "Animal Training (Non-canine)"},
+    {"id": "10", "title": "Behavior Modification (Non-canine)"}
+  ]},
   {
     "id": "234", "title": "Wellness",
     "serviceProviders": [],
@@ -207,6 +207,31 @@
     "services": []},
   {
     "id": "567", "title": "Events",
+    "serviceProviders": [],
+    "questions": [],
+    "services": []},
+  {
+    "id": "678", "title": "Crafts",
+    "serviceProviders": [],
+    "questions": [],
+    "services": []},
+  {
+    "id": "789", "title": "Design and Web",
+    "serviceProviders": [],
+    "questions": [],
+    "services": []},
+  {
+    "id": "890", "title": "Legal",
+    "serviceProviders": [],
+    "questions": [],
+    "services": []},
+  {
+    "id": "987", "title": "Personal",
+    "serviceProviders": [],
+    "questions": [],
+    "services": []},
+  {
+    "id": "876", "title": "Photography",
     "serviceProviders": [],
     "questions": [],
     "services": []}

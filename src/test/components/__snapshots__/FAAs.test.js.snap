@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FAAs Summary Snapshots 1`] = `
+<div>
+  <h3>
+    Frequently Asked Questions Answers
+  </h3>
+  <table
+    className="table"
+  >
+    <tbody>
+      <tr
+        className="header-row"
+      >
+        <td>
+          Question
+        </td>
+        <td>
+          Answer
+        </td>
+        <td />
+      </tr>
+      <tr
+        className="faa-row"
+      >
+        <td>
+          <select
+            className="form-control"
+            value=""
+          >
+            <option
+              value={172}
+            >
+              Background Check
+            </option>
+            <option
+              value={192}
+            >
+              Employees
+            </option>
+            <option
+              value={232}
+            >
+              Games
+            </option>
+          </select>
+        </td>
+        <td>
+          <input
+            value=""
+          />
+        </td>
+        <td>
+          <button>
+            <i
+              className="fas fa-plus-square"
+            />
+          </button>
+        </td>
+        <td />
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
