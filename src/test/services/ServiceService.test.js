@@ -1,6 +1,6 @@
 import services from "../mockData/services.mock.json";
 import ServiceService from "../../services/ServiceService";
-import mockService from "./mocks/MockServiceService";
+import mockServiceService from "./mocks/MockServiceService";
 
 const test_new_service = {
   id: 555,
@@ -25,7 +25,7 @@ const serviceService = ServiceService.getInstance();
 
 // Mock the service here
 beforeAll(() => {
-  global.fetch = mockService(services);
+  global.fetch = mockServiceService(services);
 });
 
 test("Test that finding a specific service works properly", () => {
@@ -42,10 +42,13 @@ test("Test that finding a specific service works properly", () => {
 test("Test that finding all services works properly", () => {
   return serviceService.findAllServices().then(services => {
     expect(services).toBeDefined();
-    expect(services.length).toBe(3);
+    expect(services.length).toBe(6);
     expect(services[0].id).toBe(123);
     expect(services[1].id).toBe(234);
     expect(services[2].id).toBe(321);
+    expect(services[3].id).toBe(456);
+    expect(services[4].id).toBe(567);
+    expect(services[5].id).toBe(678);
   });
 });
 
@@ -55,15 +58,18 @@ test("Test that creation works properly", () => {
     expect(service.id).toBe(555);
 
     expect(services).toBeDefined();
-    expect(services).toHaveLength(4);
+    expect(services).toHaveLength(7);
     expect(services[0].id).toBe(123);
     expect(services[1].id).toBe(234);
     expect(services[2].id).toBe(321);
-    expect(services[3].id).toBe(555);
+    expect(services[3].id).toBe(456);
+    expect(services[4].id).toBe(567);
+    expect(services[5].id).toBe(678);
+    expect(services[6].id).toBe(555);
   });
 });
 
-test("Test that finding a specific service works properly", () => {
+test("Test that updating a specific service works properly", () => {
   return serviceService.updateService(test_update_service).then(service => {
     expect(service).toBeDefined();
 
@@ -76,9 +82,14 @@ test("Test that finding a specific service works properly", () => {
 test("Test that delete works properly", () => {
   return serviceService.deleteService(123).then(response => {
     expect(services).toBeDefined();
-    expect(services).toHaveLength(3);
+    expect(services).toHaveLength(6);
+    expect(services.length).toBe(6);
     expect(services[0].id).toBe(234);
     expect(services[1].id).toBe(321);
-    expect(services[2].id).toBe(555);
+    expect(services[2].id).toBe(456);
+    expect(services[3].id).toBe(567);
+    expect(services[4].id).toBe(678);
+    expect(services[5].id).toBe(555);
   });
 });
+
