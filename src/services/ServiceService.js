@@ -20,7 +20,7 @@ export default class ServiceService {
 
   createService = service => {
     delete service.id;
-    return fetch(`${API_ROOT}/api/services`, {
+    return fetch(`${API_ROOT}/api/services/`, {
       method: "post",
       body: JSON.stringify(service),
       headers: { "content-type": "application/json" }
@@ -28,7 +28,7 @@ export default class ServiceService {
   };
 
   updateService = service => {
-    return fetch(`${API_ROOT}/api/services/${service.id}`, {
+    return fetch(`${API_ROOT}/api/services/${service.id}/`, {
       method: "put",
       body: JSON.stringify(service),
       headers: { "content-type": "application/json" }
