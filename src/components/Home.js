@@ -18,10 +18,10 @@ const Home = ({history, pillServiceCategories}) =>
 <SearchBar history={history}/>
 </div>
 <div className="col-3 text-right">
-    <a href="#">Sign up</a>
+    <Link to="/register"> Sign Up</Link>
 </div>
 <div className="col-1">
-    <Link to="/login"> Login</Link> 
+    <Link to="/login"> Login</Link>
     </div>
     </div>
     <br/>
