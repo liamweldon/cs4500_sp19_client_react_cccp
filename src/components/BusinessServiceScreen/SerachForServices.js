@@ -4,20 +4,18 @@ class SearchForServices extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      services: props.services,
-      selectedServiceIds: props.selectedServiceIds
+      foundServices: []
     };
   }
 
   servicesFilter = event => {
-    const updatedServices = this.state.services.filter(
-      currentService =>
-        currentService.serviceName.includes(event.target.value) &&
-        !this.state.selectedServiceIds.includes(currentService.id)
+    const updatedServices = this.props.services.filter(currentService =>
+      currentService.serviceName.includes(event.target.value)
     );
+
     this.setState((prevState, props) => {
       return {
-        services: updatedServices
+        foundServices: updatedServices
       };
     });
   };
@@ -32,19 +30,19 @@ class SearchForServices extends React.Component {
       <div>
         <h4>Search For Services</h4>
         <input
-          type="tesxt"
+          type="text"
           className="form-control"
           placeholder="Service Name"
-          onChange={this.servicesFilter}
+          onChange={event => this.servicesFilter(event)}
         />
         <ul className="list-group">
-          {this.state.services.map(currentSelectedService => (
+          {this.state.foundServices.map(currentService => (
             <li
-              key={currentSelectedService.id}
+              key={currentService.id}
               className="list-group-item"
               style={selectedServiceStyle}
             >
-              <div>{currentSelectedService.serviceName}</div>
+              <div>{currentService.serviceName}</div>
               <i className="fa fa-check" />
             </li>
           ))}
