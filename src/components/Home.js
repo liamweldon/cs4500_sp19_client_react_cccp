@@ -21,7 +21,7 @@ const Home = ({history, pillServiceCategories}) =>
     <a href="#">Sign up</a>
 </div>
 <div className="col-1">
-    <a href="#">Log in</a>
+    <Link to="/login"> Login</Link> 
     </div>
     </div>
     <br/>
