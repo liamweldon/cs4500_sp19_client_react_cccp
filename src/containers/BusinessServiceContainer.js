@@ -84,6 +84,7 @@ class BusinessServiceContainer extends React.Component {
               selectedServices={this.state.services.filter(currentService =>
                 this.state.selectedServiceIds.includes(currentService.id)
               )}
+              clickedSelectedService={this.state.clickedSelectedService}
               removeFromSelectedServices={serviceId =>
                 this.removeFromSelectedServices(serviceId)
               }
@@ -94,7 +95,10 @@ class BusinessServiceContainer extends React.Component {
           </div>
           <div className="col-sm-7s">
             <ServiceQuestionAnswerSelect
-              clickedSelectedService={this.state.clickedSelectedService}
+              clickedSelectedService={this.state.services.find(
+                currService =>
+                  currService.id === this.state.clickedSelectedServices
+              )}
             />
           </div>
         </div>

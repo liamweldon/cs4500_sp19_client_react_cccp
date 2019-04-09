@@ -17,6 +17,7 @@ const SelectedServices = props => {
             key={currentSelectedService.id}
             className="list-group-item"
             style={serviceItemStyle}
+            active={props.clickedSelectedService === currentSelectedService.id}
           >
             <div
               onClick={() =>
