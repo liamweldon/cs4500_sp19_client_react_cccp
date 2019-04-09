@@ -8,6 +8,7 @@ import Home from './components/Home';
 import BusinessContainer from './containers/BusinessContainer';
 import ServiceNavigatorContainer from './containers/ServiceNavigatorContainer'
 import ProviderContainer from './containers/ProviderContainer'
+import Login from './components/Login/Login'
 
 class App extends Component {
     constructor(props) {
@@ -35,6 +36,7 @@ class App extends Component {
             <Link to="/provider"> Provider</Link> |
             <Link to="/business"> Business</Link> |
             <Link to="/admin"> Admin</Link>
+            <Link to="/login"> Login</Link> |
             <br/>
             <br/>
             <br/>
@@ -50,6 +52,11 @@ class App extends Component {
         path="/provider"
         exact
         component={ProviderContainer}/>
+        <Route
+        path="/login"
+        exact
+        render={() => <Login/>}
+        />
         <Route path="/services" exact
              render={() => <ServiceNavigatorContainer
                serviceCategoryService={this.serviceCategoryService}/>}/>
