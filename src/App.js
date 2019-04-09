@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
 import serviceCategories from "./data/service-categories.mock.json";
 import ServiceCategoryService from "./services/ServiceCategoryService";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
 import Admin from "./components/Admin";
 import Home from "./components/Home";
 import ServiceNavigatorContainer from "./containers/ServiceNavigatorContainer";
 import ProviderContainer from "./containers/ProviderContainer";
+import BusinessServiceContainer from "./containers/BusinessServiceContainer";
 
 class App extends Component {
   constructor(props) {
@@ -31,10 +34,17 @@ class App extends Component {
       <div className="container">
         <Router>
           <div>
-            <Link to="/home">Home</Link> |<Link to="/services"> Services</Link>{" "} | 
-            <Link to="/providers"> Providers</Link> |
-            <Link to="/provider"> Provider</Link> |
+            <Link to="/home">Home</Link>
+            <span> | </span>
+            <Link to="/services"> Services</Link>
+            <span> | </span>
+            <Link to="/providers"> Providers</Link>
+            <span> | </span>
+            <Link to="/provider"> Provider</Link>
+            <span> | </span>
             <Link to="/admin"> Admin</Link>
+            <span> | </span>
+            <Link to="/service-questions"> Service Questions</Link>
             <br />
             <br />
             <br />
@@ -57,6 +67,11 @@ class App extends Component {
                   serviceCategoryService={this.serviceCategoryService}
                 />
               )}
+            />
+            <Route
+              path="/service-questions"
+              exact
+              component={BusinessServiceContainer}
             />
           </div>
         </Router>
