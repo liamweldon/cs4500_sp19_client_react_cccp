@@ -8,18 +8,38 @@ class SearchForServices extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.setState((prevState, props) => {
-      return {
-        foundServices: props.services.slice(0, 5)
-      };
-    });
+  componentDidUpdate(prevProps) {
+    if (
+      prevProps.selectedServiceIds.length !=
+      this.props.selectedServiceIds.length
+    ) {
+      this.setState((prevState, props) => {
+        return {
+          foundServices: this.nonSelectedServices()
+        };
+      });
+    }
   }
 
-  servicesFilter = event => {
-    const updatedServices = this.props.services.filter(currentService =>
-      currentService.serviceName.includes(event.target.value)
-    );
+  nonSelectedServices() {
+    return this.props.selectedServiceIds.length === 0
+      ? this.props.services
+      : this.props.services.filter(
+          currentService =>
+            !this.props.selectedServiceIds.includes(currentService.id)
+        );
+  }
+
+  foundServicesFilter = event => {
+    const searchText = event.target.value;
+    const nonSelectedServices = this.nonSelectedServices();
+
+    const updatedServices =
+      searchText === ""
+        ? nonSelectedServices.slice(0, 5)
+        : nonSelectedServices.filter(currentService =>
+            currentService.serviceName.includes(searchText)
+          );
 
     this.setState((prevState, props) => {
       return {
@@ -41,7 +61,7 @@ class SearchForServices extends React.Component {
           type="text"
           className="form-control"
           placeholder="Service Name"
-          onChange={event => this.servicesFilter(event)}
+          onChange={event => this.foundServicesFilter(event)}
         />
         <ul className="list-group">
           {this.state.foundServices.map(currentService => (
@@ -51,7 +71,11 @@ class SearchForServices extends React.Component {
               style={selectedServiceStyle}
             >
               <div>{currentService.serviceName}</div>
-              <div onClick={() => this.props.selectService(currentService.id)}>
+              <div
+                onClick={() =>
+                  this.props.addToSelectedServices(currentService.id)
+                }
+              >
                 <i className="fa fa-check" />
               </div>
             </li>

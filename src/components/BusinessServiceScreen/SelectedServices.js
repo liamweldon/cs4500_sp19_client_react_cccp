@@ -1,24 +1,36 @@
 import React from "react";
 
 const SelectedServices = props => {
-  const selectedServiceStyle = {
+  const serviceItemStyle = {
     display: "flex",
     justifyContent: "space-between"
   };
+
+  const selectedServices = props.selectedServices;
 
   return (
     <div>
       <h4>Selected Services</h4>
       <ul className="list-group">
-        {props.selectedServices.map(currentSelectedService => (
+        {selectedServices.map(currentSelectedService => (
           <li
             key={currentSelectedService.id}
             className="list-group-item"
-            style={selectedServiceStyle}
+            style={serviceItemStyle}
           >
-            <div>{currentSelectedService.serviceName}</div>
-            <div onClick={() => props.selectService(currentSelectedService.id)}>
-              <i class="far fa-times" />
+            <div
+              onClick={() =>
+                props.clickASelectedService(currentSelectedService.id)
+              }
+            >
+              {currentSelectedService.serviceName}
+            </div>
+            <div
+              onClick={() =>
+                props.removeFromSelectedServices(currentSelectedService.id)
+              }
+            >
+              <i class="fa fa-times" />
             </div>
           </li>
         ))}
