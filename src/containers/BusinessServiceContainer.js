@@ -4,6 +4,8 @@ import SearchForServices from "../components/BusinessServiceScreen/SerachForServ
 import SelectedServices from "../components/BusinessServiceScreen/SelectedServices";
 import ServiceQuestionAnswerSelect from "../components/BusinessServiceScreen/ServiceQuestionAnswerSelect";
 
+import mockServices from "../components/BusinessServiceScreen/mockServices";
+
 class BusinessServiceContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -11,24 +13,31 @@ class BusinessServiceContainer extends React.Component {
 
     this.state = {
       services: [],
-      selectedServices: []
+      selectedServiceIds: []
     };
   }
 
   componentDidMount() {
-    console.log("business container mounted");
     this.setState((prevState, props) => {
       return {
-        services: this.serviceService.findAllServices(),
-        selectedServices: []
+        services: mockServices
       };
     });
+    /*
+    this.serviceService.findAllServices().then(services =>
+      this.setState((prevState, props) => {
+        return {
+          services: services
+        };
+      })
+    );
+    */
   }
 
   selectService = serviceId => {
     this.setState((prevState, props) => {
       return {
-        selectedServices: prevState.selectedServices.push(serviceId)
+        selectedServiceIds: prevState.selectedServiceIds.push(serviceId)
       };
     });
   };
@@ -36,7 +45,7 @@ class BusinessServiceContainer extends React.Component {
   deselectService = serviceId => {
     this.setState((prevState, props) => {
       return {
-        selectedServices: prevState.filter(
+        selectedServiceIds: prevState.filter(
           currentServiceId => currentServiceId !== serviceId
         )
       };
@@ -47,27 +56,28 @@ class BusinessServiceContainer extends React.Component {
     return (
       <div className="container-fluid">
         <div className="row">
-          <div className="col-sm-4">
+          <div className="col-sm-5">
             <SearchForServices
               services={this.state.services}
-              selectedServices={this.state.selectedServices}
+              selectedServiceIds={this.state.selectedServiceIds}
               selectService={() => this.selectService()}
               deselectService={() => this.deselectService()}
             />
-            <div class="w-100">
+            <div className="w-100">
               <br />
             </div>
             <SelectedServices
-              services={this.state.services}
-              selectedServices={this.state.selectedServices}
+              selectedServices={this.state.services.filter(currentService =>
+                this.state.selectedServiceIds.includes(currentService.id)
+              )}
               selectService={() => this.selectService()}
               deselectService={() => this.deselectService()}
             />
           </div>
-          <div className="col-sm-8">
+          <div className="col-sm-7s">
             <ServiceQuestionAnswerSelect
               services={this.state.services}
-              selectedServices={this.state.selectedServices}
+              selectedServiceIds={this.state.selectedServiceIds}
             />
           </div>
         </div>
