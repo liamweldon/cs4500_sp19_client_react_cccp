@@ -1,8 +1,6 @@
 import React from "react";
 
 const SelectedServices = props => {
-  const selectedServices = props.selectedServices;
-
   const selectedServiceStyle = {
     display: "flex",
     justifyContent: "space-between"
@@ -12,14 +10,16 @@ const SelectedServices = props => {
     <div>
       <h4>Selected Services</h4>
       <ul className="list-group">
-        {selectedServices.map(currentSelectedService => (
+        {props.selectedServices.map(currentSelectedService => (
           <li
             key={currentSelectedService.id}
             className="list-group-item"
             style={selectedServiceStyle}
           >
             <div>{currentSelectedService.serviceName}</div>
-            <i class="far fa-times" />
+            <div onClick={() => props.selectService(currentSelectedService.id)}>
+              <i class="far fa-times" />
+            </div>
           </li>
         ))}
       </ul>

@@ -1,6 +1,6 @@
 import React from "react";
 import ServiceService from "../services/ServiceService";
-import SearchForServices from "../components/BusinessServiceScreen/SerachForServices";
+import SearchForServices from "../components/BusinessServiceScreen/SearchForServices";
 import SelectedServices from "../components/BusinessServiceScreen/SelectedServices";
 import ServiceQuestionAnswerSelect from "../components/BusinessServiceScreen/ServiceQuestionAnswerSelect";
 
@@ -13,7 +13,7 @@ class BusinessServiceContainer extends React.Component {
 
     this.state = {
       services: [],
-      selectedServiceIds: []
+      selectedServiceIds: [-1]
     };
   }
 
@@ -35,24 +35,35 @@ class BusinessServiceContainer extends React.Component {
   }
 
   selectService = serviceId => {
-    this.setState((prevState, props) => {
-      return {
-        selectedServiceIds: prevState.selectedServiceIds.push(serviceId)
-      };
-    });
+    if (!this.state.selectedServiceIds.includes(serviceId)) {
+      this.setState((prevState, props) => {
+        return {
+          selectedServiceIds: prevState.selectedServiceIds.push(serviceId)
+        };
+      });
+    }
   };
 
   deselectService = serviceId => {
-    this.setState((prevState, props) => {
-      return {
-        selectedServiceIds: prevState.filter(
-          currentServiceId => currentServiceId !== serviceId
-        )
-      };
-    });
+    if (this.state.selectedServiceIds.includes(serviceId)) {
+      this.setState((prevState, props) => {
+        return {
+          selectedServiceIds: prevState.selectedServiceIds.filter(
+            currentServiceId => currentServiceId !== serviceId
+          )
+        };
+      });
+    }
   };
 
   render() {
+    const selectedServices = this.state.services.filter(currentService => {
+      // why the FUCK is this a number
+      // @TODO
+      console.log(this.state.selectedServiceIds);
+      return this.state.selectedServiceIds.includes(currentService.id);
+    });
+
     return (
       <div className="container-fluid">
         <div className="row">
@@ -60,18 +71,14 @@ class BusinessServiceContainer extends React.Component {
             <SearchForServices
               services={this.state.services}
               selectedServiceIds={this.state.selectedServiceIds}
-              selectService={() => this.selectService()}
-              deselectService={() => this.deselectService()}
+              selectService={serviceId => this.selectService(serviceId)}
             />
             <div className="w-100">
               <br />
             </div>
             <SelectedServices
-              selectedServices={this.state.services.filter(currentService =>
-                this.state.selectedServiceIds.includes(currentService.id)
-              )}
-              selectService={() => this.selectService()}
-              deselectService={() => this.deselectService()}
+              selectedServices={selectedServices}
+              deselectService={serviceId => this.deselectService(serviceId)}
             />
           </div>
           <div className="col-sm-7s">

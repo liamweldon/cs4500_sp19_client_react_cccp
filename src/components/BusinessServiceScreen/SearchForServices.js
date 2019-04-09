@@ -8,6 +8,14 @@ class SearchForServices extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.setState((prevState, props) => {
+      return {
+        foundServices: props.services.slice(0, 5)
+      };
+    });
+  }
+
   servicesFilter = event => {
     const updatedServices = this.props.services.filter(currentService =>
       currentService.serviceName.includes(event.target.value)
@@ -43,7 +51,9 @@ class SearchForServices extends React.Component {
               style={selectedServiceStyle}
             >
               <div>{currentService.serviceName}</div>
-              <i className="fa fa-check" />
+              <div onClick={() => this.props.selectService(currentService.id)}>
+                <i className="fa fa-check" />
+              </div>
             </li>
           ))}
         </ul>
