@@ -9,6 +9,7 @@ import ServiceNavigatorContainer from './containers/ServiceNavigatorContainer'
 import ProviderContainer from './containers/ProviderContainer'
 import Login from './components/Login/Login'
 import Register from './components/Register'
+import Profile from './components/Profile'
 
 class App extends Component {
     constructor(props) {
@@ -37,6 +38,7 @@ class App extends Component {
             <Link to="/admin"> Admin</Link>  |
             <Link to="/login"> Login</Link> |
             <Link to="/register"> Sign Up</Link> |
+            <Link to="/profile"> Profile</Link>
             <br/>
             <br/>
             <br/>
@@ -61,6 +63,11 @@ class App extends Component {
         path="/register"
         exact
         render={() => <Register/>}
+        />
+        <Route
+        path="/profile"
+        exact
+        render={() => <Profile/>}
         />
         <Route path="/services" exact
              render={() => <ServiceNavigatorContainer
