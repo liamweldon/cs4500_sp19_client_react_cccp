@@ -13,16 +13,12 @@ class BusinessServiceContainer extends React.Component {
 
     this.state = {
       services: [],
-      selectedServiceIds: [-1]
+      selectedServiceIds: [],
+      clickedSelectedService: undefined
     };
   }
 
   componentDidMount() {
-    this.setState((prevState, props) => {
-      return {
-        services: mockServices
-      };
-    });
     /*
     this.serviceService.findAllServices().then(services =>
       this.setState((prevState, props) => {
@@ -32,19 +28,24 @@ class BusinessServiceContainer extends React.Component {
       })
     );
     */
+    this.setState((prevState, props) => {
+      return {
+        services: mockServices
+      };
+    });
   }
 
-  selectService = serviceId => {
+  addToSelectedServices = serviceId => {
     if (!this.state.selectedServiceIds.includes(serviceId)) {
       this.setState((prevState, props) => {
         return {
-          selectedServiceIds: prevState.selectedServiceIds.push(serviceId)
+          selectedServiceIds: [...prevState.selectedServiceIds, serviceId]
         };
       });
     }
   };
 
-  deselectService = serviceId => {
+  removeFromSelectedServices = serviceId => {
     if (this.state.selectedServiceIds.includes(serviceId)) {
       this.setState((prevState, props) => {
         return {
@@ -56,14 +57,15 @@ class BusinessServiceContainer extends React.Component {
     }
   };
 
-  render() {
-    const selectedServices = this.state.services.filter(currentService => {
-      // why the FUCK is this a number
-      // @TODO
-      console.log(this.state.selectedServiceIds);
-      return this.state.selectedServiceIds.includes(currentService.id);
+  clickASelectedService = serviceId => {
+    this.setState((prevState, props) => {
+      return {
+        clickedSelectedService: serviceId
+      };
     });
+  };
 
+  render() {
     return (
       <div className="container-fluid">
         <div className="row">
@@ -71,20 +73,28 @@ class BusinessServiceContainer extends React.Component {
             <SearchForServices
               services={this.state.services}
               selectedServiceIds={this.state.selectedServiceIds}
-              selectService={serviceId => this.selectService(serviceId)}
+              addToSelectedServices={serviceId =>
+                this.addToSelectedServices(serviceId)
+              }
             />
             <div className="w-100">
               <br />
             </div>
             <SelectedServices
-              selectedServices={selectedServices}
-              deselectService={serviceId => this.deselectService(serviceId)}
+              selectedServices={this.state.services.filter(currentService =>
+                this.state.selectedServiceIds.includes(currentService.id)
+              )}
+              removeFromSelectedServices={serviceId =>
+                this.removeFromSelectedServices(serviceId)
+              }
+              clickASelectedService={serviceId =>
+                this.clickASelectedService(serviceId)
+              }
             />
           </div>
           <div className="col-sm-7s">
             <ServiceQuestionAnswerSelect
-              services={this.state.services}
-              selectedServiceIds={this.state.selectedServiceIds}
+              clickedSelectedService={this.state.clickedSelectedService}
             />
           </div>
         </div>
