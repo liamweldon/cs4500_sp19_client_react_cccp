@@ -34,7 +34,7 @@ class App extends Component {
             <Link to="/home">Home</Link> |
             <Link to="/services"> Services</Link> |
             <Link to="/providers"> Providers</Link> |
-            <Link to="/provider"> Provider</Link> |
+            <Link to="/provider/522"> Provider</Link> |
             <Link to="/business"> Business</Link> |
             <Link to="/admin"> Admin</Link>  |
             <Link to="/login"> Login</Link> |
@@ -50,8 +50,7 @@ class App extends Component {
         path="/admin"
         exact
           component={Admin}/>
-        <Route
-        path="/provider"
+        <Route path="/provider/:id"
         exact
         component={ProviderContainer}/>
         <Route

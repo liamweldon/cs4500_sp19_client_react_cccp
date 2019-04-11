@@ -14,8 +14,8 @@ class ProviderContainer extends React.Component {
   }
 
   getProvider = () => {
-    // TODO in the future, we will find by the ID in the path
-    this.userService.findUserById('522').then((provider) => {
+  const id = this.props.match.params.id;
+    this.userService.findUserById(id).then((provider) => {
       if (provider) {
         this.setState({
           provider
@@ -25,8 +25,8 @@ class ProviderContainer extends React.Component {
   };
 
   getFAAs = () => {
-    // in the future, we will find by the provider's ID in the path
-    this.faaService.findFAAsByUser('522').then((faas) => {
+    const id = this.props.match.params.id;
+    this.faaService.findFAAsByUser(id).then((faas) => {
       if (faas) {
         this.setState({
           faas
