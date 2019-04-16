@@ -37,7 +37,8 @@ class App extends Component {
             <Link to="/provider"> Provider</Link> |
             <Link to="/admin"> Admin</Link>  |
             <Link to="/login"> Login</Link> |
-            <Link to="/register"> Sign Up</Link>
+            <Link to="/register"> Sign Up</Link> |
+            <Link to="/profile"> Profile</Link>
             <br/>
             <br/>
             <br/>
@@ -62,6 +63,11 @@ class App extends Component {
         path="/register"
         exact
         render={() => <Register/>}
+        />
+        <Route
+        path="/profile"
+        exact
+        render={() => <Profile/>}
         />
         <Route path="/services" exact
              render={() => <ServiceNavigatorContainer
