@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+ import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import serviceCategories from './data/service-categories.mock.json'
 import ServiceCategoryService from './services/ServiceCategoryService'
@@ -36,9 +36,7 @@ class App extends Component {
             <Link to="/providers"> Providers</Link> |
             <Link to="/provider"> Provider</Link> |
             <Link to="/admin"> Admin</Link>  |
-            <Link to="/login"> Login</Link> |
-            <Link to="/register"> Sign Up</Link> |
-            <Link to="/profile"> Profile</Link>
+            <Link to="/login"> Login</Link>
             <br/>
             <br/>
             <br/>
@@ -63,11 +61,6 @@ class App extends Component {
         path="/register"
         exact
         render={() => <Register/>}
-        />
-        <Route
-        path="/profile"
-        exact
-        render={() => <Profile/>}
         />
         <Route path="/services" exact
              render={() => <ServiceNavigatorContainer
