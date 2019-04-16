@@ -1,15 +1,18 @@
-import React, {Component} from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import serviceCategories from './data/service-categories.mock.json'
-import ServiceCategoryService from './services/ServiceCategoryService'
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import Admin from './components/Admin';
-import Home from './components/Home';
-import BusinessContainer from './containers/BusinessContainer';
-import ServiceNavigatorContainer from './containers/ServiceNavigatorContainer'
-import ProviderContainer from './containers/ProviderContainer'
-import Login from './components/Login/Login'
-import Register from './components/Register'
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+import Home from "./components/Home";
+import Admin from "./components/Admin";
+import ServiceNavigatorContainer from "./containers/ServiceNavigatorContainer";
+import ProviderContainer from "./containers/ProviderContainer";
+import BusinessServiceContainer from "./containers/BusinessServiceContainer";
+import BusinessContainer from "./containers/BusinessContainer";
+import Login from "./components/Login/Login";
+import Register from "./components/Register";
+
+import serviceCategories from "./data/service-categories.mock.json";
+import ServiceCategoryService from "./services/ServiceCategoryService";
 
 class App extends Component {
   constructor(props) {
