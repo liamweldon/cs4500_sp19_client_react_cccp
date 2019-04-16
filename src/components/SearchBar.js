@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 const Result = ({results}) => {
   return results.map(serv => <div className="serviceRow" key={serv.id}>
     <div>
-      <div className="row">
+      <div className="row resultRow">
         <div className="col-5">
           <a href={"/admin/services/" + serv.id}>{serv.serviceName}</a>
         </div>
