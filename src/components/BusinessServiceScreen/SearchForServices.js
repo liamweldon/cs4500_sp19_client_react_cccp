@@ -4,21 +4,28 @@ class SearchForServices extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      foundServices: []
+      foundServices: [],
+      searchValue: ""
     };
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, prevState) {
     if (
-      prevProps.selectedServiceIds.length !=
-      this.props.selectedServiceIds.length
+      prevProps.selectedServiceIds.length !==
+        this.props.selectedServiceIds.length ||
+      prevState.searchValue !== this.state.searchValue
     ) {
-      this.setState((prevState, props) => {
-        return {
-          foundServices: this.nonSelectedServices()
-        };
-      });
+      this.foundServicesFilter();
     }
+  }
+
+  updateSearchValue(event) {
+    const updatedSearchValue = event.target.value ? event.target.value : "";
+    this.setState((prevState, prevProps) => {
+      return {
+        searchValue: updatedSearchValue
+      };
+    });
   }
 
   nonSelectedServices() {
@@ -30,15 +37,17 @@ class SearchForServices extends React.Component {
         );
   }
 
-  foundServicesFilter = event => {
-    const searchText = event.target.value;
+  foundServicesFilter = () => {
+    const searchValue = this.state.searchValue;
     const nonSelectedServices = this.nonSelectedServices();
 
     const updatedServices =
-      searchText === ""
+      searchValue === ""
         ? nonSelectedServices.slice(0, 5)
         : nonSelectedServices.filter(currentService =>
-            currentService.serviceName.includes(searchText)
+            currentService.serviceName
+              .toLowerCase()
+              .includes(searchValue.toLowerCase())
           );
 
     this.setState((prevState, props) => {
@@ -59,9 +68,9 @@ class SearchForServices extends React.Component {
         <h4>Search For Services</h4>
         <input
           type="text"
-          className="form-control"
+          className="form-control search-box-services"
           placeholder="Service Name"
-          onChange={event => this.foundServicesFilter(event)}
+          onChange={event => this.updateSearchValue(event)}
         />
         <ul className="list-group">
           {this.state.foundServices.map(currentService => (

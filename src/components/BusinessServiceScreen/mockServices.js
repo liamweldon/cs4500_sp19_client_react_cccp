@@ -5,7 +5,21 @@ const mockService = [
     serviceDescription: "Cleaning for your house!",
     providers: [],
     serviceCategories: [],
-    serviceQuestions: []
+    serviceQuestions: [
+      {
+        id: "1",
+        question: "Number of bedrooms",
+        questionType: "MULTIPLE-CHOICE",
+        choices: [
+          { id: "1", title: "1 bedroom" },
+          { id: "2", title: "2 bedroom" },
+          { id: "3", title: "3 bedroom" },
+          { id: "4", title: "4 bedroom" },
+          { id: "5", title: "5 bedroom" },
+          { id: "6", title: "6 bedroom" }
+        ]
+      }
+    ]
   },
   {
     id: 234,
@@ -13,7 +27,21 @@ const mockService = [
     serviceDescription: "Painting for your home!",
     providers: [],
     serviceCategories: [],
-    serviceQuestions: []
+    serviceQuestions: [
+      {
+        id: "2",
+        question: "Number of bathrooms",
+        questionType: "MULTIPLE-CHOICE",
+        choices: [
+          { id: "1", title: "1 bathroom" },
+          { id: "2", title: "2 bathroom" },
+          { id: "3", title: "3 bathroom" },
+          { id: "4", title: "4 bathroom" },
+          { id: "5", title: "5 bathroom" },
+          { id: "6", title: "6 bathroom" }
+        ]
+      }
+    ]
   },
   {
     id: 321,
@@ -21,7 +49,18 @@ const mockService = [
     serviceDescription: "Algebra or calculus?",
     providers: [],
     serviceCategories: [],
-    serviceQuestions: []
+    serviceQuestions: [
+      {
+        id: "3",
+        question: "Cleaning type",
+        questionType: "MULTIPLE-CHOICE",
+        choices: [
+          { id: "1", title: "Standard cleaning" },
+          { id: "2", title: "Deep cleaning" },
+          { id: "3", title: "Move out cleaning" }
+        ]
+      }
+    ]
   },
   {
     id: 456,
@@ -29,7 +68,34 @@ const mockService = [
     serviceDescription: "Test1!",
     providers: [],
     serviceCategories: [],
-    serviceQuestions: []
+    serviceQuestions: [
+      {
+        id: "1",
+        question: "Number of bedrooms",
+        questionType: "MULTIPLE-CHOICE",
+        choices: [
+          { id: "1", title: "1 bedroom" },
+          { id: "2", title: "2 bedroom" },
+          { id: "3", title: "3 bedroom" },
+          { id: "4", title: "4 bedroom" },
+          { id: "5", title: "5 bedroom" },
+          { id: "6", title: "6 bedroom" }
+        ]
+      },
+      {
+        id: "2",
+        question: "Number of bathrooms",
+        questionType: "MULTIPLE-CHOICE",
+        choices: [
+          { id: "1", title: "1 bathroom" },
+          { id: "2", title: "2 bathroom" },
+          { id: "3", title: "3 bathroom" },
+          { id: "4", title: "4 bathroom" },
+          { id: "5", title: "5 bathroom" },
+          { id: "6", title: "6 bathroom" }
+        ]
+      }
+    ]
   },
   {
     id: 567,
@@ -37,7 +103,29 @@ const mockService = [
     serviceDescription: "Test2!",
     providers: [],
     serviceCategories: [],
-    serviceQuestions: []
+    serviceQuestions: [
+      {
+        id: "3",
+        question: "Cleaning type",
+        questionType: "MULTIPLE-CHOICE",
+        choices: [
+          { id: "1", title: "Standard cleaning" },
+          { id: "2", title: "Deep cleaning" },
+          { id: "3", title: "Move out cleaning" }
+        ]
+      },
+      {
+        id: "4",
+        question: "Extra services",
+        questionType: "MULTIPLE-ANSWER",
+        choices: [
+          { id: "1", title: "Fridge cleaning" },
+          { id: "2", title: "Oven cleaning" },
+          { id: "3", title: "Window cleaning" },
+          { id: "4", title: "Laundry" }
+        ]
+      }
+    ]
   },
   {
     id: 678,
@@ -45,7 +133,30 @@ const mockService = [
     serviceDescription: "Test3!",
     providers: [],
     serviceCategories: [],
-    serviceQuestions: []
+    serviceQuestions: [
+      {
+        id: "4",
+        question: "Extra services",
+        questionType: "MULTIPLE-ANSWER",
+        choices: [
+          { id: "1", title: "Fridge cleaning" },
+          { id: "2", title: "Oven cleaning" },
+          { id: "3", title: "Window cleaning" },
+          { id: "4", title: "Laundry" }
+        ]
+      },
+      {
+        id: "5",
+        question: "Frequency",
+        questionType: "MULTIPLE-CHOICE",
+        choices: [
+          { id: "1", title: "Just once" },
+          { id: "2", title: "Every week" },
+          { id: "3", title: "Every 2 weeks" },
+          { id: "4", title: "Once a month" }
+        ]
+      }
+    ]
   }
 ];
 

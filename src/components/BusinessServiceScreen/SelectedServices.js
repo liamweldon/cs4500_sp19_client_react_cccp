@@ -7,34 +7,41 @@ const SelectedServices = props => {
   };
 
   const selectedServices = props.selectedServices;
+  const clickedSelectedService = props.clickedSelectedService;
 
   return (
     <div>
       <h4>Selected Services</h4>
       <ul className="list-group">
-        {selectedServices.map(currentSelectedService => (
-          <li
-            key={currentSelectedService.id}
-            className="list-group-item"
-            style={serviceItemStyle}
-            active={props.clickedSelectedService === currentSelectedService.id}
-          >
-            <div
-              onClick={() =>
-                props.clickASelectedService(currentSelectedService.id)
+        {selectedServices.map(mappedSelectedService => {
+          let listItemIsActive = "list-group-item";
+          if (clickedSelectedService === mappedSelectedService.id) {
+            listItemIsActive += " active";
+          }
+
+          return (
+            <li
+              key={mappedSelectedService.id}
+              className={listItemIsActive}
+              style={serviceItemStyle}
+              onClick={e =>
+                props.clickASelectedService(mappedSelectedService.id)
               }
             >
-              {currentSelectedService.serviceName}
-            </div>
-            <div
-              onClick={() =>
-                props.removeFromSelectedServices(currentSelectedService.id)
-              }
-            >
-              <i class="fa fa-times" />
-            </div>
-          </li>
-        ))}
+              <div>
+                {mappedSelectedService.serviceName}, {mappedSelectedService.id}
+              </div>
+              <div
+                onClick={e => {
+                  e.stopPropagation();
+                  props.removeFromSelectedServices(mappedSelectedService.id);
+                }}
+              >
+                <i class="fa fa-times" />
+              </div>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

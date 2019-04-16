@@ -46,15 +46,25 @@ class BusinessServiceContainer extends React.Component {
   };
 
   removeFromSelectedServices = serviceId => {
-    if (this.state.selectedServiceIds.includes(serviceId)) {
-      this.setState((prevState, props) => {
-        return {
-          selectedServiceIds: prevState.selectedServiceIds.filter(
-            currentServiceId => currentServiceId !== serviceId
-          )
-        };
-      });
-    }
+    let updatedSelectedServiceIds;
+    let updatedClickedSelectedService;
+
+    this.setState((prevState, props) => {
+      if (prevState.selectedServiceIds.includes(serviceId)) {
+        updatedSelectedServiceIds = prevState.selectedServiceIds.filter(
+          currentServiceId => currentServiceId !== serviceId
+        );
+      }
+      updatedClickedSelectedService =
+        prevState.clickedSelectedService === serviceId
+          ? undefined
+          : prevState.clickedSelectedService;
+
+      return {
+        selectedServiceIds: updatedSelectedServiceIds,
+        clickedSelectedService: updatedClickedSelectedService
+      };
+    });
   };
 
   clickASelectedService = serviceId => {
@@ -93,11 +103,11 @@ class BusinessServiceContainer extends React.Component {
               }
             />
           </div>
-          <div className="col-sm-7s">
+          <div className="col-sm-7">
             <ServiceQuestionAnswerSelect
               clickedSelectedService={this.state.services.find(
                 currService =>
-                  currService.id === this.state.clickedSelectedServices
+                  currService.id === this.state.clickedSelectedService
               )}
             />
           </div>

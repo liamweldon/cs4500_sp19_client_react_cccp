@@ -1,38 +1,30 @@
 import React from "react";
 
 const ServiceQuestionAnswerSelect = props => {
-  const clickedService = props.clickedSelectedService;
-
   const serviceItemStyle = {
     display: "flex",
     justifyContent: "space-between"
   };
 
-  const questionsAnswers = () =>
-    clickedService ? (
-      <div>
-        <div>{clickedService.serviceName}</div>
-        <div>
-          <i class="fa fa-times" />
-        </div>
-      </div>
-    ) : (
-      <div>
-        <div>No service...</div>
-        <div>
-          <i class="fa fa-times" />
-        </div>
-      </div>
-    );
+  const clickedService = props.clickedSelectedService;
+
+  const questionsAnswers = () => {
+    if (clickedService !== undefined) {
+      return (
+        <li className="list-group-item" style={serviceItemStyle}>
+          <div>{clickedService.serviceName}</div>
+          <div>
+            <i class="fa fa-times" />
+          </div>
+        </li>
+      );
+    }
+  };
 
   return (
     <div>
       <h4>Service Question Answer Select</h4>
-      <ul className="list-group">
-        <li className="list-group-item" style={serviceItemStyle}>
-          {questionsAnswers()}
-        </li>
-      </ul>
+      <ul className="list-group">{questionsAnswers()}</ul>
     </div>
   );
 };
