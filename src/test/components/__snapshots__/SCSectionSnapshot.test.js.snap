@@ -1,0 +1,461 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rerender works properly 1`] = `
+<div>
+  <a
+    id="123"
+  />
+  <h2>
+    Home Improvements
+  </h2>
+  <div>
+    <div
+      className="row"
+    >
+      <div
+        className="card no-border col-6"
+      >
+        <img
+          className="card-img-top"
+        />
+        <div
+          className="card-body"
+        >
+          <p
+            className="card-text"
+          >
+            <a
+              href="/provider"
+            >
+               
+              Appliance Installation
+            </a>
+          </p>
+        </div>
+      </div>
+      <div
+        className="card no-border col-6"
+      >
+        <img
+          className="card-img-top"
+        />
+        <div
+          className="card-body"
+        >
+          <p
+            className="card-text"
+          >
+            <a
+              href="/provider"
+            >
+               
+              Cabinetry
+            </a>
+          </p>
+        </div>
+      </div>
+      <div
+        className="card no-border col-6"
+      >
+        <img
+          className="card-img-top"
+        />
+        <div
+          className="card-body"
+        >
+          <p
+            className="card-text"
+          >
+            <a
+              href="/provider"
+            >
+               
+              Door Installation
+            </a>
+          </p>
+        </div>
+      </div>
+      <div
+        className="card no-border col-6"
+      >
+        <img
+          className="card-img-top"
+        />
+        <div
+          className="card-body"
+        >
+          <p
+            className="card-text"
+          >
+            <a
+              href="/provider"
+            >
+               
+              Concrete Removal
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Appliance Installation
+        </a>
+      </div>
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Cabinetry
+        </a>
+      </div>
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Door Installation
+        </a>
+      </div>
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Concrete Removal
+        </a>
+      </div>
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Dishwasher Installation
+        </a>
+      </div>
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Finish Carpentry
+        </a>
+      </div>
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Floor Polishing
+        </a>
+      </div>
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Furniture Assembly
+        </a>
+      </div>
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Generator Installation
+        </a>
+      </div>
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Gardening
+        </a>
+      </div>
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Home Organizing
+        </a>
+      </div>
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Electrical and Wiring Repair
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Rerender works properly 2`] = `
+<div>
+  <a
+    id="123"
+  />
+  <h2>
+    Home Improvements
+  </h2>
+  <div>
+    <div
+      className="row"
+    >
+      <div
+        className="card no-border col-6"
+      >
+        <img
+          className="card-img-top"
+        />
+        <div
+          className="card-body"
+        >
+          <p
+            className="card-text"
+          >
+            <a
+              href="/provider"
+            >
+               
+              Appliance Installation
+            </a>
+          </p>
+        </div>
+      </div>
+      <div
+        className="card no-border col-6"
+      >
+        <img
+          className="card-img-top"
+        />
+        <div
+          className="card-body"
+        >
+          <p
+            className="card-text"
+          >
+            <a
+              href="/provider"
+            >
+               
+              Cabinetry
+            </a>
+          </p>
+        </div>
+      </div>
+      <div
+        className="card no-border col-6"
+      >
+        <img
+          className="card-img-top"
+        />
+        <div
+          className="card-body"
+        >
+          <p
+            className="card-text"
+          >
+            <a
+              href="/provider"
+            >
+               
+              Door Installation
+            </a>
+          </p>
+        </div>
+      </div>
+      <div
+        className="card no-border col-6"
+      >
+        <img
+          className="card-img-top"
+        />
+        <div
+          className="card-body"
+        >
+          <p
+            className="card-text"
+          >
+            <a
+              href="/provider"
+            >
+               
+              Concrete Removal
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Appliance Installation
+        </a>
+      </div>
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Cabinetry
+        </a>
+      </div>
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Door Installation
+        </a>
+      </div>
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Concrete Removal
+        </a>
+      </div>
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Dishwasher Installation
+        </a>
+      </div>
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Finish Carpentry
+        </a>
+      </div>
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Floor Polishing
+        </a>
+      </div>
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Furniture Assembly
+        </a>
+      </div>
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Generator Installation
+        </a>
+      </div>
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Gardening
+        </a>
+      </div>
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Home Organizing
+        </a>
+      </div>
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Electrical and Wiring Repair
+        </a>
+      </div>
+      <div
+        className="col-6 list-group-item no-border"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Car Wash
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
