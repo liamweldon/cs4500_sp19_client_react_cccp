@@ -1,0 +1,288 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Creation renders properly in DOM 1`] = `
+<div
+  className="row"
+>
+  <div
+    className="card no-border col-6"
+  >
+    <img
+      className="card-img-top"
+    />
+    <div
+      className="card-body"
+    >
+      <p
+        className="card-text"
+      >
+        <a
+          href="/provider"
+        >
+           
+          House Cleaners
+        </a>
+      </p>
+    </div>
+  </div>
+  <div
+    className="card no-border col-6"
+  >
+    <img
+      className="card-img-top"
+    />
+    <div
+      className="card-body"
+    >
+      <p
+        className="card-text"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Interior Painters
+        </a>
+      </p>
+    </div>
+  </div>
+  <div
+    className="card no-border col-6"
+  >
+    <img
+      className="card-img-top"
+    />
+    <div
+      className="card-body"
+    >
+      <p
+        className="card-text"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Math Tutoring
+        </a>
+      </p>
+    </div>
+  </div>
+  <div
+    className="card no-border col-6"
+  >
+    <img
+      className="card-img-top"
+    />
+    <div
+      className="card-body"
+    >
+      <p
+        className="card-text"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Test1
+        </a>
+      </p>
+    </div>
+  </div>
+  <div
+    className="card no-border col-6"
+  >
+    <img
+      className="card-img-top"
+    />
+    <div
+      className="card-body"
+    >
+      <p
+        className="card-text"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Test2
+        </a>
+      </p>
+    </div>
+  </div>
+  <div
+    className="card no-border col-6"
+  >
+    <img
+      className="card-img-top"
+    />
+    <div
+      className="card-body"
+    >
+      <p
+        className="card-text"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Test3
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Creation renders properly in DOM 2`] = `
+<div
+  className="row"
+>
+  <div
+    className="card no-border col-6"
+  >
+    <img
+      className="card-img-top"
+    />
+    <div
+      className="card-body"
+    >
+      <p
+        className="card-text"
+      >
+        <a
+          href="/provider"
+        >
+           
+          House Cleaners
+        </a>
+      </p>
+    </div>
+  </div>
+  <div
+    className="card no-border col-6"
+  >
+    <img
+      className="card-img-top"
+    />
+    <div
+      className="card-body"
+    >
+      <p
+        className="card-text"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Interior Painters
+        </a>
+      </p>
+    </div>
+  </div>
+  <div
+    className="card no-border col-6"
+  >
+    <img
+      className="card-img-top"
+    />
+    <div
+      className="card-body"
+    >
+      <p
+        className="card-text"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Math Tutoring
+        </a>
+      </p>
+    </div>
+  </div>
+  <div
+    className="card no-border col-6"
+  >
+    <img
+      className="card-img-top"
+    />
+    <div
+      className="card-body"
+    >
+      <p
+        className="card-text"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Test1
+        </a>
+      </p>
+    </div>
+  </div>
+  <div
+    className="card no-border col-6"
+  >
+    <img
+      className="card-img-top"
+    />
+    <div
+      className="card-body"
+    >
+      <p
+        className="card-text"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Test2
+        </a>
+      </p>
+    </div>
+  </div>
+  <div
+    className="card no-border col-6"
+  >
+    <img
+      className="card-img-top"
+    />
+    <div
+      className="card-body"
+    >
+      <p
+        className="card-text"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Test3
+        </a>
+      </p>
+    </div>
+  </div>
+  <div
+    className="card no-border col-6"
+  >
+    <img
+      className="card-img-top"
+    />
+    <div
+      className="card-body"
+    >
+      <p
+        className="card-text"
+      >
+        <a
+          href="/provider"
+        >
+           
+          Car Wash
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+`;

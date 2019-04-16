@@ -1,0 +1,220 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rerender works properly 1`] = `
+<div
+  style={
+    Object {
+      "position": "fixed",
+    }
+  }
+>
+  <ul
+    className="list-group"
+  >
+    <li
+      className="list-group-item no-border"
+    >
+      <a
+        href="#123"
+      >
+        Home Improvements
+      </a>
+    </li>
+    <li
+      className="list-group-item no-border"
+    >
+      <a
+        href="#345"
+      >
+        Pets
+      </a>
+    </li>
+    <li
+      className="list-group-item no-border"
+    >
+      <a
+        href="#234"
+      >
+        Wellness
+      </a>
+    </li>
+    <li
+      className="list-group-item no-border"
+    >
+      <a
+        href="#456"
+      >
+        Business
+      </a>
+    </li>
+    <li
+      className="list-group-item no-border"
+    >
+      <a
+        href="#567"
+      >
+        Events
+      </a>
+    </li>
+    <li
+      className="list-group-item no-border"
+    >
+      <a
+        href="#678"
+      >
+        Crafts
+      </a>
+    </li>
+    <li
+      className="list-group-item no-border"
+    >
+      <a
+        href="#789"
+      >
+        Design and Web
+      </a>
+    </li>
+    <li
+      className="list-group-item no-border"
+    >
+      <a
+        href="#890"
+      >
+        Legal
+      </a>
+    </li>
+    <li
+      className="list-group-item no-border"
+    >
+      <a
+        href="#987"
+      >
+        Personal
+      </a>
+    </li>
+    <li
+      className="list-group-item no-border"
+    >
+      <a
+        href="#876"
+      >
+        Photography
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Rerender works properly 2`] = `
+<div
+  style={
+    Object {
+      "position": "fixed",
+    }
+  }
+>
+  <ul
+    className="list-group"
+  >
+    <li
+      className="list-group-item no-border"
+    >
+      <a
+        href="#123"
+      >
+        Home Improvements
+      </a>
+    </li>
+    <li
+      className="list-group-item no-border"
+    >
+      <a
+        href="#345"
+      >
+        Pets
+      </a>
+    </li>
+    <li
+      className="list-group-item no-border"
+    >
+      <a
+        href="#234"
+      >
+        Wellness
+      </a>
+    </li>
+    <li
+      className="list-group-item no-border"
+    >
+      <a
+        href="#456"
+      >
+        Business
+      </a>
+    </li>
+    <li
+      className="list-group-item no-border"
+    >
+      <a
+        href="#567"
+      >
+        Events
+      </a>
+    </li>
+    <li
+      className="list-group-item no-border"
+    >
+      <a
+        href="#678"
+      >
+        Crafts
+      </a>
+    </li>
+    <li
+      className="list-group-item no-border"
+    >
+      <a
+        href="#789"
+      >
+        Design and Web
+      </a>
+    </li>
+    <li
+      className="list-group-item no-border"
+    >
+      <a
+        href="#890"
+      >
+        Legal
+      </a>
+    </li>
+    <li
+      className="list-group-item no-border"
+    >
+      <a
+        href="#987"
+      >
+        Personal
+      </a>
+    </li>
+    <li
+      className="list-group-item no-border"
+    >
+      <a
+        href="#876"
+      >
+        Photography
+      </a>
+    </li>
+    <li
+      className="list-group-item no-border"
+    >
+      <a
+        href="#999"
+      >
+        New One
+      </a>
+    </li>
+  </ul>
+</div>
+`;

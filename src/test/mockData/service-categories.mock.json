@@ -2,18 +2,18 @@
   {
     "id": "123", "serviceCategoryName": "Home Improvements",
     "services": [
-      {"id": "1", "title": "Appliance Installation"},
-      {"id": "2", "title": "Cabinetry"},
-      {"id": "3", "title": "Door Installation"},
-      {"id": "4", "title": "Concrete Removal"},
-      {"id": "5", "title": "Dishwasher Installation"},
-      {"id": "6", "title": "Finish Carpentry"},
-      {"id": "7", "title": "Floor Polishing"},
-      {"id": "8", "title": "Furniture Assembly"},
-      {"id": "9", "title": "Generator Installation"},
-      {"id": "10", "title": "Gardening"},
-      {"id": "11", "title": "Home Organizing"},
-      {"id": "12", "title": "Electrical and Wiring Repair"}
+      {"id": "1", "serviceName": "Appliance Installation"},
+      {"id": "2", "serviceName": "Cabinetry"},
+      {"id": "3", "serviceName": "Door Installation"},
+      {"id": "4", "serviceName": "Concrete Removal"},
+      {"id": "5", "serviceName": "Dishwasher Installation"},
+      {"id": "6", "serviceName": "Finish Carpentry"},
+      {"id": "7", "serviceName": "Floor Polishing"},
+      {"id": "8", "serviceName": "Furniture Assembly"},
+      {"id": "9", "serviceName": "Generator Installation"},
+      {"id": "10", "serviceName": "Gardening"},
+      {"id": "11", "serviceName": "Home Organizing"},
+      {"id": "12", "serviceName": "Electrical and Wiring Repair"}
     ],
     "serviceProviders": [
       {
@@ -133,11 +133,11 @@
     "serviceProviders": [],
     "questions": [],
     "services": [
-    {"id": "1", "title": "Cat Grooming"},
-    {"id": "2", "title": "Dog Training"},
-    {"id": "3", "title": "Pet Boarding"},
-    {"id": "4", "title": "Pet Sitting"},
-    {"id": "5", "title": "Dog Walking"},
+    {"id": "1", "serviceName": "Cat Grooming"},
+    {"id": "2", "serviceName": "Dog Training"},
+    {"id": "3", "serviceName": "Pet Boarding"},
+    {"id": "4", "serviceName": "Pet Sitting"},
+    {"id": "5", "serviceName": "Dog Walking"},
     {
       "id": "6",
       "title": "Dog Grooming",
@@ -196,42 +196,42 @@
     {"id": "10", "title": "Behavior Modification (Non-canine)"}
   ]},
   {
-    "id": "234", "title": "Wellness",
+    "id": "234", "serviceCategoryName": "Wellness",
     "serviceProviders": [],
     "questions": [],
     "services": []},
   {
-    "id": "456", "title": "Business",
+    "id": "456", "serviceCategoryName": "Business",
     "serviceProviders": [],
     "questions": [],
     "services": []},
   {
-    "id": "567", "title": "Events",
+    "id": "567", "serviceCategoryName": "Events",
     "serviceProviders": [],
     "questions": [],
     "services": []},
   {
-    "id": "678", "title": "Crafts",
+    "id": "678", "serviceCategoryName": "Crafts",
     "serviceProviders": [],
     "questions": [],
     "services": []},
   {
-    "id": "789", "title": "Design and Web",
+    "id": "789", "serviceCategoryName": "Design and Web",
     "serviceProviders": [],
     "questions": [],
     "services": []},
   {
-    "id": "890", "title": "Legal",
+    "id": "890", "serviceCategoryName": "Legal",
     "serviceProviders": [],
     "questions": [],
     "services": []},
   {
-    "id": "987", "title": "Personal",
+    "id": "987", "serviceCategoryName": "Personal",
     "serviceProviders": [],
     "questions": [],
     "services": []},
   {
-    "id": "876", "title": "Photography",
+    "id": "876", "serviceCategoryName": "Photography",
     "serviceProviders": [],
     "questions": [],
     "services": []}
