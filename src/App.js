@@ -5,6 +5,7 @@ import ServiceCategoryService from './services/ServiceCategoryService'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Admin from './components/Admin';
 import Home from './components/Home';
+import BusinessContainer from './containers/BusinessContainer';
 import ServiceNavigatorContainer from './containers/ServiceNavigatorContainer'
 import ProviderContainer from './containers/ProviderContainer'
 import Login from './components/Login/Login'
@@ -34,7 +35,8 @@ class App extends Component {
             <Link to="/home">Home</Link> |
             <Link to="/services"> Services</Link> |
             <Link to="/providers"> Providers</Link> |
-            <Link to="/provider"> Provider</Link> |
+            <Link to="/provider/522"> Provider</Link> |
+            <Link to="/business"> Business</Link> |
             <Link to="/admin"> Admin</Link>  |
             <Link to="/login"> Login</Link> |
             <Link to="/register"> Sign Up</Link> |
@@ -50,8 +52,7 @@ class App extends Component {
         path="/admin"
         exact
           component={Admin}/>
-        <Route
-        path="/provider"
+        <Route path="/provider/:id"
         exact
         component={ProviderContainer}/>
         <Route
@@ -71,7 +72,8 @@ class App extends Component {
         />
         <Route path="/services" exact
              render={() => <ServiceNavigatorContainer
-                            serviceCategoryService={this.serviceCategoryService}/>}/>
+               serviceCategoryService={this.serviceCategoryService}/>}/>
+        <Route path="/business" exact component={BusinessContainer}/>
         </div>
         </Router>
     </div>
