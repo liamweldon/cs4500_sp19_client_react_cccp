@@ -53,7 +53,7 @@ const Provider = ({provider, faas}) => (
         <h4> Payment Methods </h4>
       </div>
     </div>
-    <Reviews/>
+    <Reviews provider={provider} />
     <div className="row" id="faqs" />
     <h4> FAQs </h4>
     <FAQs faqs={faas} />
