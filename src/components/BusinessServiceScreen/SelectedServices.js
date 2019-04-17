@@ -37,7 +37,7 @@ const SelectedServices = props => {
                   props.removeFromSelectedServices(mappedSelectedService.id);
                 }}
               >
-                <i class="fa fa-times" />
+                <i className="fa fa-times" />
               </div>
             </li>
           );
