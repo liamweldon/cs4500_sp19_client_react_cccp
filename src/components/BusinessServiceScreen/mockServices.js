@@ -7,7 +7,7 @@ const mockService = [
     serviceCategories: [],
     serviceQuestions: [
       {
-        id: "1",
+        id: "2945",
         question: "Number of bedrooms",
         questionType: "MULTIPLE-CHOICE",
         choices: [
@@ -29,7 +29,7 @@ const mockService = [
     serviceCategories: [],
     serviceQuestions: [
       {
-        id: "2",
+        id: "1946",
         question: "Number of bathrooms",
         questionType: "MULTIPLE-CHOICE",
         choices: [
@@ -51,7 +51,7 @@ const mockService = [
     serviceCategories: [],
     serviceQuestions: [
       {
-        id: "3",
+        id: "2974",
         question: "Cleaning type",
         questionType: "MULTIPLE-CHOICE",
         choices: [
@@ -70,7 +70,7 @@ const mockService = [
     serviceCategories: [],
     serviceQuestions: [
       {
-        id: "1",
+        id: "1736",
         question: "Number of bedrooms",
         questionType: "MULTIPLE-CHOICE",
         choices: [
@@ -83,7 +83,7 @@ const mockService = [
         ]
       },
       {
-        id: "2",
+        id: "8363",
         question: "Number of bathrooms",
         questionType: "MULTIPLE-CHOICE",
         choices: [
@@ -105,7 +105,7 @@ const mockService = [
     serviceCategories: [],
     serviceQuestions: [
       {
-        id: "3",
+        id: "2354",
         question: "Cleaning type",
         questionType: "MULTIPLE-CHOICE",
         choices: [
@@ -115,7 +115,7 @@ const mockService = [
         ]
       },
       {
-        id: "4",
+        id: "1234",
         question: "Extra services",
         questionType: "MULTIPLE-ANSWER",
         choices: [
@@ -135,7 +135,7 @@ const mockService = [
     serviceCategories: [],
     serviceQuestions: [
       {
-        id: "4",
+        id: "5346",
         question: "Extra services",
         questionType: "MULTIPLE-ANSWER",
         choices: [
@@ -146,7 +146,7 @@ const mockService = [
         ]
       },
       {
-        id: "5",
+        id: "7493",
         question: "Frequency",
         questionType: "MULTIPLE-CHOICE",
         choices: [
