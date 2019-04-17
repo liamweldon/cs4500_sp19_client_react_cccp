@@ -1,0 +1,15 @@
+{
+  "id": 522,
+  "username": "demi",
+  "password": "test",
+  "firstName": "demi",
+  "lastName": "f",
+  "role": "provider",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
+  "timesHired": 3,
+  "isBackgroundChecked": true,
+  "numEmployees": 9,
+  "numYearsInBusiness": 2,
+  "services": []
+}
+
