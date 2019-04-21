@@ -1,36 +1,30 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-
-import Home from "./components/Home";
-import Admin from "./components/Admin";
-import ServiceNavigatorContainer from "./containers/ServiceNavigatorContainer";
-import ProviderContainer from "./containers/ProviderContainer";
-import BusinessServiceContainer from "./containers/BusinessServiceContainer";
-import BusinessContainer from "./containers/BusinessContainer";
-import Login from "./components/Login/Login";
-import Register from "./components/Register";
-
-import serviceCategories from "./data/service-categories.mock.json";
-import ServiceCategoryService from "./services/ServiceCategoryService";
+import React, {Component} from 'react';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import serviceCategories from './data/service-categories.mock.json'
+import ServiceCategoryService from './services/ServiceCategoryService'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import Admin from './components/Admin';
+import Home from './components/Home';
+import BusinessContainer from './containers/BusinessContainer';
+import ServiceNavigatorContainer from './containers/ServiceNavigatorContainer'
+import ProviderContainer from './containers/ProviderContainer'
+import Login from './components/Login/Login'
+import Register from './components/Register'
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.serviceCategoryService = ServiceCategoryService.getInstance();
-    this.state = {
-      pillServiceCategories: serviceCategories
-    };
-  }
-  componentDidMount() {
-    this.serviceCategoryService
-      .findAllServiceCategories(4)
-      .then(serviceCategories =>
-        this.setState({
-          pillServiceCategories: serviceCategories
-        })
-      );
-  }
+    constructor(props) {
+        super(props)
+        this.serviceCategoryService = ServiceCategoryService.getInstance()
+        this.state = {
+            pillServiceCategories: serviceCategories
+        }
+    }
+    componentDidMount() {
+        this.serviceCategoryService.findAllServiceCategories(4)
+            .then(serviceCategories => this.setState({
+            pillServiceCategories: serviceCategories
+        }))
+    }
 
   render() {
     return (
@@ -87,7 +81,7 @@ class App extends Component {
             <Route path="/register" exact render={() => <Register />} />
           </div>
         </Router>
-      </div>
+    </div>
     );
   }
 }

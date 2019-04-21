@@ -1,6 +1,7 @@
 import React from 'react';
 import './Provider.scss';
 import FAQs from './FAQs';
+import Reviews from "./Reviews";
 
 const Provider = ({provider, faas}) => (
   <div className="provider">
@@ -52,9 +53,7 @@ const Provider = ({provider, faas}) => (
         <h4> Payment Methods </h4>
       </div>
     </div>
-    <div className="section" id="reviews">
-      <h4> Reviews </h4>
-    </div>
+    <Reviews provider={provider} />
     <div className="row" id="faqs" />
     <h4> FAQs </h4>
     <FAQs faqs={faas} />

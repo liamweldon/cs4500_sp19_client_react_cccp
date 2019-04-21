@@ -20,8 +20,45 @@ const Business = ({business, onChange, update}) => (
     <div className="label">State</div>
     <input value={business.businessState} name="businessState" onChange={onChange} />
     <div className="label">Zip</div>
-    <input value={business.businessZipcode} name="businessZipcode" onChange={onChange} />
-
+    <input value={business.businessZipcode} name="businessZipcode" onChange={onChange} /> <h4>Payment methods</h4>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <label>
+          <input type="checkbox" />
+          Credit Card
+        </label>
+      </li>
+      <li class="list-group-item">
+        <label>
+          <input type="checkbox" />
+          Cash
+        </label>
+      </li>
+      <li class="list-group-item">
+        <label>
+          <input type="checkbox" />
+          Check
+        </label>
+      </li>
+      <li class="list-group-item">
+        <label>
+          <input type="checkbox" />
+          Venmo
+        </label>
+      </li>
+      <li class="list-group-item">
+        <label>
+          <input type="checkbox" />
+          Paypal
+        </label>
+      </li>
+      <li class="list-group-item">
+        <label>
+          <input type="checkbox" />
+          Square
+        </label>
+      </li>
+    </ul>
     <h4>Social Media</h4>
     <div className="label">Facebook</div>
     <input value={business.facebook} name="facebook" onChange={onChange} />
