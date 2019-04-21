@@ -55,7 +55,6 @@ class App extends Component {
             <Link to="/login"> Login</Link>
             <span> | </span>
             <Link to="/register"> Sign Up</Link>
-<<<<<<< HEAD
             <br/>
             <br/>
             <br/>
