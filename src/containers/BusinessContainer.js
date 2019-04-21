@@ -70,7 +70,7 @@ class BusinessContainer extends React.Component {
             business: {
               ...this.state.business,
               businessAcceptedPayments: this.state.business.businessAcceptedPayments.filter(
-                (payment) => payment === target.name
+                (payment) => payment !== target.name
               )
             }
           });
