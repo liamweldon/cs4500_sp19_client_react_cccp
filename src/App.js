@@ -41,13 +41,19 @@ class App extends Component {
             <span> | </span>
             <Link to="/services"> Services</Link>
             <span> | </span>
+            <Link to="/service-questions"> Service Questions</Link>
+            <span> | </span>
             <Link to="/providers"> Providers</Link>
             <span> | </span>
-            <Link to="/provider"> Provider</Link>
+            <Link to="/provider/522"> Provider</Link>
+            <span> | </span>
+            <Link to="/business"> Business</Link>
             <span> | </span>
             <Link to="/admin"> Admin</Link>
             <span> | </span>
-            <Link to="/service-questions"> Service Questions</Link>
+            <Link to="/login"> Login</Link>
+            <span> | </span>
+            <Link to="/register"> Sign Up</Link>
             <br />
             <br />
             <br />
@@ -60,8 +66,6 @@ class App extends Component {
                 />
               )}
             />
-            <Route path="/admin" exact component={Admin} />
-            <Route path="/provider" exact component={ProviderContainer} />
             <Route
               path="/services"
               exact
@@ -76,6 +80,11 @@ class App extends Component {
               exact
               component={BusinessServiceContainer}
             />
+            <Route path="/provider/:id" exact component={ProviderContainer} />
+            <Route path="/business" exact component={BusinessContainer} />
+            <Route path="/admin" exact component={Admin} />
+            <Route path="/login" exact render={() => <Login />} />
+            <Route path="/register" exact render={() => <Register />} />
           </div>
         </Router>
       </div>
