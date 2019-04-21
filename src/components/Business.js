@@ -24,37 +24,79 @@ const Business = ({business, onChange, update}) => (
     <ul class="list-group">
       <li class="list-group-item">
         <label>
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            name="Credit Card"
+            onChange={onChange}
+            checked={
+              business && business.businessAcceptedPayments && business.businessAcceptedPayments.includes('Credit Card')
+            }
+          />
           Credit Card
         </label>
       </li>
       <li class="list-group-item">
         <label>
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            name="Cash"
+            onChange={onChange}
+            checked={
+              business && business.businessAcceptedPayments && business.businessAcceptedPayments.includes('Cash')
+            }
+          />
           Cash
         </label>
       </li>
       <li class="list-group-item">
         <label>
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            name="Check"
+            onChange={onChange}
+            checked={
+              business && business.businessAcceptedPayments && business.businessAcceptedPayments.includes('Check')
+            }
+          />
           Check
         </label>
       </li>
       <li class="list-group-item">
         <label>
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            name="Venmo"
+            onChange={onChange}
+            checked={
+              business && business.businessAcceptedPayments && business.businessAcceptedPayments.includes('Venmo')
+            }
+          />
           Venmo
         </label>
       </li>
       <li class="list-group-item">
         <label>
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            name="Paypal"
+            onChange={onChange}
+            checked={
+              business && business.businessAcceptedPayments && business.businessAcceptedPayments.includes('Paypal')
+            }
+          />
           Paypal
         </label>
       </li>
       <li class="list-group-item">
         <label>
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            name="Square"
+            onChange={onChange}
+            checked={
+              business && business.businessAcceptedPayments && business.businessAcceptedPayments.includes('Square')
+            }
+          />
           Square
         </label>
       </li>
