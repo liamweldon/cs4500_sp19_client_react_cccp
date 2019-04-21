@@ -10,6 +10,7 @@ import ServiceNavigatorContainer from './containers/ServiceNavigatorContainer'
 import ProviderContainer from './containers/ProviderContainer'
 import Login from './components/Login/Login'
 import Register from './components/Register'
+import ServiceProviderNavigator from "./components/ServiceProviderNavigator/ServiceProviderNavigator";
 
 class App extends Component {
     constructor(props) {
@@ -53,6 +54,9 @@ class App extends Component {
         <Route path="/provider/:id"
         exact
         component={ProviderContainer}/>
+        <Route path="/providers"
+               exact
+               component={ServiceProviderNavigator}/>
         <Route
         path="/login"
         exact
