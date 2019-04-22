@@ -30,7 +30,9 @@ export default class UserService {
                 body: JSON.stringify(user),
                 headers: {'content-type': 'application/json'}
             })
-            .then(response => response.json())
+            .then(response => {let rv = response.json();
+                                delete rv.businessAcceptedPaymentsDirect;
+                                return rv;})
 
     deleteUser = id => {
         return fetch(`${API_ROOT}/api/users/${id}`,
