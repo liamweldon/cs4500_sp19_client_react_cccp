@@ -22,14 +22,14 @@ class BusinessContainer extends React.Component {
         timesHired: '',
         isBackgroundChecked: '',
         numEmployees: '',
-        numYearsInBusiness: ''
+        numYearsInBusiness: '',
+        businessAcceptedPayments: []
       },
       redirect: false
     };
   }
 
   getBusiness = () => {
-    // TODO in the future, we will find by the ID in the path
     this.userService.findUserById('522').then((provider) => {
       if (provider) {
         this.setState({
@@ -56,9 +56,31 @@ class BusinessContainer extends React.Component {
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
 
-    this.setState({
-      business: {...this.state.business, [name]: value}
-    });
+    if (target.type === 'checkbox') {
+      if (target.checked) {
+        this.setState({
+          business: {
+            ...this.state.business,
+            businessAcceptedPayments: [...this.state.business.businessAcceptedPayments, target.name]
+          }
+        });
+      } else {
+        if (this.state.business.businessAcceptedPayments.includes(target.name)) {
+          this.setState({
+            business: {
+              ...this.state.business,
+              businessAcceptedPayments: this.state.business.businessAcceptedPayments.filter(
+                (payment) => payment !== target.name
+              )
+            }
+          });
+        }
+      }
+    } else {
+      this.setState({
+        business: {...this.state.business, [name]: value}
+      });
+    }
   };
 
   render() {
