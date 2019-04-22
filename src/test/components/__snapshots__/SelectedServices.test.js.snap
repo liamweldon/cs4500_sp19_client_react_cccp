@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test clicking a service renders properly 1`] = `
+<div>
+  <h4>
+    Selected Services
+  </h4>
+  <ul
+    className="list-group"
+  >
+    <li
+      className="list-group-item"
+      onClick={[Function]}
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <div>
+        House Cleaners
+        , 
+        123
+      </div>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="fa fa-times"
+        />
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Test clicking a service renders properly 2`] = `
+<div>
+  <h4>
+    Selected Services
+  </h4>
+  <ul
+    className="list-group"
+  />
+</div>
+`;
