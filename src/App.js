@@ -10,6 +10,7 @@ import BusinessServiceContainer from "./containers/BusinessServiceContainer";
 import BusinessContainer from "./containers/BusinessContainer";
 import Login from "./components/Login/Login";
 import Register from "./components/Register";
+import Profile from "./components/Profile";
 import ServiceProviderNavigator from "./components/ServiceProviderNavigator/ServiceProviderNavigator";
 
 import serviceCategories from "./data/service-categories.mock.json";
