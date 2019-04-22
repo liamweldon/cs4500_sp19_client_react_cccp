@@ -10,10 +10,11 @@ import BusinessServiceContainer from "./containers/BusinessServiceContainer";
 import BusinessContainer from "./containers/BusinessContainer";
 import Login from "./components/Login/Login";
 import Register from "./components/Register";
-import ServiceProviderNavigator from "./components/ServiceProviderNavigator/ServiceProviderNavigator";
+import Profile from "./components/Profile";
 
 import serviceCategories from "./data/service-categories.mock.json";
 import ServiceCategoryService from "./services/ServiceCategoryService";
+import ServiceProviderNavigator from "./components/ServiceProviderNavigator/ServiceProviderNavigator";
 
 class App extends Component {
   constructor(props) {
@@ -57,52 +58,45 @@ class App extends Component {
             <Link to="/register"> Sign Up</Link>
             <span> | </span>
             <Link to="/profile"> Profile</Link>
-            <br/>
-            <br/>
-            <br/>
-        <Route
-        path="/home"
-        exact
-        render={() => <Home pillServiceCategories={this.state.pillServiceCategories}/>}/>
-        <Route
-        path="/admin"
-        exact
-          component={Admin}/>
-        <Route path="/provider/:id"
-        exact
-        component={ProviderContainer}/>
-        <Route path="/providers"
+            <br />
+            <br />
+            <br />
+            <Route
+              path="/home"
+              exact
+              render={() => (
+                <Home
+                  pillServiceCategories={this.state.pillServiceCategories}
+                />
+              )}
+            />
+            <Route
+              path="/services"
+              exact
+              render={() => (
+                <ServiceNavigatorContainer
+                  serviceCategoryService={this.serviceCategoryService}
+                />
+              )}
+            />
+            <Route
+              path="/service-questions"
+              exact
+              component={BusinessServiceContainer}
+            />
+            <Route path="/providers"
                exact
                component={ServiceProviderNavigator}/>
-        <Route
-        path="/services"
-        exact
-        render={() => (
-            <ServiceNavigatorContainer
-                serviceCategoryService={this.serviceCategoryService}
-            />
-        )}
-        />
-        <Route
-        path="/login"
-        exact
-        render={() => <Login/>}
-        />
-        <Route
-        path="/register"
-        exact
-        render={() => <Register/>}
-        />
-        <Route
-        path="/profile"
+            <Route path="/provider/:id" exact component={ProviderContainer} />
+            <Route path="/business" exact component={BusinessContainer} />
+            <Route path="/admin" exact component={Admin} />
+            <Route path="/login" exact render={() => <Login />} />
+            <Route path="/register" exact render={() => <Register />} />
+            <Route path="/profile"
         exact
         render={() => <Profile/>}
         />
-        <Route path="/services" exact
-             render={() => <ServiceNavigatorContainer
-               serviceCategoryService={this.serviceCategoryService}/>}/>
-        <Route path="/business" exact component={BusinessContainer}/>
-        </div>
+          </div>
         </Router>
       </div>
     );
