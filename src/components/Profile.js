@@ -1,104 +1,91 @@
 import React from 'react'
 
-const Profile = () =>
-    <div className="container">
-        <h1>Profile</h1>
-        <br/>
-        <div>
-            <h4>Legal name</h4>
-            <div className="row">
-                <div className="col-6">
-                    <label for="first-name">First name</label>
-                    <input id="first-name" className="form-control"/>
+function read_cookie(name) {
+  var result = document.cookie.match(new RegExp(name + '=([^;]+)'));
+  result && (result = JSON.parse(result[1]));
+  return result;
+}
+
+class Profile extends React.Component {
+
+
+  constructor(props) {
+    var username = read_cookie("name")
+    super(props)
+    this.state = {
+        users: [],
+        user: read_cookie("user")
+    };
+  }
+
+  render() {
+      return (
+        <div className="container">
+            <h1>Profile</h1>
+            <br/>
+            <div>
+                <h4>Legal name</h4>
+                <div className="row">
+                    <div className="col-6">
+                        <label for="first-name">First name</label>
+                        <input id="first-name" className="form-control" value={this.state.user.firstName}/>
+                    </div>
+                    <div className="col-6">
+                        <label for="last-name">Last name</label>
+                        <input id="last-name" className="form-control" value={this.state.user.lastName}/>
+                    </div>
                 </div>
-                <div className="col-6">
-                    <label for="last-name">Last name</label>
-                    <input id="last-name" className="form-control"/>
+                <div className="row">
+                    <div className="col-6">
+                        <label for="username">Username</label>
+                        <input id="username" className="form-control" value={this.state.user.username}/>
+                    </div>
+                    <div className="col-6">
+                        <label for="email">Email</label>
+                        <input id="email" className="form-control" value={this.state.user.businessEmail}/>
+                    </div>
                 </div>
+                <br/>
+                <h4>Business address</h4>
+                <div className="row">
+                    <div className="col-12">
+                        <label for="street">Street</label>
+                        <input id="street" className="form-control" value={this.state.user.businessEmail}/>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-12">
+                        <label for="city">City</label>
+                        <input id="city" className="form-control" value={this.state.user.businessCity}/>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-6">
+                        <label for="state">State</label>
+                        <input id="state" className="form-control" value={this.state.user.businessState}/>
+                    </div>
+                    <div className="col-6">
+                        <label for="zip">Zip</label>
+                        <input id="zip" className="form-control" value={this.state.user.businessZipcode}/>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <div className="row">
+                    <div className="col-12">
+                        <a className="btn btn-success btn-block">
+                            Update Account
+                        </a>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
             </div>
-            <br/>
-            <h4>Date of birth</h4>
-            <div className="row">
-                <div className="col-4">
-                    <label for="first-name">Month</label>
-                    <select className="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </div>
-                <div className="col-4">
-                    <label for="last-name">Day</label>
-                    <select className="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </div>
-                <div className="col-4">
-                    <label for="last-name">Year</label>
-                    <select className="form-control">
-                        <option>2000</option>
-                        <option>2001</option>
-                        <option>2002</option>
-                        <option>2004</option>
-                        <option>2005</option>
-                    </select>
-                </div>
-            </div>
-            <br/>
-            <h4>Home address</h4>
-            <div className="row">
-                <div className="col-12">
-                    <label for="first-name">Street</label>
-                    <input id="first-name" className="form-control"/>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-12">
-                    <label for="first-name">City</label>
-                    <input id="first-name" className="form-control"/>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-6">
-                    <label for="first-name">State</label>
-                    <select className="form-control">
-                        <option>MA</option>
-                        <option>NH</option>
-                        <option>NY</option>
-                        <option>CA</option>
-                    </select>
-                </div>
-                <div className="col-6">
-                    <label for="first-name">Zip</label>
-                    <input id="first-name" className="form-control"/>
-                </div>
-            </div>
-            <br/>
-            <div className="row">
-                <div className="col-12">
-                    <label for="email">Email</label>
-                    <input id="email" className="form-control"/>
-                </div>
-            </div>
-            <br/>
-            <div className="row">
-                <div className="col-12">
-                    <a className="btn btn-success btn-block">
-                        Update Account
-                    </a>
-                </div>
-            </div>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
         </div>
-    </div>
+      );
+    }
+}
 
 export default Profile
